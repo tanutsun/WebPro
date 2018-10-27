@@ -498,8 +498,6 @@ body .container.body .right_col { background:#F7F7F7; }
 .top_nav .nav>li>a:hover { background:#D9DEE4; }
 
 body {
-  color:#73879C;
-  background:#2A3F54;
   font-family:"Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
   font-size:13px;
   font-weight:400;
@@ -2360,7 +2358,7 @@ a.btn-success,
 a.btn-warning { color:#fff; }
 
 .btn-success {
-  background:#26B99A;
+  background:#27db79;
   border:1px solid #169F85;
 }
 

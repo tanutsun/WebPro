@@ -1,7 +1,8 @@
 @import "bourbon";
 
-body {
-	font-family: 'Kanit', sans-serif;	
+body{
+	font-family: 'supermarketregular', 'supermarketregular';
+	font-size: 150%;
 }
 .wrapper {	
   margin: 10px;
