@@ -1,0 +1,12 @@
+body{
+	font-family: 'supermarketregular', 'supermarketregular';
+	font-size: 150%;
+}
+.backgroud{
+		height:-webkit-fill-available;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); 
+}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @font-face {
-  font-family:'supermarketregular';
+  font-family:'supermarketregular' ;
   src:url(supermarket-webfont.eot);
   src:url(supermarket-webfont.eot?#iefix) format('embedded-opentype'),url(supermarket-webfont.woff2) format('woff2'),url(supermarket-webfont.woff) format('woff'),url(supermarket-webfont.ttf) format('truetype');
   font-weight:normal;
@@ -341,8 +341,11 @@ table.tile_info td p { overflow:hidden; }
 
 .nav_menu {
   float:left;
-  background:#EDEDED;
-  border-bottom:1px solid #D9DEE4;
+  background: -webkit-linear-gradient(rgb(0, 183, 255), rgb(252, 252, 252)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgb(0, 183, 255), rgb(252, 252, 252)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgb(0, 183, 255), rgb(252, 252, 252)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgb(0, 183, 255), rgb(252, 252, 252)); 
+  border-bottom:1px solid rgb(0, 0, 0);
   margin-bottom:10px;
   width:100%;
   position:relative;
@@ -675,6 +678,7 @@ a:visited { outline:0; }
   margin:0;
   width:70%;
   float:right;
+  text-align: -webkit-right;
 }
 
 .top_nav .navbar-right li {
