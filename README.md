@@ -29,11 +29,13 @@ Project Web Programming
 - [ ] Template Admin
 - [ ] Init code structure
 - [ ] Get Data in Front
+    - [ ] Ecommerce
 - [ ] Get Data in Admin
     - [ ] Get
     - [ ] Edit
     - [ ] Update
     - [ ] Delete
+    - [ ] Report Ecommerce
 
 ---
 ### Feature
