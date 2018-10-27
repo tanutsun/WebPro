@@ -24,10 +24,10 @@ Project Web Programming
 ---
 ### Todos
 - [x] Folder Structure
+- [x] Init code structure
 - [ ] Create Database
 - [ ] Template Front
 - [ ] Template Admin
-- [ ] Init code structure
 - [ ] Get Data in Front
     - [ ] Ecommerce
 - [ ] Get Data in Admin
