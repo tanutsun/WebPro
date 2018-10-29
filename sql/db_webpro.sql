@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2018 at 12:15 PM
+-- Generation Time: Oct 29, 2018 at 03:35 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ชุมชนบึงบัว`
+-- Database: `db_webpro`
 --
 
 -- --------------------------------------------------------
@@ -42,11 +42,31 @@ CREATE TABLE `activity` (
 --
 
 INSERT INTO `activity` (`Activity_ID`, `Activity_Name`, `Activity_Detail`, `Activity_Date`, `Activity_Pic`, `Admin_ID`) VALUES
-(1, 'Act1', 'Detail Act 1', '0000-00-00', 'upload/images/image-not-found.png', 0),
-(2, 'Act2', 'Detail Act 2', '0000-00-00', 'upload/images/image-not-found.png', 0),
-(3, 'Act3', 'Detail Act 3', '0000-00-00', 'upload/images/image-not-found.png', 0),
-(4, 'Act4', 'Detail Act 4', '0000-00-00', 'upload/images/image-not-found.png', 0),
-(5, 'Act5', 'Detail Act 5', '0000-00-00', 'upload/images/image-not-found.png', 0);
+(1, 'Act1', 'Detail Act 1', '0000-00-00', 'upload/images/image-not-found.png', 1),
+(2, 'Act2', 'Detail Act 2', '0000-00-00', 'upload/images/image-not-found.png', 1),
+(3, 'Act3', 'Detail Act 3', '0000-00-00', 'upload/images/image-not-found.png', 1),
+(4, 'Act4', 'Detail Act 4', '0000-00-00', 'upload/images/image-not-found.png', 1),
+(5, 'Act5', 'Detail Act 5', '0000-00-00', 'upload/images/image-not-found.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` bigint(20) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `last_login` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`, `last_login`) VALUES
+(1, 'admin', '$2y$10$zl2ptI4zXNFOtuzDyouwderC0q/VWEoKIW7hAqUdcUfbmqmqRyDg2', '2018-10-27 16:22:25');
 
 -- --------------------------------------------------------
 
@@ -95,13 +115,13 @@ CREATE TABLE `plant` (
 --
 
 INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`, `Plant_Pic`, `Admin_ID`, `Map_ID`) VALUES
-(1, 'Plant1', 'Detail Plant 1', '0000-00-00', 'upload/images/image-not-found.png', 0, 1),
-(2, 'Plant2', 'Detail Plant 2', '0000-00-00', 'upload/images/image-not-found.png', 0, 2),
-(3, 'Plant3', 'Detail Plant 3', '0000-00-00', 'upload/images/image-not-found.png', 0, 3),
-(4, 'Plant4', 'Detail Plant 4', '0000-00-00', 'upload/images/image-not-found.png', 0, 4),
-(5, 'Plant5', 'Detail Plant 5', '0000-00-00', 'upload/images/image-not-found.png', 0, 5),
-(6, 'Plant6', 'Detail Plant 6', '0000-00-00', 'upload/images/image-not-found.png', 0, 6),
-(7, 'Plant7', 'Detail Plant 7', '0000-00-00', 'upload/images/image-not-found.png', 0, 7);
+(1, 'Plant1', 'Detail Plant 1', '0000-00-00', 'upload/images/image-not-found.png', 1, 1),
+(2, 'Plant2', 'Detail Plant 2', '0000-00-00', 'upload/images/image-not-found.png', 1, 2),
+(3, 'Plant3', 'Detail Plant 3', '0000-00-00', 'upload/images/image-not-found.png', 1, 3),
+(4, 'Plant4', 'Detail Plant 4', '0000-00-00', 'upload/images/image-not-found.png', 1, 4),
+(5, 'Plant5', 'Detail Plant 5', '0000-00-00', 'upload/images/image-not-found.png', 1, 5),
+(6, 'Plant6', 'Detail Plant 6', '0000-00-00', 'upload/images/image-not-found.png', 1, 6),
+(7, 'Plant7', 'Detail Plant 7', '0000-00-00', 'upload/images/image-not-found.png', 1, 7);
 
 -- --------------------------------------------------------
 
@@ -124,13 +144,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`, `Admin_ID`) VALUES
-(1, 'Product1', 'Detail Product 1', '0000-00-00', 50, 'upload/images/image-not-found.png', 0),
-(2, 'Product2', 'Detail Product 2', '0000-00-00', 50, 'upload/images/image-not-found.png', 0),
-(3, 'Product3', 'Detail Product 3', '0000-00-00', 100, 'upload/images/image-not-found.png', 0),
-(4, 'Product4', 'Detail Product 4', '0000-00-00', 20, 'upload/images/image-not-found.png', 0),
-(5, 'Product5', 'Detail Product 5', '0000-00-00', 20, 'upload/images/image-not-found.png', 0),
-(6, 'Product6', 'Detail Product 6', '0000-00-00', 30, 'upload/images/image-not-found.png', 0),
-(7, 'Product7', 'Detail Product 7', '0000-00-00', 20, 'upload/images/image-not-found.png', 0);
+(1, 'Product1', 'Detail Product 1', '0000-00-00', 50, 'upload/images/image-not-found.png', 1),
+(2, 'Product2', 'Detail Product 2', '0000-00-00', 50, 'upload/images/image-not-found.png', 1),
+(3, 'Product3', 'Detail Product 3', '0000-00-00', 100, 'upload/images/image-not-found.png', 1),
+(4, 'Product4', 'Detail Product 4', '0000-00-00', 20, 'upload/images/image-not-found.png', 1),
+(5, 'Product5', 'Detail Product 5', '0000-00-00', 20, 'upload/images/image-not-found.png', 1),
+(6, 'Product6', 'Detail Product 6', '0000-00-00', 30, 'upload/images/image-not-found.png', 1),
+(7, 'Product7', 'Detail Product 7', '0000-00-00', 20, 'upload/images/image-not-found.png', 1);
 
 -- --------------------------------------------------------
 
@@ -171,6 +191,12 @@ ALTER TABLE `activity`
   ADD PRIMARY KEY (`Activity_ID`);
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `map`
 --
 ALTER TABLE `map`
@@ -203,6 +229,12 @@ ALTER TABLE `sell`
 --
 ALTER TABLE `activity`
   MODIFY `Activity_ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `map`
