@@ -25,7 +25,7 @@ Project Web Programming
 ### Todos
 - [x] Folder Structure
 - [x] Init code structure
-- [ ] Create Database
+- [x] Create Database
 - [ ] Template Front
 - [ ] Template Admin
 - [ ] Get Data in Front
