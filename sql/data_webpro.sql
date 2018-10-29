@@ -42,11 +42,11 @@ CREATE TABLE `activity` (
 --
 
 INSERT INTO `activity` (`Activity_ID`, `Activity_Name`, `Activity_Detail`, `Activity_Date`, `Activity_Pic`, `Admin_ID`) VALUES
-(1, 'Act1', 'Detail Act 1', '0000-00-00', 'upload/images/act1.png', 0),
-(2, 'Act2', 'Detail Act 2', '0000-00-00', 'upload/images/act2.png', 0),
-(3, 'Act3', 'Detail Act 3', '0000-00-00', 'upload/images/act3.png', 0),
-(4, 'Act4', 'Detail Act 4', '0000-00-00', 'upload/images/act4.png', 0),
-(5, 'Act5', 'Detail Act 5', '0000-00-00', 'upload/images/act5.png', 0);
+(1, 'Act1', 'Detail Act 1', '0000-00-00', 'upload/images/image-not-found.png', 0),
+(2, 'Act2', 'Detail Act 2', '0000-00-00', 'upload/images/image-not-found.png', 0),
+(3, 'Act3', 'Detail Act 3', '0000-00-00', 'upload/images/image-not-found.png', 0),
+(4, 'Act4', 'Detail Act 4', '0000-00-00', 'upload/images/image-not-found.png', 0),
+(5, 'Act5', 'Detail Act 5', '0000-00-00', 'upload/images/image-not-found.png', 0);
 
 -- --------------------------------------------------------
 
@@ -95,13 +95,13 @@ CREATE TABLE `plant` (
 --
 
 INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`, `Plant_Pic`, `Admin_ID`, `Map_ID`) VALUES
-(1, 'Plant1', 'Detail Plant 1', '0000-00-00', 'upload/images/plant1.png', 0, 1),
-(2, 'Plant2', 'Detail Plant 2', '0000-00-00', 'upload/images/plant2.png', 0, 2),
-(3, 'Plant3', 'Detail Plant 3', '0000-00-00', 'upload/images/plant3.png', 0, 3),
-(4, 'Plant4', 'Detail Plant 4', '0000-00-00', 'upload/images/plant4.png', 0, 4),
-(5, 'Plant5', 'Detail Plant 5', '0000-00-00', 'upload/images/plant5.png', 0, 5),
-(6, 'Plant6', 'Detail Plant 6', '0000-00-00', 'upload/images/plant6.png', 0, 6),
-(7, 'Plant7', 'Detail Plant 7', '0000-00-00', 'upload/images/plant7.png', 0, 7);
+(1, 'Plant1', 'Detail Plant 1', '0000-00-00', 'upload/images/image-not-found.png', 0, 1),
+(2, 'Plant2', 'Detail Plant 2', '0000-00-00', 'upload/images/image-not-found.png', 0, 2),
+(3, 'Plant3', 'Detail Plant 3', '0000-00-00', 'upload/images/image-not-found.png', 0, 3),
+(4, 'Plant4', 'Detail Plant 4', '0000-00-00', 'upload/images/image-not-found.png', 0, 4),
+(5, 'Plant5', 'Detail Plant 5', '0000-00-00', 'upload/images/image-not-found.png', 0, 5),
+(6, 'Plant6', 'Detail Plant 6', '0000-00-00', 'upload/images/image-not-found.png', 0, 6),
+(7, 'Plant7', 'Detail Plant 7', '0000-00-00', 'upload/images/image-not-found.png', 0, 7);
 
 -- --------------------------------------------------------
 
@@ -124,13 +124,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`, `Admin_ID`) VALUES
-(1, 'Product1', 'Detail Product 1', '0000-00-00', 50, 'upload/images/product1.png', 0),
-(2, 'Product2', 'Detail Product 2', '0000-00-00', 50, 'upload/images/product2.png', 0),
-(3, 'Product3', 'Detail Product 3', '0000-00-00', 100, 'upload/images/product3.png', 0),
-(4, 'Product4', 'Detail Product 4', '0000-00-00', 20, 'upload/images/product4.png', 0),
-(5, 'Product5', 'Detail Product 5', '0000-00-00', 20, 'upload/images/product5.png', 0),
-(6, 'Product6', 'Detail Product 6', '0000-00-00', 30, 'upload/images/product6.png', 0),
-(7, 'Product7', 'Detail Product 7', '0000-00-00', 20, 'upload/images/product7.png', 0);
+(1, 'Product1', 'Detail Product 1', '0000-00-00', 50, 'upload/images/image-not-found.png', 0),
+(2, 'Product2', 'Detail Product 2', '0000-00-00', 50, 'upload/images/image-not-found.png', 0),
+(3, 'Product3', 'Detail Product 3', '0000-00-00', 100, 'upload/images/image-not-found.png', 0),
+(4, 'Product4', 'Detail Product 4', '0000-00-00', 20, 'upload/images/image-not-found.png', 0),
+(5, 'Product5', 'Detail Product 5', '0000-00-00', 20, 'upload/images/image-not-found.png', 0),
+(6, 'Product6', 'Detail Product 6', '0000-00-00', 30, 'upload/images/image-not-found.png', 0),
+(7, 'Product7', 'Detail Product 7', '0000-00-00', 20, 'upload/images/image-not-found.png', 0);
 
 -- --------------------------------------------------------
 
