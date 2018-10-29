@@ -80,7 +80,7 @@ if(isset($_POST['submit']) && $_POST['submit'] == "Login"){
         </div>
         <br><br>
         <center>
-            <a href="home.html">
+            <a href="#">
                 <button class=" btn-lg btn-success btn-block" type="submit" name="submit" value="Login" style="margin-top:10px;width: 12%">LOGIN</button>
             </a>
         </center>
