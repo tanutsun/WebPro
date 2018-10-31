@@ -6,8 +6,11 @@
         <!--Bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      
-    <title> บึงบัว </title>
+        <!--slick-->
+        <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    
+        <title> บึงบัว </title>
         <style>
             .font {
                  font-family: 'Supermarket';
@@ -41,6 +44,7 @@
 
         </style>
     </head>
+
     <body>
         <font face="Supermarket">   
         <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
@@ -67,22 +71,112 @@
                 </li>
             </ul>
         </nav>
-        <div class="container-fluid">
-   
 
-        <div class="row">
-            <div class="col-md-3">
-                
-            </div>
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-3">
-            </div>
-        </div>    
+        <div class="highlight mb-5">
+            <div><a href="#" ><img src="img/example.png" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="#" ><img src="" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="#" ><img src="img/example.png" alt="img1 test" width="100%" class="img-fluid"></a></div>
+        </div>
+        
+        <div class="container">                    
+        
+        <center>
+            <h4>ผลิตภัณฑ์</h4>
+
+            <div class="row pt-2 pb-5">
+                <div class="col-md-3">
+                    <a href="module/product/detailproduct.html">
+                    <img src="img/example.png" style="width:80%; height:120px;">  
+                    </a> 
+                </div>
+                <div class="col-md-3">
+                    <a href="module/product/detailproduct.html">
+                    <img src="img/example.png" style="width:80%; height:120px;">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="module/product/detailproduct.html">
+                    <img src="img/example.png" style="width:80%; height:120px;"> 
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="module/product/detailproduct.html">
+                    <img src="img/example.png" style="width:80%; height:120px;">
+                    </a>
+                </div>
+            </div>  
+
+            <h4>พันธุ์พืช</h4>
+
+            <div class="row pt-2 pb-5">
+                <div class="col-md-12 pb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="module/plan/detailplan.html">
+                            <img src="img/example.png" style="width:80%; height:150px;"> 
+                            </a>     
+                        </div>
+                        <div class="col-md-4">
+                            <a href="module/plan/detailplan.html">
+                            <img src="img/example.png" style="width:80%; height:150px;">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="module/plan/detailplan.html">
+                            <img src="img/example.png" style="width:80%; height:150px;">
+                            </a>
+                        </div>
+                    </div>   
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="module/plan/detailplan.html">
+                            <img src="img/example.png" style="width:80%; height:150px;">    
+                            </a>        
+                        </div>
+                        <div class="col-md-4">
+                            <a href="module/plan/detailplan.html">
+                            <img src="img/example.png" style="width:80%; height:150px;">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="module/plan/detailplan.html">
+                            <img src="img/example.png" style="width:80%; height:150px;">
+                            </a>
+                        </div>
+                    </div> 
+                </div>      
+            </div> 
+
+            <h4>กิจกรรม</h4>
+
+            <div class="row pt-2 pb-5">
+                <div class="col-md-3">
+                    <a href="module/activity/detailactivity.html">
+                    <img src="img/example.png" style="width:80%; height:120px;">  
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="module/activity/detailactivity.html">
+                    <img src="img/example.png" style="width:80%; height:120px;">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="module/activity/detailactivity.html">
+                    <img src="img/example.png" style="width:80%; height:120px;">
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="module/activity/detailactivity.html">
+                    <img src="img/example.png" style="width:80%; height:120px;">
+                    </a>    
+                </div>
+            </div> 
+        </center>
 
         </div>
+    <!-- end container-->
 
         <footer>
             <div class="row">
@@ -99,7 +193,18 @@
         </footer>     
     </font>
 
+    <!--slick-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 
-
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $('.highlight').slick({
+                dots : true
+            });
+        });             
+	</script>
+    
     </body>
 </html>
