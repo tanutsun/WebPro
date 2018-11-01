@@ -1,20 +1,20 @@
-<?php 
+<?php
 
-require_once(__DIR__ . "/../libs/config.inc.php");
-require_once(__DIR__ . "/../libs/admin/func.inc.php");
+require_once __DIR__ . "/../libs/config.inc.php";
+require_once __DIR__ . "/../libs/admin/func.inc.php";
 
 $helper = new helperAdmin($db);
 
-if(!$helper->checkLogin()){
+if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
+$product_ = $helper->productQuery($db)
 
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>บึงบัว</title>
     <meta charset="utf-8">
@@ -36,7 +36,7 @@ if(!$helper->checkLogin()){
                 $('#myTable').dataTable();
             });
     </script>
-    
+
     <link rel="stylesheet" href="../admin/assets/css/event.css">
 </head>
 
@@ -44,11 +44,11 @@ if(!$helper->checkLogin()){
     <div class="top_nav">
         <div class="nav_menu">
             <nav class="">
-                <a href="<?php echo ROOT_URL."/admin/dashboard.php" ?>">
+                <a href="<?php echo ROOT_URL . "/admin/dashboard.php" ?>">
                     <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
                         <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%">LOGOUT</button>
                     </a>
                     <!--เมนูด้านขวา -->
@@ -66,82 +66,31 @@ if(!$helper->checkLogin()){
     <table class="table table-bordered" id="myTable">
         <thead>
         <tr id="tablehead">
-            <th>ID</th>
-            <th>ชื่อบทความ</th>
-            <th>วันที่</th>
-            <th>การจัดการ</th>
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>รายละเอียดสินค้า</th>
+            <th>วันผลิตสินค้า</th>
+            <th>ราคาสินค้า</th>
+            <th>ภาพประกอบสินค้า</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>00</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
+        <?php
+while ($row = $product_->fetch()) {
+    echo "<tr>";
+    echo "<td>" . $row['Product_ID'] . "</td>";
+    echo "<td>" . $row['Product_Name'] . "</td>";
+    echo "<td>" . $row['Product_Detail'] . "</td>";
+    echo "<td>" . $row['Product_Date'] . "</td>";
+    echo "<td>" . $row['Product_Price'] . "</td>";
+    echo "<td>" . "<img src=" . $row['Product_Pic'] . " />" . "</td>";
+
+    echo "</tr>";
+}
+?>
         </tbody>
-        
-        
+
+
     </table>
 </div>
 </body>

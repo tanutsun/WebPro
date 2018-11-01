@@ -9,10 +9,7 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
 

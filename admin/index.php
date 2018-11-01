@@ -1,27 +1,25 @@
-<?php 
+<?php
 
-require_once(__DIR__ . "/../libs/config.inc.php");
-require_once(__DIR__ . "/../libs/admin/func.inc.php");
+require_once __DIR__ . "/../libs/config.inc.php";
+require_once __DIR__ . "/../libs/admin/func.inc.php";
 
 $helper = new helperAdmin($db);
 
-
-if($helper->checkLogin()){
+if ($helper->checkLogin()) {
     $helper->redirectDashboard();
     exit();
 }
 
-if(isset($_POST['submit']) && $_POST['submit'] == "Login"){
+if (isset($_POST['submit']) && $_POST['submit'] == "Login") {
 
-    if(isset($_POST['username']) && isset($_POST['password'])){
-        
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+
         $username = $_POST['username'];
         $password = $_POST['password'];
 
         $helper->doLogin($username, $password);
 
-        
-    }else{
+    } else {
         $helper->setMsg("error", "โปรดกรอก Username");
     }
 }
@@ -58,9 +56,9 @@ if(isset($_POST['submit']) && $_POST['submit'] == "Login"){
         </center>
     </div>
     <form class="" method="POST" action="">
-            <?php 
-                $helper->showMsg(); //เพิ่ม pop up login ผิดด้วย
-            ?>
+            <?php
+$helper->showMsg(); //เพิ่ม pop up login ผิดด้วย
+?>
         <div class="form-group">
             <label class="control-label col-md-5 col-sm-5 col-xs-12" for="username" style="text-align:right; padding:8px;font-size: 120%;">
                 USERNAME :
@@ -93,9 +91,9 @@ if(isset($_POST['submit']) && $_POST['submit'] == "Login"){
 <!-- <form method="POST" action="">
     <h3>Login</h3>
 
-    // <?php 
-    //     $helper->showMsg();
-    // ?>
+    // <?php
+//     $helper->showMsg();
+// ?>
 
     Username : <input type="text" name="username">
     <br>
