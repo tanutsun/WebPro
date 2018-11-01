@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-require_once(__DIR__ . "/../libs/config.inc.php");
-require_once(__DIR__ . "/../libs/admin/func.inc.php");
+require_once __DIR__ . "/../libs/config.inc.php";
+require_once __DIR__ . "/../libs/admin/func.inc.php";
 
 $helper = new helperAdmin($db);
 
-if(!$helper->checkLogin()){
+if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
@@ -36,19 +36,18 @@ if(!$helper->checkLogin()){
                 $('#myTable').dataTable();
             });
     </script>
-    
+
     <link rel="stylesheet" href="../admin/assets/css/event.css">
 </head>
-
 <body>
     <div class="top_nav">
         <div class="nav_menu">
             <nav class="">
-                <a href="<?php echo ROOT_URL."/admin/dashboard.php" ?>">
+                <a href="<?php echo ROOT_URL . "/admin/dashboard.php" ?>">
                     <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
                         <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%">LOGOUT</button>
                     </a>
                     <!--เมนูด้านขวา -->
@@ -140,8 +139,8 @@ if(!$helper->checkLogin()){
             <td>♥ ♥</td>
         </tr>
         </tbody>
-        
-        
+
+
     </table>
 </div>
 </body>

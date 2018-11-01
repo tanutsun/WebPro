@@ -9,10 +9,8 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
-
+$plant = $helper->PlantQuery($db)
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -34,7 +32,7 @@ if (!$helper->checkLogin()) {
 
     <script>
          $(function(){
-                $('#myTable').dataTable();
+                $('#myTable').dataTable({ select: true});
             });
     </script>
 
@@ -67,79 +65,25 @@ if (!$helper->checkLogin()) {
     <table class="table table-bordered" id="myTable">
         <thead>
         <tr id="tablehead">
-            <th>ID</th>
-            <th>ชื่อบทความ</th>
+            <th>รหัสต้นไม้</th>
+            <th>ชื่อต้นไม้</th>
+            <th>รายละเอียดต้นไม้</th>
             <th>วันที่</th>
-            <th>การจัดการ</th>
+            <th>รูปต้นไม้</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>00</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
+             <?php
+while ($row = $plant->fetch()) {
+    echo "<tr>";
+    echo "<td>" . $row['Plant_ID'] . "</td>";
+    echo "<td>" . $row['Plant_Name'] . "</td>";
+    echo "<td>" . $row['Plant_Detail'] . "</td>";
+    echo "<td>" . $row['Plant_Date'] . "</td>";
+    echo "<td>" . "<img src=" . $row['Plant_Pic'] . " />" . "</td>";
+    echo "</tr>";
+}
+?>
         </tbody>
 
 
