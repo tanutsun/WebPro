@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       
-    <title> บึงบัว </title>
+    <title> Detail Activity </title>
         <style>
             .font {
                  font-family: 'Supermarket';
@@ -45,48 +45,44 @@
         <font face="Supermarket">   
         <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="../../index.html">
+            <a class="navbar-brand" href="#">
                 <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
             </a>        
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../../module/product/product.html">ผลิตภัณฑ์</a>
+                    <a class="nav-link" href="#">ผลิตภัณฑ์</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../module/plan/plan.html">พันธุ์พืช</a>
+                    <a class="nav-link" href="#">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../module/activity/activity.html">กิจกรรม</a>
+                    <a class="nav-link" href="#">กิจกรรม</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../module/process/process.html">กระบวนการ</a>
+                    <a class="nav-link" href="#">กระบวนการ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../module/map/map.html">แผนที่</a>
+                    <a class="nav-link" href="#">แผนที่</a>
                 </li>
             </ul>
         </nav>
 
+        <!--stat detail activity-->
+            <div class="container" style="padding-bottom: 20%;">
+				<center>
+       			 <img src="../../img/dishwashingsoap1.jpg" style="width:550px; height:450px; padding-top:7%;">
+        		 <br><br>
+        			<h2><b>กิจกรรมทำน้ำยาล้างจาน(สูตรบี-ไบรท์)</b></h2>
+                </center>
+                <br>
+    				<h3 style="padding-top:5%"><b>รายละเอียดกิจกรรม</b></h3><hr>
+    				<h5>กิจกรรมทำน้ำยาล้างจาน(สูตรบี-ไบรท์) 
+                    <br>- ได้จัดทำขึ้นในวันที่ 23 ตุลาคม 2561 ณ.ชุมชนบึงบัว
+                    <br>- ตั้งเเต่เวลา 9.00-12.00 
+                    <br>## งานนี้ฟรีตลอดงาน เเถมยังได้ผลิตภัณฑ์ที่ผู้เข้าร่วมได้ทำกลับบ้านไปใช้ได้ด้วย</h5>
+    		</div>
 
-        <div id="googleMap"></div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.3984763828053!2d100.7845000143117!3d
-        13.753617300958133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6b9b41bb0e0664!2z4Lio4Li54LiZ4
-        Lii4LmM4LiB4Liy4Lij4LmA4Lij4Li14Lii4LiZ4Lij4Li54LmJ4LiE4LiZ4LmA4Lih4Li34Lit4LiHIOC4muC4tuC4h-C4muC4seC4pw!5e
-        1!3m2!1sth!2sth!4v1540799335281" width="1390" height="655" frameborder="0" style="border:0" allowfullscreen></iframe> 
-    
-        
-        <script>
-            function myMap() {
-                var mapProp = {
-                    center: new google.maps.LatLng(51.508742, -0.120850),
-                    zoom: 5,
-                };
-                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            }
-        </script>
-    
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
 
         <footer>
             <div class="row">
@@ -103,5 +99,10 @@
         </footer>     
     </font>
 
+
+<!--script-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
     </body>
 </html>
