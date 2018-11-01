@@ -3,7 +3,7 @@ body{
 	font-size: 150%;
 }
 .backgroud{
-		height:-webkit-fill-available;
+		height:auto;
     background: red; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); /* For Opera 11.1 to 12.0 */
