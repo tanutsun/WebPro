@@ -39,13 +39,20 @@ class helperAdmin
 
         return;
     }
-
+/** */
     public function productQuery($db)
     {
         $sql = "SELECT * FROM product";
         return $product = $db->query($sql);
     }
 
+    /**  */
+    public function PlantQuery($db)
+    {
+        $sql = "SELECT * FROM plant";
+        return $plant = $db->query($sql);
+
+    }
     /* function doLogin()
      *
      * @param $user :string
