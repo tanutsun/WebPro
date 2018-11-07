@@ -1,6 +1,6 @@
 <?php 
-require_once(__DIR__ . "../../../../../libs/config.inc.php");
-?>
+  require_once(__DIR__ . "../../../../../libs/config.inc.php");
+  ?>
 <html>
     <head>
         <!-- Required meta tags -->
@@ -10,7 +10,7 @@ require_once(__DIR__ . "../../../../../libs/config.inc.php");
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       
-    <title> activity </title>
+    <title> Detail Activity </title>
         <style>
             .font {
                  font-family: 'Supermarket';
@@ -69,59 +69,31 @@ require_once(__DIR__ . "../../../../../libs/config.inc.php");
                     <a class="nav-link" href="#">แผนที่</a>
                 </li>
             </ul>
-        </nav> <!--end navbar-->
+        </nav>
 
-        <!--start activity-->
-                <div class="container">
-                <?php 
+        <!--stat detail activity-->
+            <div class="container" style="padding-bottom: 20%;">
+            <?php 
                     $con=mysqli_connect("localhost","root","","webpro");
-                    $sql="SELECT Activity_Pic,Activity_Name,Activity_Date  FROM activity ";
+                    $sql="SELECT Activity_Pic,Activity_Name,Activity_Date,Activity_Detail  FROM activity ";
                     $result=mysqli_query($con,$sql);
                     while($row=mysqli_fetch_array($result)){
                    echo $Activity_Pic=$row['Activity_Pic'];
                    echo $Activity_Name=$row['Activity_Name'];
                    echo $Activity_Date=$row['Activity_Date'];
-                    ?>
-                   <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">   
-                   <div class="col-sm">
-                    <img src="<?php echo ROOT_URL."/".$Activity_Pic?>" style="width : 350px;  height: 280px;">
-                    </div>
-                  <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
-                   <b><h4> ชื่อกิจกรรม :  <?php echo $Activity_Name?>
-                    <br>
-                  
-                   
-                    จัดกิจกรรมในวันที่ : <?php echo $Activity_Date?>
-                    <br> 
-                    <br><br>
-                    <h5><a href="../detail.activity/detail1.html">อ่านเพิ่มเติม</a></h5>
-                  </div>
-                    </div><hr>
-
-                    <?php } ?>
-                    
-
-                
-                    
-
-                       
-                     
-
-                <!--start pageing number-->
-                <nav aria-label="Page navigation example" style="padding-top:120px;"> 
-                  <ul class="pagination justify-content-end">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">Next</a>
-                    </li>
-                  </ul>
-                </nav> <!--end pageing number-->
-        </div> <!--end cintrainer-->
+                   echo $Activity_Detail=$row['Activity_Detail'];?>
+				<center>
+       			 <img src="<?php echo ROOT_URL."/".$Activity_Pic?>" style="width:550px; height:450px; padding-top:7%;">
+        		 <br><br>
+        			<h2><b><?php echo $Activity_Name ?></b></h2>
+                </center>
+                <br>
+    				<h3 style="padding-top:5%"><b>รายละเอียดกิจกรรม</b></h3><hr>
+    				<h5> <?php echo $Activity_Detail ?>
+                    <br>- ได้จัดทำขึ้นในวันที่ 23 ตุลาคม 2561 ณ.ชุมชนบึงบัว
+                    <br>- ตั้งเเต่เวลา 9.00-12.00 
+                    <br>## งานนี้ฟรีตลอดงาน เเถมยังได้ผลิตภัณฑ์ที่ผู้เข้าร่วมได้ทำกลับบ้านไปใช้ได้ด้วย</h5>
+                    </div><?php }?>
 
 
         <footer>
@@ -138,6 +110,7 @@ require_once(__DIR__ . "../../../../../libs/config.inc.php");
             </div>
         </footer>     
     </font>
+
 
 <!--script-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
