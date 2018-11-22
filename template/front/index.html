@@ -12,17 +12,23 @@
     
         <title> บึงบัว </title>
         <style>
+            
+            body {
+               background-image: url("img/bg/bg.png");
+               width: 100%;
+           }
+
             .font {
                  font-family: 'Supermarket';
             }
 
             @font-face {
                 font-family: 'Supermarket';
-                src: url('../font/supermarket.ttf');
+                src: url('font/Supermarket/supermarket.ttf');
                 src: local('Souses Regular'), local('Supermarket Web'),
-                url("../font/supermarket.woff") format("woff"),
-                url("../font/supermarket.otf") format("opentype"),
-                url("../font/supermarket.svg#grablau") format("svg");
+                url("font/Supermarket/supermarket.woff") format("woff"),
+                url("font/Supermarket/supermarket.otf") format("opentype"),
+                url("font/Supermarket/supermarket.svg#grablau") format("svg");
             }
 
             .bg-nav{
@@ -42,6 +48,17 @@
                 color:white
             }
 
+            .btn-all{
+                background-color:#2054FF;
+                border-radius: 25px;
+                width: 10%;
+                color:whitesmoke;
+            }
+
+            .name-plant{
+                font-size: 20px;
+            }
+
         </style>
     </head>
 
@@ -58,13 +75,10 @@
                     <a class="nav-link" href="module/product/product.html">ผลิตภัณฑ์</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="module/plan/plan.html">พันธุ์พืช</a>
+                    <a class="nav-link" href="module/plant/plant.html">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="module/activity/activity.html">กิจกรรม</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="module/process/process.html">กระบวนการ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="module/map/map.html">แผนที่</a>
@@ -72,107 +86,224 @@
             </ul>
         </nav>
 
+<<<<<<< HEAD
         <div class="highlight mb-5" style="height: 400px">
             <div><a href="#" ><img src="./img/dishwashingsoap1.jpg" alt="img1 test" width="100%" height="400px" class="img-fluid"></a></div>
             <div><a href="#" ><img src="" alt="img1 test" width="100%" class="img-fluid"></a></div>
             <div><a href="#" ><img src="img/example.png" alt="img1 test" width="100%" class="img-fluid"></a></div>
+=======
+        <div class="highlight mb-5">
+            <div><a href="module/product/detailproduct.html" ><img src="img/index-highlight1.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="module/plant/detailplant.html" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="module/detail.activity/detail1.html" ><img src="img/index-highlight3.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+>>>>>>> origin/toey
         </div>
         
         <div class="container">                    
         
         <center>
-            <h4>ผลิตภัณฑ์</h4>
-
-            <div class="row pt-2 pb-5">
-                <div class="col-md-3">
-                    <a href="module/product/detailproduct.html">
-                    <img src="img/example.png" style="width:80%; height:120px;">  
-                    </a> 
+            
+            <div class="row">
+                <div class="col-2">
+                    <h2>ผลิตภัณฑ์</h2>
                 </div>
+                <div class="col-10">
+                    <hr>
+                </div>
+            </div>
+            <br>
+            <div class="row pt-2 pb-3">
                 <div class="col-md-3">
                     <a href="module/product/detailproduct.html">
-                    <img src="img/example.png" style="width:80%; height:120px;">
+                    <img src="img/index-product1.jpg" style="width:100%; height:160px;">  
                     </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="module/product/detailproduct.html">
-                    <img src="img/example.png" style="width:80%; height:120px;"> 
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="module/product/detailproduct.html">
-                    <img src="img/example.png" style="width:80%; height:120px;">
-                    </a>
-                </div>
-            </div>  
-
-            <h4>พันธุ์พืช</h4>
-
-            <div class="row pt-2 pb-5">
-                <div class="col-md-12 pb-4">
                     <div class="row">
-                        <div class="col-md-4">
-                            <a href="module/plan/detailplan.html">
-                            <img src="img/example.png" style="width:80%; height:150px;"> 
-                            </a>     
-                        </div>
-                        <div class="col-md-4">
-                            <a href="module/plan/detailplan.html">
-                            <img src="img/example.png" style="width:80%; height:150px;">
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="module/plan/detailplan.html">
-                            <img src="img/example.png" style="width:80%; height:150px;">
-                            </a>
+                        <div class="col">
+                            <p class="name-plant">กล้วยตาก</p>
                         </div>
                     </div>   
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-3">
+                    <a href="module/product/detailproduct.html">
+                    <img src="img/index-product2.jpg" style="width:100%; height:160px;">
+                    </a>
+                    <div class="row">
+                        <div class="col">
+                            <p class="name-plant">สบู่สมุนไพร</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-3">
+                    <a href="module/product/detailproduct.html">
+                    <img src="img/index-product3.jpg" style="width:100%; height:160px;"> 
+                    </a>
+                    <div class="row">
+                        <div class="col">
+                            <p class="name-plant">น้ำยาล้างจาน</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-3">
+                    <a href="module/product/detailproduct.html">
+                    <img src="img/index-product4.jpg" style="width:100%; height:160px;">
+                    </a>
+                    <div class="row">
+                        <div class="col">
+                            <p class="name-plant">น้ำยาซักผ้า</p>
+                        </div>
+                    </div> 
+                </div>
+            </div> 
+            <br>
+            <a href="module/product/product.html" class="btn btn-all">ดูทั้งหมด</a>  
+            <br>
+            <br>
+            <br>
+            <br>  
+            
+            <div class="row">
+                <div class="col-2">
+                    <h2>พันธุ์พืช</h2>
+                </div>
+                <div class="col-10">
+                    <hr>
+                </div>
+            </div>
+            <br>
+            <div class="row pt-2 pb-3">
+                <div class="col-md-12 pb-4">
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="module/plan/detailplan.html">
-                            <img src="img/example.png" style="width:80%; height:150px;">    
-                            </a>        
+                            <a href="module/plant/detailplant.html">
+                                <img src="img/index-plant1.jpg" style="width:100%; height:200px;"> 
+                            </a> 
+                            <div class="row">
+                                <div class="col">
+                                    <p class="name-plant">ต้นใบเตย</p>
+                                </div>
+                            </div>    
                         </div>
                         <div class="col-md-4">
-                            <a href="module/plan/detailplan.html">
-                            <img src="img/example.png" style="width:80%; height:150px;">
+                            <a href="module/plant/detailplant.html">
+                                <img src="img/index-plant2.jpg" style="width:100%; height:200px;">
                             </a>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="name-plant">ต้นกล้วย</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-4">
-                            <a href="module/plan/detailplan.html">
-                            <img src="img/example.png" style="width:80%; height:150px;">
+                            <a href="module/plant/detailplant.html">
+                                <img src="img/index-plant3.jpg" style="width:100%; height:200px;">
                             </a>
+                            <div class="row">
+                                    <div class="col">
+                                    <p class="name-plant">ต้นข่า</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                <div class="col-md-12 pt-2">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="module/plant/detailplant.html">
+                                <img src="img/index-plant4.jpg" style="width:100%; height:200px;">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="name-plant">ต้นมะม่วง</p>
+                                </div>
+                            </div>        
+                        </div>
+                        <div class="col-md-4">
+                            <a href="module/plant/detailplant.html">
+                                <img src="img/index-plant5.jpg" style="width:100%; height:200px;">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="name-plant">ต้นมะละกอ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="module/plant/detailplant.html">
+                                <img src="img/index-plant6.jpg" style="width:100%; height:200px;">
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="name-plant">ต้นมะม่วง</p>
+                                </div>
+                            </div>
                         </div>
                     </div> 
                 </div>      
             </div> 
-
-            <h4>กิจกรรม</h4>
-
-            <div class="row pt-2 pb-5">
+            <br>
+            <a href="module/plant/plant.html" class="btn btn-all">ดูทั้งหมด</a>  
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <div class="row">
+                <div class="col-2">
+                    <h2>กิจกรรม</h2>
+                </div>
+                <div class="col-10">
+                    <hr>
+                </div>
+            </div>
+            <br>
+            <div class="row pt-2 pb-3">
                 <div class="col-md-3">
                     <a href="module/activity/detailactivity.html">
-                    <img src="img/example.png" style="width:80%; height:120px;">  
+                        <img src="img/index-activity1.jpg" style="width:100%; height:160px;"> 
                     </a>
+                    <div class="row">
+                            <div class="col">
+                                <p class="name-plant">ปลูกป่า</p>
+                            </div>
+                        </div>
                 </div>
                 <div class="col-md-3">
                     <a href="module/activity/detailactivity.html">
-                    <img src="img/example.png" style="width:80%; height:120px;">
+                        <img src="img/index-activity2.jpg" style="width:100%; height:160px;"> 
                     </a>
+                    <div class="row">
+                        <div class="col">
+                            <p class="name-plant">ศึกษาดูงานจังหวัด จันทบุรี ระยอง ปราจีนบุรี</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <a href="module/activity/detailactivity.html">
-                    <img src="img/example.png" style="width:80%; height:120px;">
+                        <img src="img/index-activity3.jpg" style="width:100%; height:160px;"> 
                     </a>
+                    <div class="row">
+                        <div class="col">
+                            <p class="name-plant">ปลูกป่าชุมชน</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <a href="module/activity/detailactivity.html">
-                    <img src="img/example.png" style="width:80%; height:120px;">
-                    </a>    
+                        <img src="img/index-activity4.jpg" style="width:100%; height:160px;"> 
+                    </a>
+                    <div class="row">
+                        <div class="col">
+                            <p class="name-plant">ศึกษาดูงาน ณ บ้านบ่อมะกรูด ราชบุรี</p>
+                        </div>
+                    </div>    
                 </div>
             </div> 
+            <br>
+            <a href="module/activity/activity.html" class="btn btn-all">ดูทั้งหมด</a> 
+            <br>
+            <br>
+            <br>
+            <br>
         </center>
 
         </div>

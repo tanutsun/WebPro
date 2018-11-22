@@ -9,17 +9,21 @@
       
     <title> activity </title>
         <style>
+           body {
+               background-image: url("../../img/bg/bg.png");
+               width: 100%;
+           }
             .font {
                  font-family: 'Supermarket';
             }
 
             @font-face {
                 font-family: 'Supermarket';
-                src: url('../font/supermarket.ttf');
+                src: url('../../font/Supermarket/supermarket.ttf');
                 src: local('Souses Regular'), local('Supermarket Web'),
-                url("../font/supermarket.woff") format("woff"),
-                url("../font/supermarket.otf") format("opentype"),
-                url("../font/supermarket.svg#grablau") format("svg");
+                url("../../font/Supermarket/supermarket.woff") format("woff"),
+                url("../../font/Supermarket/supermarket.otf") format("opentype"),
+                url("../../font/Supermarket/supermarket.svg#grablau") format("svg");
             }
 
             .bg-nav{
@@ -39,106 +43,101 @@
                 color:white
             }
 
+            .btn-read{
+                background-color:grey;
+                border-radius: 25px;
+                color:black;
+                font-size:20px;
+            }
+
         </style>
     </head>
-    <body>
+    <body >
+       
         <font face="Supermarket">   
-        <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
-            <!-- Brand/logo -->
-            <a class="navbar-brand" href="#">
-                <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
-            </a>        
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">ผลิตภัณฑ์</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">พันธุ์พืช</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">กิจกรรม</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">กระบวนการ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">แผนที่</a>
-                </li>
-            </ul>
-        </nav> <!--end navbar-->
+            <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
+                <!-- Brand/logo -->
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
+                </a>        
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../module/product/product.html">ผลิตภัณฑ์</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../module/plant/plant.html">พันธุ์พืช</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../../module/activity/activity.html">กิจกรรม</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../module/map/map.html">แผนที่</a>
+                    </li>
+                </ul>
+            </nav>
 
         <!--start activity-->
                 <div class="container">
                 
                         <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
                                 <div class="col-sm">
-                                 <img src="../../img/dishwashingsoap1.jpg" style="width : 350px;  height: 280px;">
+                                 <img src="../../img/activity/activity1.jpg" style="width : 350px;  height: 280px;">
                                </div>
                                <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
-                                <b><h4> ชื่อกิจกรรม : ทำน้ำยาล้างจาน
-                                 <br>
-                                 รายละเอียดกิจกรรม :  สาธิตวิธีการทำน้ำยาล้างจาน(สูตรบี-ไบรท์)
-                                 <br>
-                                 จัดกิจกรรมในวันที่ : 29 / 11 / 2561
-                                 <br>
-                                 ตั้งเเต่เวลา : 9.00 - 12.00</h4></b>
+                                <b><h4> ชื่อกิจกรรม : ศึกษาดูงานจังหวัด "จันทบุรี" "ระยอง" เเละ "ปราจีนบุรี"
                                  <br><br>
-                                 <h5><a href="../detail.activity/detail1.html">อ่านเพิ่มเติม</a></h5>
-                               </div>
+                                 รายละเอียดกิจกรรม :  ไปท่องเที่ยวชมวัฒนธรรม3จังหวัด...
+                                
+                                 <br><br><br>
+                                 <a class="btn btn-read" href="../detail.activity/detail1.html" role="button">อ่านเพิ่มเติม</a>
+                                  </div>
                        </div><hr>
 
-                <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
-                   <div class="col-sm">
-                    <img src="../../img/dishwashingsoap1.jpg" style="width : 350px;  height: 280px;">
-                  </div>
-                  <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
-                   <b><h4> ชื่อกิจกรรม : ทำน้ำยาล้างจาน
-                    <br>
-                    รายละเอียดกิจกรรม :  สาธิตวิธีการทำน้ำยาล้างจาน(สูตรบี-ไบรท์)
-                    <br>
-                    จัดกิจกรรมในวันที่ : 29 / 11 / 2561
-                    <br>
-                    ตั้งเเต่เวลา : 9.00 - 12.00</h4></b>
-                    <br><br>
-                    <h5><a href="../detail.activity/detail1.html">อ่านเพิ่มเติม</a></h5>
-                  </div>
-          </div><hr>
+                       <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
+                            <div class="col-sm">
+                             <img src="../../img/activity/activity1.jpg" style="width : 350px;  height: 280px;">
+                           </div>
+                           <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
+                            <b><h4> ชื่อกิจกรรม : ศึกษาดูงานจังหวัด "จันทบุรี" "ระยอง" เเละ "ปราจีนบุรี"
+                             <br><br>
+                             รายละเอียดกิจกรรม :  ไปท่องเที่ยวชมวัฒนธรรม3จังหวัด...
+                             
+                             <br><br><br>
+                             <a class="btn btn-read" href="../detail.activity/detail1.html" role="button">อ่านเพิ่มเติม</a>
+                              </div>
+                   </div><hr>
 
                 
-          <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
-                <div class="col-sm">
-                 <img src="../../img/dishwashingsoap1.jpg" style="width : 350px;  height: 280px;">
-               </div>
-               <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
-                <b><h4> ชื่อกิจกรรม : ทำน้ำยาล้างจาน
-                 <br>
-                 รายละเอียดกิจกรรม :  สาธิตวิธีการทำน้ำยาล้างจาน(สูตรบี-ไบรท์)
-                 <br>
-                 จัดกิจกรรมในวันที่ : 29 / 11 / 2561
-                 <br>
-                 ตั้งเเต่เวลา : 9.00 - 12.00</h4></b>
-                 <br><br>
-                 <h5><a href="../detail.activity/detail1.html">อ่านเพิ่มเติม</a></h5>
-               </div>
-       </div><hr>
-                  
-                <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
+                   <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
                         <div class="col-sm">
-                         <img src="../../img/dishwashingsoap1.jpg" style="width : 350px;  height: 280px;">
+                         <img src="../../img/activity/activity1.jpg" style="width : 350px;  height: 280px;">
                        </div>
                        <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
-                        <b><h4> ชื่อกิจกรรม : ทำน้ำยาล้างจาน
-                         <br>
-                         รายละเอียดกิจกรรม :  สาธิตวิธีการทำน้ำยาล้างจาน(สูตรบี-ไบรท์)
-                         <br>
-                         จัดกิจกรรมในวันที่ : 29 / 11 / 2561
-                         <br>
-                         ตั้งเเต่เวลา : 9.00 - 12.00</h4></b>
+                        <b><h4> ชื่อกิจกรรม : ศึกษาดูงานจังหวัด "จันทบุรี" "ระยอง" เเละ "ปราจีนบุรี"
                          <br><br>
-                         <h5><a href="../detail.activity/detail1.html">อ่านเพิ่มเติม</a></h5>
-                       </div>
-               </div>
+                         รายละเอียดกิจกรรม :  ไปท่องเที่ยวชมวัฒนธรรม3จังหวัด...
+                         
+                         <br><br><br>
+                         <a class="btn btn-read" href="../detail.activity/detail1.html" role="button">อ่านเพิ่มเติม</a>
+                          </div>
+               </div><hr>
+
+                  
+               <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
+                    <div class="col-sm">
+                     <img src="../../img/activity/activity1.jpg" style="width : 350px;  height: 280px;">
+                   </div>
+                   <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
+                    <b><h4> ชื่อกิจกรรม : ศึกษาดูงานจังหวัด "จันทบุรี" "ระยอง" เเละ "ปราจีนบุรี"
+                     <br><br>
+                     รายละเอียดกิจกรรม :  ไปท่องเที่ยวชมวัฒนธรรม3จังหวัด...
+                     
+                     <br><br><br>
+                     <a class="btn btn-read" href="../detail.activity/detail1.html" role="button">อ่านเพิ่มเติม</a>
+                      </div>
+           </div>
+
                   
 
                 <!--start pageing number-->
@@ -155,7 +154,7 @@
                     </li>
                   </ul>
                 </nav> <!--end pageing number-->
-        </div> <!--end cintrainer-->
+        </div> <!--end contrainer-->
 
 
         <footer>
