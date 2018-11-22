@@ -45,7 +45,6 @@ class helperAdmin
         $sql = "SELECT * FROM product";
         return $product = $db->query($sql);
     }
-
     /**  */
     public function PlantQuery($db)
     {

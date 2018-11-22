@@ -160,6 +160,10 @@ while ($row = $product_->fetch()) {
 						<div class="form-group">
 							<label>ราคาสินค้า</label>
 							<input type="text" class="form-control" name="product_price" required>
+                        </div>
+                        	<div class="form-group">
+	                        <label>รูปสินค้า</label>
+							<input type="file" class="form-control" required>
 						</div>
 					</div>
 					<div class="modal-footer">
