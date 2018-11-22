@@ -12,7 +12,6 @@
             .font {
                  font-family: 'Supermarket';
             }
-
             @font-face {
                 font-family: 'Supermarket';
                 src: url('../../font/Supermarket/supermarket.ttf');
@@ -139,11 +138,11 @@
                             </div> 
                         ช่องทางการชำระเงิน:
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="radio" class="form-check-input" name="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">PromptPay</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="radio" class="form-check-input" name="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Paypal</label>
                         </div>
                         <br>
@@ -152,7 +151,42 @@
                                 <textarea class="form-control" rows="5" id="comment"></textarea>
                         </div> 
                         <center>
-                            <input class="btn btn-sub" type="submit" value="ซื้อสินค้า">
+                            <button id="showModal" class="btn btn-sub" type="button" data-toggle="modal" data-target="#buyPlant">ซื้อสินค้า</button>
+                            <div class="modal fade modal-fullscreen " id="buyPlant" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title w-100 text-center">ยืนยันรายละเอียดสินค้า</h3>
+                                            <button type="button" class="close" data-dismiss="modal">&timesb;</button>
+                                        </div>
+                                        <div class="modal-body ">
+                                            <center>
+                                                <table style="align-self: auto">
+                                                    <tr>
+                                                        <td><label>ราคาต่อชิ้น : </label></td>
+                                                        <td><label id="price">150</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>จำนวนที่ต้องการซื้อ : </label></td>
+                                                        <td><label id="totalPlant">2</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label>ราคารวม : </label></td>
+                                                        <td><label id="totalPrice">300</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label id="payment">ชำระเงินผ่านทาง Paypal</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"><center><input class="btn btn-sub" type="submit" value="ยืนยัน"></center></td>
+                                                    </tr>
+                                                </table>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </center>                       
                     </form>                        
                 </div>
@@ -160,9 +194,7 @@
         </div>
     </div>
             <center>
-            <a href="../../index.html">
-                <button type="button" href="../../index.html" class="btn btn-back">กลับสู่หน้าหลัก</button>
-            </a>
+            <a href="plant.html" class="btn">กลับสู่หน้าพืชพันธุ์</a>
             </center>
             <br>
         </div>
