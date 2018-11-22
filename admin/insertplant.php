@@ -1,13 +1,24 @@
-<?php 
+<?php
 
-require_once(__DIR__ . "/../libs/config.inc.php");
-require_once(__DIR__ . "/../libs/admin/func.inc.php");
+require_once __DIR__ . "/../libs/config.inc.php";
+require_once __DIR__ . "/../libs/admin/func.inc.php";
 
 $helper = new helperAdmin($db);
 
-if(!$helper->checkLogin()){
+if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
+}
+if (isset($_POST['Add'])) {
+    $ID = rand(0, 9999);
+    $name = $_POST['plant_name'];
+    $detail = $_POST['plant_detail'];
+    echo $detail;
+    $date = $_POST['plant_date'];
+    $mapid = $_POST['Map_id'];
+    $qu = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
+     VALUES($ID, $name, $detail, $date, 'upload/images/image-not-found.png', 1,$mapid)";
+    $result = $db->query($qu);
 }
 
 ?>
@@ -59,25 +70,23 @@ if(!$helper->checkLogin()){
         <div class="nav_menu">
             <nav class="">
                 <a href="<?php echo ROOT_URL . "/admin/dashboard.php" ?>">
-                     <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
+                    <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
-                    <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%" data-toggle="modal"
-                            data-target="#myModal">LOGOUT</button>
-                        <!--เมนูด้านขวา -->
+                <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%" data-toggle="modal" data-target="#myModal">LOGOUT</button>
                 </ul>
             </nav>
         </div>
     </div>
-    <div class="container" style="width:1700px">
+    <div class="container" style="width:95%">
         <div class="panel panel-default">
             <div class="panel-heading">เขียนบทความใหม่</div>
             <div class="panel-body">
-                <div class="container" style="width: 1500px">
-                    <form>
+                <div class="container" style="width: 80%">
+                    <form method="POST">
                         <div class="form-group">
                             <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
-                            <input type="text" class="form-control" id="">
+                            <input type="text" class="form-control" name="plant_name">
                         </div>
                         <br>
                         <label>
@@ -88,7 +97,7 @@ if(!$helper->checkLogin()){
                         <br>
                         รายละเอียด : <span style="color:red">*</span>
                         <br>
-                        <textarea name="editor1" id="editor1" rows="10" cols="80">
+                        <textarea rows="10" cols="80" name="plant_detail" id="editor1">
 
                         </textarea>
                         <script>
@@ -98,14 +107,14 @@ if(!$helper->checkLogin()){
                         <div class="row">
                             <div class="col-sm-6"><label for="name">ประเภทบทความ : </label>
                                 <br>
-                                <input type="text" size="70">
+                                <input type="text" size="60">
                             </div>
 
                             <div class="col-sm-6"><label for="name">วันที่ :</label>
                                 <br>
                                 <div class="form-group">
-                                    <div class='input-group date' id='datetimepicker1'>
-                                        <input type='text' class="form-control" />
+                                    <div class='input-group date' id='datetimepicker' >
+                                        <input type='date' class="form-control" name="plant_date" require>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -114,15 +123,15 @@ if(!$helper->checkLogin()){
                             </div>
                             <script type="text/javascript">
                                 $(function () {
-                                    $('#datetimepicker1').datetimepicker();
+                                    $('#datetimepicker').datetimepicker();
                                 });
                             </script>
                             <div class="col-sm-6"><label for="name">ค่าละติจูด และ ค่าลองติจูด : <span style="color:red">*</span></label>
                                 <br>
-                                <input type="text" size="70">
+                                <input type="text" size="60" name="Map_id" require>
                             </div>
                         </div>
-                        <a href="" class="btn btn-success" style="float: right">บันทึก</a>
+	            <input type="submit" class="btn btn-success" name="Add" value="บันทึก" style="float: right">
                     </form>
                 </div>
             </div>
@@ -139,7 +148,7 @@ if(!$helper->checkLogin()){
                     <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i>
                     <h1>ทำการยืนยันเพื่อออกจากระบบ</h1>
                     <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
                         <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
                     </a>
                 </center>
@@ -147,7 +156,7 @@ if(!$helper->checkLogin()){
 
         </div>
     </div>
-        
+
 </body>
 
 </html>

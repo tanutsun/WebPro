@@ -23,16 +23,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
     exit; // finish execution since we only need the "ok" or "err" answers from the server.
 }
 
-if (isset($_POST['Add'])) {
-    $ID = $_POST['product_id'];
-    $name = $_POST['product_name'];
-    $detail = $_POST['product_detail'];
-    $date = $_POST['product_date'];
-    $price = $_POST['product_price'];
-    $q = "INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`, `Admin_ID`)
-     VALUES($ID, $name, $detail, $date, $price, 'upload/images/image-not-found.png', 1)";
-    $result = $db->query($q);
-}
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +31,7 @@ if (isset($_POST['Add'])) {
     <title>บึงบัว</title>
     <meta charset="utf-8">
     <meta name="viewport">
+
     <!-- Bootstrap -->
     <link href="../admin/assets/option/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -57,6 +48,10 @@ if (isset($_POST['Add'])) {
 
     <!-- edit css by tasto -->
     <link href="../admin/assets/css/home.css" rel="stylesheet">
+    <!-- Datatable-->
+    <script src="../admin/assets/option/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../admin/assets/option/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
     <script>
          $(function(){
                $('#myTable').DataTable();
@@ -104,7 +99,7 @@ $(document).on('click','.deletedata',function(){
     </div>
     <div class="container" style="width:80%">
             <h1>ผลิตภัณฑ์ชุมชนบึงบัว</h1>
-            <a href="<?php  echo ROOT_URL . "/admin/insertproduct.php" ?>" data-toggle="modal">
+            <a href="<?php echo ROOT_URL . "/admin/insertproduct.php" ?>" data-toggle="modal">
             <button class="btn-lg btn-success" type="submit" style="float:right">+เพิ่มสินค้า</button>
             </a>
             <hr>
@@ -136,45 +131,6 @@ while ($row = $product_->fetch()) {
 ?>
         </tbody>
     </table>
-    <div id="addEmployeeModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<form method="POST">
-					<div class="modal-header">
-						<h4 class="modal-title">เพิ่มสินค้า</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-                    <div class="modal-body">
-                    <div class="form-group">
-							<label>รหัสสินค้า</label>
-							<input type="text" name="product_id" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>ชื่อสินค้า</label>
-							<input type="text" name="product_name" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>รายละเอียดสินค้า</label>
-							<input type="text" name="product_detail" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>วันผลิตสินค้า</label>
-							<input type="date" class="form-control" name="product_date" required>
-						</div>
-						<div class="form-group">
-							<label>ราคาสินค้า</label>
-							<input type="text" class="form-control" name="product_price" required>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-success" name="Add" value="Add">
-					</div>
-				</form>
-			</div>
-		</div>
-    </div>
-
     </div>
 
     <!-- Modal -->
@@ -187,7 +143,7 @@ while ($row = $product_->fetch()) {
                     <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i><br>
                     <h1>ทำการยืนยันเพื่อออกจากระบบ</h1><br>
                     <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
                         <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
                     </a>
                 </center>

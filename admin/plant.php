@@ -24,7 +24,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
 }
 
 if (isset($_POST['Add'])) {
-    echo $_POST['plant_name'];
     $ID = $_POST['plant_id'];
     $name = $_POST['plant_name'];
     $detail = $_POST['plant_detail'];
@@ -41,13 +40,12 @@ if (isset($_POST['Add'])) {
     <title>บึงบัว</title>
     <meta charset="utf-8">
     <meta name="viewport">
-    <!-- Bootstrap -->
+      <!-- Bootstrap -->
     <link href="../admin/assets/option/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="../admin/assets/option/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../admin/assets/option/build/css/custom.min.css" rel="stylesheet">
-
     <!-- jQuery -->
     <script src="../admin/assets/option/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -57,6 +55,9 @@ if (isset($_POST['Add'])) {
 
     <!-- edit css by tasto -->
     <link href="../admin/assets/css/home.css" rel="stylesheet">
+    <!-- Datatable-->
+    <script src="../admin/assets/option/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../admin/assets/option/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
     <script>
          $(function(){
@@ -137,47 +138,6 @@ while ($row = $plant->fetch()) {
 ?>
         </tbody>
     </table>
-    <div id="addEmployeeModal" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<form method="POST">
-					<div class="modal-header">
-						<h4 class="modal-title">เพิ่มสินค้า</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					</div>
-                    <div class="modal-body">
-                    <div class="form-group">
-							<label>รหัสต้นไม้</label>
-							<input type="text" name="plant_id" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>ชื่อต้นไม้</label>
-							<input type="text" name="plant_name" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label>รายละเอียดต้นไม้</label>
-							<input type="text" name="plant_detail" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-							<label>วันที่</label>
-							<input type="date" class="form-control" name="plant_date" required>
-                        </div>
-                        	<div class="form-group">
-	                        <label>รูปต้นไม้</label>
-							<input type="file" class="form-control" required>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-success" name="Add" value="Add">
-					</div>
-				</form>
-			</div>
-		</div>
-    </div>
-</div>
-
- <!-- Modal -->
  <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -187,7 +147,7 @@ while ($row = $plant->fetch()) {
                     <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i><br>
                     <h1>ทำการยืนยันเพื่อออกจากระบบ</h1><br>
                     <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
                         <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
                     </a>
                 </center>

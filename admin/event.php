@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-require_once(__DIR__ . "/../libs/config.inc.php");
-require_once(__DIR__ . "/../libs/admin/func.inc.php");
+require_once __DIR__ . "/../libs/config.inc.php";
+require_once __DIR__ . "/../libs/admin/func.inc.php";
 
 $helper = new helperAdmin($db);
 
-if(!$helper->checkLogin()){
+if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
@@ -19,7 +19,7 @@ if(!$helper->checkLogin()){
     <title>บึงบัว</title>
     <meta charset="utf-8">
     <meta name="viewport">
-    <!-- Bootstrap -->
+      <!-- Bootstrap -->
     <link href="../admin/assets/option/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="../admin/assets/option/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -35,13 +35,16 @@ if(!$helper->checkLogin()){
 
     <!-- edit css by tasto -->
     <link href="../admin/assets/css/home.css" rel="stylesheet">
+    <!-- Datatable-->
+    <script src="../admin/assets/option/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../admin/assets/option/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
     <script>
          $(function(){
                 $('#myTable').dataTable();
             });
     </script>
-    
+
     <link rel="stylesheet" href="../admin/assets/css/event.css">
 </head>
 
@@ -49,7 +52,7 @@ if(!$helper->checkLogin()){
     <div class="top_nav">
         <div class="nav_menu">
             <nav class="">
-                <a href="<?php echo ROOT_URL."/admin/dashboard.php" ?>">
+                <a href="<?php echo ROOT_URL . "/admin/dashboard.php" ?>">
                     <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
@@ -63,7 +66,7 @@ if(!$helper->checkLogin()){
     <div class="container" style="width:80%">
 
             <h1>กิจกรรมชุมชนบึงบัว</h2>
-            <a href="<?php echo ROOT_URL."/admin/insertevent.php" ?>">
+            <a href="<?php echo ROOT_URL . "/admin/insertevent.php" ?>">
             <button class=" btn-lg btn-success" type="submit" style="float:right">+เพิ่มบทความ</button>
             </a>
             <hr>
@@ -144,8 +147,8 @@ if(!$helper->checkLogin()){
             <td>♥ ♥</td>
         </tr>
         </tbody>
-        
-        
+
+
     </table>
 </div>
 
@@ -159,7 +162,7 @@ if(!$helper->checkLogin()){
                     <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i><br>
                     <h1>ทำการยืนยันเพื่อออกจากระบบ</h1><br>
                     <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
                         <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
                     </a>
                 </center>
