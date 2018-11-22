@@ -15,9 +15,9 @@ if (isset($_POST['Add'])) {
     $detail = $_POST['product_detail'];
     $date = $_POST['product_date'];
     $price = $_POST['product_price'];
-    $quy = "INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`, `Admin_ID`)
-     VALUES($ID, $name, $detail, $date, $price, 'upload/images/image-not-found.png', 1)";
+    $quy = "INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`,`Admin_ID`) VALUES($ID,'$name','$detail','$date',$price, 'upload/images/image-not-found.png', 1)";
     $result = $db->query($quy);
+
 }
 ?>
 <!DOCTYPE html>
@@ -49,14 +49,11 @@ if (isset($_POST['Add'])) {
     <!-- CK Editor-->
     <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
 
-    <link rel="stylesheet" href="../../admin/assets/css/event.css">
+    <link rel="stylesheet" href="../admin/assets/css/event.css">
     <!-- edit css by tasto -->
     <link href="../admin/assets/css/home.css" rel="stylesheet">
 
     <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker();
-        });
     </script>
 </head>
 
@@ -82,7 +79,7 @@ if (isset($_POST['Add'])) {
                     <form method="POST">
                         <div class="form-group">
                             <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
-                            <input type="text" class="form-control" name="product_name" required>
+                            <input type="text" class="form-control" name="product_name" require>
                         </div>
                         <br>
                         <label>
@@ -93,7 +90,7 @@ if (isset($_POST['Add'])) {
                         <br>
                         รายละเอียด : <span style="color:red">*</span>
                         <br>
-                        <textarea name="product_detail" id="editor1" class="form-control"  rows="10" cols="80">
+                        <textarea name="product_detail" type="text" id="editor1" class="form-control"  rows="10" cols="80">
 
                         </textarea>
                         <script>
@@ -102,13 +99,13 @@ if (isset($_POST['Add'])) {
                         <div class="row">
                             <div class="col-sm-6"><label for="name">ประเภทบทความ : </label>
                                 <br>
-                                <input type="text" size="60" required>
+                                <input type="text" size="60" require>
                             </div>
                             <div class="col-sm-6"><label for="name">วันที่ :</label>
                                 <br>
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker1'>
-                                        <input type='date' class="form-control" name="product_date" required>
+                                        <input type='date' class="form-control" name="product_date" require>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -116,14 +113,11 @@ if (isset($_POST['Add'])) {
                                 </div>
                             </div>
                             <script type="text/javascript">
-                                $(function () {
-                                    $('#datetimepicker1').datetimepicker();
-                                });
                             </script>
                             <div class="col-sm-6">
                             <label for="name">ราคา : </label>
                                 <br>
-                                <input type="text" size="60" name="product_price" required>
+                                <input type="text" size="60" name="product_price" >
                             </div>
                         </div>
 						<input type="submit" class="btn btn-success" name="Add" value="บันทึก" style="float: right">

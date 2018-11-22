@@ -13,17 +13,14 @@ if (isset($_POST['Add'])) {
     $ID = rand(0, 9999);
     $name = $_POST['plant_name'];
     $detail = $_POST['plant_detail'];
-    echo $detail;
     $date = $_POST['plant_date'];
     $mapid = $_POST['Map_id'];
     $qu = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
-     VALUES($ID, $name, $detail, $date, 'upload/images/image-not-found.png', 1,$mapid)";
+     VALUES($ID, '$name', '$detail', '$date', 'upload/images/image-not-found.png', 1, '$mapid')";
     $result = $db->query($qu);
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
