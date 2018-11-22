@@ -36,7 +36,9 @@ if(!$helper->checkLogin()){
     <div class="top_nav">
         <div class="nav_menu">
             <nav class="">
-                <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
+                <a href="<?php echo ROOT_URL."/admin/dashboard.php" ?>">
+                    <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
+                </a>
                 <ul class="nav navbar-nav navbar-right">
                     <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
                         <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%">LOGOUT</button>
@@ -49,6 +51,10 @@ if(!$helper->checkLogin()){
     <div class="col-md-12 col-sm-12 col-xs-12">
         <h1 style="margin:2%;">ประเภทของบทความ</h1>
         <hr style="color: black;width: 80%;">
+        <a href="<?php echo ROOT_URL."/admin/event.php" ?>">กิจกรรมชุมชนบึงบัว</a>
+        <a href="<?php echo ROOT_URL."/admin/product.php" ?>">ผลิตภัณฑ์ชุมชนบึงบัว</a>
+        <a href="<?php echo ROOT_URL."/admin/plant.php" ?>">พันธุ์พืชในสวนชุมชนบึงบัว</a>
+        <a href="<?php echo ROOT_URL."/admin/productprocess.php" ?>">กระบวนการทำผลิตภัณฑ์ของชุมชนบึงบัว</a>
     </div>
 </body>
 
