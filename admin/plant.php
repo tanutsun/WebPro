@@ -9,7 +9,30 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
-$plant = $helper->PlantQuery($db)
+$plant = $helper->PlantQuery($db);
+
+if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
+    $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
+    if ($id > 0) {
+        $query = "DELETE FROM plant WHERE Plant_ID=" . $id . " LIMIT 1";
+        $result = $db->query($query);
+        echo 'ok';
+    } else {
+        echo 'err';
+    }
+    exit; // finish execution since we only need the "ok" or "err" answers from the server.
+}
+
+if (isset($_POST['Add'])) {
+    echo $_POST['plant_name'];
+    $ID = $_POST['plant_id'];
+    $name = $_POST['plant_name'];
+    $detail = $_POST['plant_detail'];
+    $date = $_POST['plant_date'];
+    $q = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
+     VALUES($ID, $name, $detail, $date, 'upload/images/image-not-found.png', 1,00)";
+    $result = $db->query($q);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,26 +42,52 @@ $plant = $helper->PlantQuery($db)
     <meta charset="utf-8">
     <meta name="viewport">
     <!-- Bootstrap -->
-    <link href="../admin/assets/option/vendors//bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../admin/assets/option/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../admin/assets/option/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../admin/assets/option/build/css/custom.min.css" rel="stylesheet">
+
     <!-- jQuery -->
     <script src="../admin/assets/option/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../admin/assets/option/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Datatable-->
-    <script src="../admin/assets/option/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="../admin/assets/option/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../admin/assets/option/build//js/custom.min.js"></script>
+
+    <!-- edit css by tasto -->
+    <link href="../admin/assets/css/home.css" rel="stylesheet">
 
     <script>
          $(function(){
-                $('#myTable').dataTable({ select: true});
+               $('#myTablee').DataTable();
             });
-    </script>
+            var currentRow,
+    id;
+$(document).on('click','.deletedata',function(){
+    id = $(this).attr('value'); // Get the clicked id for deletion
+    currentRow = $(this).closest('tr'); // Get a reference to the row that has the button we clicked
+    console.log(id)
+    $.ajax({
+        type:'POST',
+        url:location.pathname, // sending the request to the same page we're on right now
+        data:{'action':'deleteEntry','id':id},
+        success:function(response){
+            if (response == 'ok') {
+                // Hide the row nicely and remove it from the DOM once the animation is finished.
+                currentRow.slideUp(500,function(){
+                    currentRow.remove();
+                })
+            } else {
+                // throw an error modally to let the user know there was an error
+            }
+        }
+    })
+});
 
+    </script>
     <link rel="stylesheet" href="../admin/assets/css/event.css">
 </head>
-
 <body>
     <div class="top_nav">
         <div class="nav_menu">
@@ -47,9 +96,8 @@ $plant = $helper->PlantQuery($db)
                     <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
-                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
-                        <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%">LOGOUT</button>
-                    </a>
+                <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%" data-toggle="modal"
+                        data-target="#myModal">LOGOUT</button>
                     <!--เมนูด้านขวา -->
                 </ul>
             </nav>
@@ -58,11 +106,11 @@ $plant = $helper->PlantQuery($db)
     <div class="container" style="width:80%">
 
             <h1>พันธุ์พืชในสวยชุมชนบึงบัว</h2>
-            <a href="">
-            <button class=" btn-lg btn-success" type="submit" style="float:right">+เพิ่มบทความ</button>
+            <a href="<?php echo ROOT_URL . "/admin/insertplant.php" ?>" data-toggle="modal">
+            <button class="btn-lg btn-success" type="submit" style="float:right">+เพิ่มสินค้า</button>
             </a>
             <hr>
-    <table class="table table-bordered" id="myTable">
+    <table class="table table-bordered" id="myTablee">
         <thead>
         <tr id="tablehead">
             <th>รหัสต้นไม้</th>
@@ -70,6 +118,7 @@ $plant = $helper->PlantQuery($db)
             <th>รายละเอียดต้นไม้</th>
             <th>วันที่</th>
             <th>รูปต้นไม้</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -80,15 +129,74 @@ while ($row = $plant->fetch()) {
     echo "<td>" . $row['Plant_Name'] . "</td>";
     echo "<td>" . $row['Plant_Detail'] . "</td>";
     echo "<td>" . $row['Plant_Date'] . "</td>";
-    echo "<td>" . "<img src=" . $row['Plant_Pic'] . " />" . "</td>";
+    echo "<td>" . "<img src=" . "../" . $row['Plant_Pic'] . " with='35px' height='35px'/" . "</td>";
+    echo "<td>" . "<button class='deletedata' value=" . $row['Plant_ID'] . ">Delete</button>" . "</td>";
+
     echo "</tr>";
 }
 ?>
         </tbody>
-
-
     </table>
+    <div id="addEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form method="POST">
+					<div class="modal-header">
+						<h4 class="modal-title">เพิ่มสินค้า</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+                    <div class="modal-body">
+                    <div class="form-group">
+							<label>รหัสต้นไม้</label>
+							<input type="text" name="plant_id" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>ชื่อต้นไม้</label>
+							<input type="text" name="plant_name" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>รายละเอียดต้นไม้</label>
+							<input type="text" name="plant_detail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+							<label>วันที่</label>
+							<input type="date" class="form-control" name="plant_date" required>
+                        </div>
+                        	<div class="form-group">
+	                        <label>รูปต้นไม้</label>
+							<input type="file" class="form-control" required>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-success" name="Add" value="Add">
+					</div>
+				</form>
+			</div>
+		</div>
+    </div>
 </div>
+
+ <!-- Modal -->
+ <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="background-color: red; color: white;">
+                <center>
+                    <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i><br>
+                    <h1>ทำการยืนยันเพื่อออกจากระบบ</h1><br>
+                    <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
+                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                        <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
+                    </a>
+                </center>
+            </div>
+
+        </div>
+    </div>
+
+
 </body>
 
 </html>

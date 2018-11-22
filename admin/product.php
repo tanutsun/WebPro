@@ -15,15 +15,14 @@ if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
     $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
     if ($id > 0) {
         $query = "DELETE FROM product WHERE Product_ID=" . $id . " LIMIT 1";
-        // $result = $db->query($query);
         $result = $db->query($query);
-        header('Refresh: 1;');
         echo 'ok';
     } else {
         echo 'err';
     }
     exit; // finish execution since we only need the "ok" or "err" answers from the server.
 }
+
 if (isset($_POST['Add'])) {
     $ID = $_POST['product_id'];
     $name = $_POST['product_name'];
@@ -43,17 +42,21 @@ if (isset($_POST['Add'])) {
     <meta charset="utf-8">
     <meta name="viewport">
     <!-- Bootstrap -->
-    <link href="../admin/assets/option/vendors//bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../admin/assets/option/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../admin/assets/option/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../admin/assets/option/build/css/custom.min.css" rel="stylesheet">
+
     <!-- jQuery -->
     <script src="../admin/assets/option/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../admin/assets/option/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Datatable-->
-    <script src="../admin/assets/option/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="../admin/assets/option/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../admin/assets/option/build//js/custom.min.js"></script>
 
+    <!-- edit css by tasto -->
+    <link href="../admin/assets/css/home.css" rel="stylesheet">
     <script>
          $(function(){
                $('#myTable').DataTable();
@@ -92,16 +95,16 @@ $(document).on('click','.deletedata',function(){
                     <img src="../admin/assets/images/navbar.png" style="margin-left: 1%;">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
-                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
-                        <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%">LOGOUT</button>
-                    </a>
+                <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%" data-toggle="modal"
+                        data-target="#myModal">LOGOUT</button>
+                    <!--เมนูด้านขวา -->
                 </ul>
             </nav>
         </div>
     </div>
     <div class="container" style="width:80%">
             <h1>ผลิตภัณฑ์ชุมชนบึงบัว</h1>
-            <a href="#addEmployeeModal" data-toggle="modal">
+            <a href="<?php  echo ROOT_URL . "/admin/insertproduct.php" ?>" data-toggle="modal">
             <button class="btn-lg btn-success" type="submit" style="float:right">+เพิ่มสินค้า</button>
             </a>
             <hr>
@@ -173,5 +176,25 @@ while ($row = $product_->fetch()) {
     </div>
 
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="background-color: red; color: white;">
+                <center>
+                    <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i><br>
+                    <h1>ทำการยืนยันเพื่อออกจากระบบ</h1><br>
+                    <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
+                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                        <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
+                    </a>
+                </center>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>
