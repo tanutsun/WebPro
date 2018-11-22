@@ -15,15 +15,14 @@ if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
     $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
     if ($id > 0) {
         $query = "DELETE FROM product WHERE Product_ID=" . $id . " LIMIT 1";
-        // $result = $db->query($query);
         $result = $db->query($query);
-        header('Refresh: 1;');
         echo 'ok';
     } else {
         echo 'err';
     }
     exit; // finish execution since we only need the "ok" or "err" answers from the server.
 }
+
 if (isset($_POST['Add'])) {
     $ID = $_POST['product_id'];
     $name = $_POST['product_name'];
