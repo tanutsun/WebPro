@@ -9,7 +9,7 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
-$plant = $helper->PlantQuery($db);
+$plant = $helper->EventPlant($db);
 
 if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
     $id = isset($_POST['id']) ? intval($_POST['id']) : 0;

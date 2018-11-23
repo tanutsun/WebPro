@@ -52,6 +52,13 @@ class helperAdmin
         return $plant = $db->query($sql);
 
     }
+    /**  */
+    public function EventQuery($db)
+    {
+        $sql = "SELECT * FROM activity";
+        return $plant = $db->query($sql);
+
+    }
     /* function doLogin()
      *
      * @param $user :string

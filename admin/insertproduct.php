@@ -22,7 +22,6 @@ if (isset($_POST['Add'])) {
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>บึงบัว</title>
     <meta charset="utf-8">
@@ -76,7 +75,7 @@ if (isset($_POST['Add'])) {
             <div class="panel-heading">เขียนบทความใหม่</div>
             <div class="panel-body">
                 <div class="container" style="width: 80%">
-                    <form method="POST">
+                    <form method="POST" nctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
                             <input type="text" class="form-control" name="product_name" require>
@@ -84,7 +83,7 @@ if (isset($_POST['Add'])) {
                         <br>
                         <label>
                             ภาพหน้าปก : <span style="color:red">*</span>รูปที่ทำการอัพโหลดต้องมีขนาด 1370 x 700 Pixels
-                            <br><br><input type="file" hidden>
+                            <br><br><input type="file" name="files">
                         </label>
                         <br>
                         <br>
@@ -126,12 +125,8 @@ if (isset($_POST['Add'])) {
             </div>
         </div>
 
-
-    <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content" style="background-color: red; color: white;">
                 <center>
                     <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i>

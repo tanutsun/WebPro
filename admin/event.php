@@ -9,6 +9,19 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
+$event = $helper->EventQuery($db);
+
+if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
+    $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
+    if ($id > 0) {
+        $query = "DELETE FROM plant WHERE Activity_ID=" . $id . " LIMIT 1";
+        $result = $db->query($query);
+        echo 'ok';
+    } else {
+        echo 'err';
+    }
+    exit; // finish execution since we only need the "ok" or "err" answers from the server.
+}
 
 ?>
 
@@ -77,86 +90,29 @@ if (!$helper->checkLogin()) {
             <th>ชื่อบทความ</th>
             <th>วันที่</th>
             <th>การจัดการ</th>
+            <th>รูป</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>00</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>01</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>02</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>03</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>04</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>05</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>06</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>07</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>08</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>09</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>กิจกรรมน้ำยาล้างจาน</td>
-            <td>27/02/40</td>
-            <td>♥ ♥</td>
-        </tr>
+<?php
+while ($row = $event->fetch()) {
+    echo "<tr>";
+    echo "<td>" . $row['Activity_ID'] . "</td>";
+    echo "<td>" . $row['Activity_Name'] . "</td>";
+    echo "<td>" . $row['Activity_Detail'] . "</td>";
+    echo "<td>" . $row['Activity_Date'] . "</td>";
+    echo "<td>" . "<img src=" . "../" . $row['Activity_Pic'] . " with='35px' height='35px'/" . "</td>";
+    echo "<td>" . "<button class='deletedata' value=" . $row['Activity_ID'] . ">Delete</button>" . "</td>";
+    echo "</tr>";
+}
+?>
         </tbody>
-
-
     </table>
 </div>
 
-    <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content" style="background-color: red; color: white;">
                 <center>
                     <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i><br>

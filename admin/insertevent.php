@@ -1,13 +1,23 @@
-<?php 
+<?php
 
-require_once(__DIR__ . "/../libs/config.inc.php");
-require_once(__DIR__ . "/../libs/admin/func.inc.php");
+require_once __DIR__ . "/../libs/config.inc.php";
+require_once __DIR__ . "/../libs/admin/func.inc.php";
 
 $helper = new helperAdmin($db);
 
-if(!$helper->checkLogin()){
+if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
+}
+
+if (isset($_POST['Add'])) {
+    $ID = rand(0, 9999);
+    $name = $_POST['Activity_name'];
+    $detail = $_POST['Activity_detail'];
+    $date = $_POST['Activity_date'];
+    $qu = "INSERT INTO `activity` (`Activity_ID`, `Activity_Name`, `Activity_Detail`, `Activity_Date`,`Activity_Pic`, `Admin_ID`)
+     VALUES($ID, '$name', '$detail', '$date', 'upload/images/image-not-found.png', 1)";
+    $result = $db->query($qu);
 }
 
 ?>
@@ -68,15 +78,15 @@ if(!$helper->checkLogin()){
             </nav>
         </div>
     </div>
-    <div class="container" style="width:1700px">
+    <div class="container" style="width:95%">
         <div class="panel panel-default">
             <div class="panel-heading">เขียนบทความใหม่</div>
             <div class="panel-body">
-                <div class="container" style="width: 1500px">
-                    <form>
+                <div class="container" style="width:80%">
+                    <form method="POST">
                         <div class="form-group">
                             <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
-                            <input type="text" class="form-control" id="">
+                            <input type="text" class="form-control" id="" name="Activity_name">
                         </div>
                         <br>
                         <label>
@@ -87,7 +97,7 @@ if(!$helper->checkLogin()){
                         <br>
                         รายละเอียด : <span style="color:red">*</span>
                         <br>
-                        <textarea name="editor1" id="editor1" rows="10" cols="80">
+                        <textarea name="Activity_detail" id="editor1" rows="10" cols="80">
 
                         </textarea>
                         <script>
@@ -97,14 +107,14 @@ if(!$helper->checkLogin()){
                         <div class="row">
                             <div class="col-sm-6"><label for="name">ประเภทบทความ : </label>
                                 <br>
-                                <input type="text" size="70">
+                                <input type="text" size="60">
                             </div>
 
                             <div class="col-sm-6"><label for="name">วันที่ :</label>
                                 <br>
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker1'>
-                                        <input type='text' class="form-control" />
+                                        <input type='date' class="form-control" name="Activity_date" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -117,7 +127,7 @@ if(!$helper->checkLogin()){
                                 });
                             </script>
                         </div>
-                        <a href="" class="btn btn-success" style="float: right">บันทึก</a>
+                            <input type="submit" class="btn btn-success" name="Add" value="บันทึก" style="float: right">
                     </form>
                 </div>
             </div>
@@ -134,7 +144,7 @@ if(!$helper->checkLogin()){
                     <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i>
                     <h1>ทำการยืนยันเพื่อออกจากระบบ</h1>
                     <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
+                    <a href="<?php echo ROOT_URL . "/admin/logout.php" ?>">
                         <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
                     </a>
                 </center>
@@ -142,7 +152,7 @@ if(!$helper->checkLogin()){
 
         </div>
     </div>
-        
+
 </body>
 
 </html>
