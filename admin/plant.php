@@ -9,7 +9,7 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
-$plant = $helper->EventPlant($db);
+$plant = $helper->PlantQuery($db);
 
 if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
     $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
@@ -124,18 +124,18 @@ $(document).on('click','.deletedata',function(){
         </thead>
         <tbody>
              <?php
-while ($row = $plant->fetch()) {
-    echo "<tr>";
-    echo "<td>" . $row['Plant_ID'] . "</td>";
-    echo "<td>" . $row['Plant_Name'] . "</td>";
-    echo "<td>" . $row['Plant_Detail'] . "</td>";
-    echo "<td>" . $row['Plant_Date'] . "</td>";
-    echo "<td>" . "<img src=" . "../" . $row['Plant_Pic'] . " with='35px' height='35px'/" . "</td>";
-    echo "<td>" . "<button class='deletedata' value=" . $row['Plant_ID'] . ">Delete</button>" . "</td>";
+            while ($row = $plant->fetch()) {
+                echo "<tr>";
+                echo "<td>" . $row['Plant_ID'] . "</td>";
+                echo "<td>" . $row['Plant_Name'] . "</td>";
+                echo "<td>" . $row['Plant_Detail'] . "</td>";
+                echo "<td>" . $row['Plant_Date'] . "</td>";
+                echo "<td>" . "<img src=" . "../" . $row['Plant_Pic'] . " with='35px' height='35px'/" . "</td>";
+                echo "<td>" . "<button class='deletedata' value=" . $row['Plant_ID'] . ">Delete</button>" . "</td>";
 
-    echo "</tr>";
-}
-?>
+                echo "</tr>";
+            }
+            ?>
         </tbody>
     </table>
  <div id="myModal" class="modal fade" role="dialog">
