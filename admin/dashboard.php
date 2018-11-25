@@ -75,7 +75,7 @@ if(!$helper->checkLogin()){
     <div>
         <center>
             <a href="<?php echo ROOT_URL."/admin/plant.php" ?>">
-                <img src="../admin/assets/images/plant.png" width="250px" height="250px" style="margin-right:25%; margin-top:5%;"></a>
+                <img src="../admin/assets/images/plant.png" width="250px" height="250px" style=" margin-top:5%;"></a>
             <!-- <a href="<?php echo ROOT_URL."/admin/productprocess.php" ?>">
                 <img src="../admin/assets/images/productprocess.png" width="250px" height="250px" style=" margin-top:5%;"></a> -->
         </center>
