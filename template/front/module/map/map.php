@@ -7,12 +7,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       
-    <title> activity </title>
+    <title> บึงบัว </title>
         <style>
-           body {
-               background-image: url("../../img/bg/bg.png");
-               width: 100%;
-           }
             .font {
                  font-family: 'Supermarket';
             }
@@ -43,71 +39,51 @@
                 color:white
             }
 
-            .btn-read{
-                background-color:grey;
-                border-radius: 25px;
-                color:black;
-                font-size:20px;
-            }
-
         </style>
     </head>
-    <body >
-       
+    <body>
         <font face="Supermarket">   
             <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
                 <!-- Brand/logo -->
-                <a class="navbar-brand" href="../../index.php">
+                <a class="navbar-brand" href="\webpro\template\front\index.php">
                     <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
                 </a>        
                 <!-- Links -->
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link" href="../../module/product/product.php">ผลิตภัณฑ์</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../module/plan/plan.php">พันธุ์พืช</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="../../module/activity/activity.php">กิจกรรม</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="../../module/map/map.php">แผนที่</a>
                     </li>
                 </ul>
             </nav>
 
-        <!--start activity-->
-                <div class="container">
-                
-                        <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
-                                <div class="col-sm">
-                                 <img src="../../img/activity/activity1.jpg" style="width : 350px;  height: 280px;">
-                               </div>
-                               <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
-                                <b><h4> ชื่อกิจกรรม : ศึกษาดูงานจังหวัด "จันทบุรี" "ระยอง" เเละ "ปราจีนบุรี"
-                                 <br><br>
-                                 รายละเอียดกิจกรรม :  ไปท่องเที่ยวชมวัฒนธรรม3จังหวัด...
-                                
-                                 <br><br><br>
-                                 <a class="btn btn-read" href="../detail.activity/detail1.php" role="button">อ่านเพิ่มเติม</a>
-                                  </div>
-                       </div>
-                
 
-                  
-
-                <!--start pageing number-->
-                <nav aria-label="Page navigation example" style="padding-top:120px;"> 
-                  <ul class="pagination justify-content-end">
-                    
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                   
-                   
-                  </ul>
-                </nav> <!--end pageing number-->
-        </div> <!--end contrainer-->
-
+        <div id="googleMap"></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.3984763828053!2d100.7845000143117!3d
+        13.753617300958133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6b9b41bb0e0664!2z4Lio4Li54LiZ4
+        Lii4LmM4LiB4Liy4Lij4LmA4Lij4Li14Lii4LiZ4Lij4Li54LmJ4LiE4LiZ4LmA4Lih4Li34Lit4LiHIOC4muC4tuC4h-C4muC4seC4pw!5e
+        1!3m2!1sth!2sth!4v1540799335281" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe> 
+    
+        
+        <script>
+            function myMap() {
+                var mapProp = {
+                    center: new google.maps.LatLng(13.754784, 100.786722),
+                    zoom: 5,
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            }
+        </script>
+    
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
 
         <footer>
             <div class="row">
@@ -124,9 +100,5 @@
         </footer>     
     </font>
 
-<!--script-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
     </body>
 </html>

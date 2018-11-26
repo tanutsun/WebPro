@@ -1,7 +1,3 @@
-<?php 
-  require_once(__DIR__ . "../../../../../libs/config.inc.php");
-  
-  ?>
 <html>
     <head>
         <!-- Required meta tags -->
@@ -11,7 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       
-    <title> Detail Activity </title>
+    <title> Detail Process1 </title>
         <style>
             .font {
                  font-family: 'Supermarket';
@@ -49,44 +45,55 @@
         <font face="Supermarket">   
         <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="/webpro/template/front/index.php">
+            <a class="navbar-brand" href="#">
                 <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
-            </a>
+            </a>        
             <!-- Links -->
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/template/front/module/product/product.php" ?>" > ผลิตภัณฑ์ </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/template/front/module/plan/plan.php" ?>">พันธุ์พืช</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/webpro/template/front/module/product/product.php">ผลิตภัณฑ์</a>
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/template/front/module/activity/activity.php" ?>">กิจกรรม</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/webpro/template/front/module/plan/plan.php">พันธุ์พืช</a>
-                </li>
+         
                 <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/activity/activity.php">กิจกรรม</a>
-                </li>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/map/map.php">แผนที่</a>
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/template/front/module/map/map.php" ?>">แผนที่</a>
                 </li>
             </ul>
         </nav>
 
-        <!--stat detail activity--> 
-      
-        
+        <!--stat detail activity-->
             <div class="container" style="padding-bottom: 20%;">
-          
 				<center>
-       			 <img src="../../img/activity/activity1.2.jpg" style="width:550px; height:450px; padding-top:7%;">
+       			 <img src="../../img/dishwashingsoap1.jpg" style="width:550px; height:450px; padding-top:7%;">
         		 <br><br>
-        			<h2><b>กิจกรรมรวมใจปลูกป่า</b></h2>
-                </center>
-                <br>
-    				<h3 style="padding-top:5%"><b>รายละเอียดกิจกรรม</b></h3><hr>
-    				
-                    <br>- ได้จัดทำขึ้นในวันที่ 23 ตุลาคม 2561 ณ.ชุมชนบึงบัว
-                    <br>- ตั้งเเต่เวลา 9.00-12.00 
-                    <br>## งานนี้ฟรีตลอดงาน เเถมยังได้ผลิตภัณฑ์ที่ผู้เข้าร่วมได้ทำกลับบ้านไปใช้ได้ด้วย</h5>
-                    </div>
+    			
+                    <br><h3><b>การทำน้ำยาล้างจาน(สูตรบี-ไบรท์)</b></h3></center>
+                    <br>
+                    <h3><b>ส่วนประกอบ</b></h3>
+                    <hr style="border: 10%;">
+					<h4>1.BCA 102 1 กิโลกรัม
+                    <br>
+                    2.บี-ไบรท์ 10 ลิตร 
+                    <br>
+                    3.สี
+                    <br>
+                    4.กลิ่น
+                    </h4>
+					<br><br>
+                    <br><h3><b>ขั้นตอนการทำน้ำยาล้างจาน(สูตรบี-ไบรท์)</b></h3>
+                    <hr style="border: 10%;">
+					<h4>1) นำ BCA102 1 กิโลกรัม ใส่ภาชนะ เเละกวนให้ไปทิศเดียวกันจนกลายเป็นเนื้อเดียวกันเนียนเเละฟู
+                    <br>
+                    2) ค่อยๆเติม บี-ไบรท์ทีละนิด จนครบ 10 ลิตร โดยคนเบาๆไปในทิศทางเดียวกันช้าๆจนน้ำยาเหนียวข้นขึ้น
+                    <br>
+                    3) เติมสี เเละ กลิ่นตามที่ต้องการ
+                    </h4>
+    		</div>
 
 
         <footer>

@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!--pagination-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title> บึงบัว </title>
+        <style>
+
+            @font-face {
+                font-family: 'Supermarket';
+                src: url('../../font/Supermarket/supermarket.ttf');
+                src: local('Souses Regular'), local('Supermarket Web'),
+                url("../../font/Supermarket/supermarket.woff") format("woff"),
+                url("../../font/Supermarket/supermarket.otf") format("opentype"),
+                url("../../font/Supermarket/supermarket.svg#grablau") format("svg");
+            }
+
+            .bg-nav{
+                background-color:#215732;
+            }
+
+            footer{
+                background-color:#215732;
+                height:10%;
+                margin: 0px;
+                padding: 10px; 
+                color: white;
+            }
+
+            .fa-facebook{
+                font-size:14px;
+                color:white
+            }
+            p {
+                font-size: 28px;
+            }
+        </style>
+    </head>
+    <body>
+        <font face="Supermarket">   
+        <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="\webpro\template\front\index.php">
+                <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
+            </a>        
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="\webpro\template\front\module\product\product.php" > ผลิตภัณฑ์ </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="\webpro\template\front\module\plan\plan.php">พันธุ์พืช</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="\webpro\template\front\module\activity\activity.php">กิจกรรม</a>
+                </li>
+         
+                <li class="nav-item">
+                    <a class="nav-link" href="\webpro\template\front\module\map\map.php">แผนที่</a>
+                </li>
+            </ul>
+        </nav>
+
+        
+
+        <div class="container-fluid">
+
+            <div class="row m-0 pt-5">
+                <div class="col-sm-4">
+                    <div class="row m-0">
+                        <div class="col-sm-12">
+                            <img src="../../img/type-product6.jpg" style="width:100%;  height:250px;">
+                        </div>
+                        <div class="col-sm-12 pt-3">
+                            <a href="detailproduct.php?Product_ID=7"><p class="text-center">สบู่สมุนไพร</p></a>
+                        </div>
+                    </div>          
+                </div>
+                <div class="col-sm-4">
+                    <div class="row m-0">
+                        <div class="col-sm-12">
+                            <img src="../../img/type-product2.jpg" style="width:100%;  height:250px;">
+                        </div>
+                        <div class="col-sm-12 pt-3">
+                            <a href="detailproduct.php?Product_ID=2"><p class="text-center">กล้วยตาก</p></a>
+                        </div>
+                    </div>          
+                </div>
+                <div class="col-sm-4">
+                    <div class="row m-0">
+                        <div class="col-sm-12">
+                            <img src="../../img/type-product3.jpg" style="width:100%;  height:250px;">
+                        </div>
+                        <div class="col-sm-12 pt-3">
+                            <a href="detailproduct.php?Product_ID=6"><p class="text-center">น้ำยาซักผ้า</p></a>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+
+            <div class="row m-0 pt-5">
+                <div class="col-sm-4">
+                    <div class="row m-0">
+                        <div class="col-sm-12">
+                            <img src="../../img/type-product4.jpg" style="width:100%;  height:250px;">
+                        </div>
+                        <div class="col-sm-12 pt-3">
+                            <a href="detailproduct.php?Product_ID=5"><p class="text-center">น้ำยาล้างจาน</p></a>
+                        </div>
+                    </div>          
+                </div>
+                <div class="col-sm-4">
+                    <div class="row m-0">
+                        <div class="col-sm-12">
+                            <img src="../../img/type-product5.jpg" style="width:100%;  height:250px;">
+                        </div>
+                        <div class="col-sm-12 pt-3">
+                            <a href="detailproduct.php?Product_ID=7"><p class="text-center">สบู่สมุนไพร</p></a>
+                        </div>
+                    </div>          
+                </div>
+                <div class="col-sm-4">
+                    <div class="row m-0">
+                        <div class="col-sm-12">
+                            <img src="../../img/type-product1.jpg" style="width:100%;  height:250px;">
+                        </div>
+                        <div class="col-sm-12 pt-3">
+                            <a href="detailproduct.php?Product_ID=1"><p class="text-center">สมุนไพรไข่เค็ม</p></a>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+         
+            <nav aria-label="Page navigation example" style="padding-top:120px;">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <footer>
+            <div class="row">
+                <div class="col-2">
+                    <h2> Contact Us </h2>
+                </div>
+                <div class="col-2">
+                    <h6> ลำปลาทิว ลาดกระบัง กรุงเทพมหานคร  โทร 089 035 6498</h6>
+                </div>
+                <div class="col-8">
+                    <h6>fb : ชุมชนบึงบัว</h6>
+                </div>
+            </div>
+        </footer>     
+    </font>
+
+    </body>
+</html>
