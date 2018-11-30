@@ -1,5 +1,5 @@
 <?php 
-require_once(__DIR__ . "../../../../../libs/config.inc.php");
+require_once(__DIR__ . "/../../libs/config.inc.php");
 $ID = $_GET["Plant_ID"];
 ?>
 
@@ -64,23 +64,23 @@ $ID = $_GET["Plant_ID"];
         <!-- Navigation bar -->
         <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="/webpro/template/front/index.php">
+            <a class="navbar-brand" href="/webpro/member/index.php">
                 <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
             </a>
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/product/product.php">ผลิตภัณฑ์</a>
+                    <a class="nav-link" href="/webpro/member/module/product/product.php">ผลิตภัณฑ์</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="plan.php">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/activity/activity.php">กิจกรรม</a>
+                    <a class="nav-link" href="/webpro/member/module/activity/activity.php">กิจกรรม</a>
                 </li>
                
                 <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/map/map.php">แผนที่</a>
+                    <a class="nav-link" href="/webpro/member/module/map/map.php">แผนที่</a>
                 </li>
             </ul>
         </nav>

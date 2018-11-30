@@ -74,23 +74,23 @@
         <!-- Navigation bar -->
         <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="/webpro/template/front/index.php">
+            <a class="navbar-brand" href="/webpro/member/index.php">
                 <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
             </a>
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/product/product.php">ผลิตภัณฑ์</a>
+                    <a class="nav-link" href="/webpro/member/module/product/product.php">ผลิตภัณฑ์</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="plan.php">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/activity/activity.php">กิจกรรม</a>
+                    <a class="nav-link" href="/webpro/member/module/activity/activity.php">กิจกรรม</a>
                 </li>
                
                 <li class="nav-item">
-                    <a class="nav-link" href="/webpro/template/front/module/map/map.php">แผนที่</a>
+                    <a class="nav-link" href="/webpro/member/module/map/map.php">แผนที่</a>
                 </li>
             </ul>
         </nav>
@@ -121,7 +121,7 @@
                     ไผ่ เป็นไม้พุ่มหลายชนิดและหลายสกุลใน วงศ์หญ้า (วงศ์ Poaceae; เดิมคือวงศ์ Gramineae) วงศ์ย่อย Bambusoideae เป็นไม้ไม่ผลัดใบใน ขึ้นเป็นกอ ลำต้นเป็นปล้องๆ เช่น ไผ่จีน (Arundinaria suberecta Munro) ไผ่ป่า (Bambusa arundinacea Willd.) ไผ่สีสุก (B. flexuosa Munro และ B. blumeana Schult.) ไผ่ไร่ (Gigantochloa albociliata Munro) ไผ่ดำ (Phyllostachys nigra Munro)
                         <br><br><br>
                     </p>
-                    <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=4" class="btn btn-read">อ่านเพิ่มเติม</a>
+                    <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=4" class="btn btn-read">อ่านเพิ่มเติม</a>
                 
                 </div>
             </div>
@@ -135,7 +135,7 @@
                         มะม่วงเป็นไม้ยืนต้นในสกุล Mangifera ซึ่งเป็นไม้ผลเมืองร้อนในวงศ์ Anacardiaceae (กลุ่มเดียวกับถั่วพิสตาชีโอและมะม่วงหิมพานต์)  
                         <br><br><br>
                     </p>
-                    <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=11" class="btn btn-read">อ่านเพิ่มเติม</a>
+                    <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=11" class="btn btn-read">อ่านเพิ่มเติม</a>
                     
                 </div>
             </div>
@@ -149,7 +149,7 @@
                         ไม้ล้มลุกอายุหลายปีขนาดใหญ่ อายุหลายปี สูง 2-8 ม. ลำต้นตั้งตรงมักไม่แตกกิ่ง ไม่มีแก่น ต้นอวบน้ำ มีรอยแผลเป็นของก้านใบที่หลุดร่วงไป
                         <br><br><br>
                     </p>
-                    <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=13" class="btn btn-read">อ่านเพิ่มเติม</a>
+                    <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=13" class="btn btn-read">อ่านเพิ่มเติม</a>
     
                 </div>
             </div>

@@ -66,24 +66,24 @@
         <font face="Supermarket">   
         <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="\webpro\template\front\index.php">
+            <a class="navbar-brand" href="\webpro\member\index.php">
                 <img src="img/logo-nav.png" alt="logo" style="width:40px;">
             </a>        
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="\webpro\template\front\module\product\product.php"  > ผลิตภัณฑ์ </a>
+                    <a class="nav-link" href="\webpro\member\module\product\product.php"  > ผลิตภัณฑ์ </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="\webpro\template\front\module\plan\plan.php" >พันธุ์พืช</a>
+                    <a class="nav-link" href="\webpro\member\module\plan\plan.php" >พันธุ์พืช</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="\webpro\template\front\module\activity\activity.php" >กิจกรรม</a>
+                    <a class="nav-link" href="\webpro\member\module\activity\activity.php" >กิจกรรม</a>
                  
                 </li>
          
                 <li class="nav-item">
-                    <a class="nav-link" href="\webpro\template\front\module\map\map.php">แผนที่</a>
+                    <a class="nav-link" href="\webpro\member\module\map\map.php">แผนที่</a>
                  
                
                 </li>
@@ -91,9 +91,9 @@
         </nav>
 
         <div class="highlight mb-5">
-            <div><a href="\webpro\template\front\module\product\detailproduct.php?Product_ID=7" ><img src="img/index-highlight1.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
-            <div><a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=13" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
-            <div><a href="\webpro\template\front\module\detail.activity\detail1.php" ><img src="img/index-highlight3.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="\webpro\member\module\product\detailproduct.php?Product_ID=7" ><img src="img/index-highlight1.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="\webpro/member/module/plan/detailplan.php?Plant_ID=13" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="\webpro\member\module\detail.activity\detail1.php" ><img src="img/index-highlight3.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
         </div>
         
         <div class="container">                    
@@ -111,7 +111,7 @@
             <br>
             <div class="row pt-2 pb-3">
                 <div class="col-md-3">
-                    <a href="\webpro\template\front\module\product\detailproduct.php?Product_ID=2">
+                    <a href="\webpro\member\module\product\detailproduct.php?Product_ID=2">
                     <img src="img/index-product1.jpg" style="width:100%; height:160px;">  
                     </a>
                     <div class="row">
@@ -121,7 +121,7 @@
                     </div>   
                 </div>
                 <div class="col-md-3">
-                    <a href="\webpro\template\front\module\product\detailproduct.php?Product_ID=7">
+                    <a href="\webpro\member\module\product\detailproduct.php?Product_ID=7">
                     <img src="img/index-product2.jpg" style="width:100%; height:160px;">
                     </a>
                     <div class="row">
@@ -131,7 +131,7 @@
                     </div> 
                 </div>
                 <div class="col-md-3">
-                    <a href="\webpro\template\front\module\product\detailproduct.php?Product_ID=5">
+                    <a href="\webpro\member\module\product\detailproduct.php?Product_ID=5">
                     <img src="img/index-product3.jpg" style="width:100%; height:160px;"> 
                     </a>
                     <div class="row">
@@ -141,7 +141,7 @@
                     </div> 
                 </div>
                 <div class="col-md-3">
-                    <a href="\webpro\template\front\module\product\detailproduct.php?Product_ID=6">
+                    <a href="\webpro\member\module\product\detailproduct.php?Product_ID=6">
                     <img src="img/index-product4.jpg" style="width:100%; height:160px;">
                     </a>
                     <div class="row">
@@ -171,7 +171,7 @@
                 <div class="col-md-12 pb-4">
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="\webpro/template/front/module/plant/detailplant.php">
+                            <a href="\webpro/member/module/plant/detailplant.php">
                                 <img src="img/index-plant1.jpg" style="width:100%; height:200px;"> 
                             </a> 
                             <div class="row">
@@ -181,7 +181,7 @@
                             </div>    
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=4">
+                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=4">
                                 <img src="img/ไผ่.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=15">
+                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=15">
                                 <img src="img/ละมุด.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -205,7 +205,7 @@
                 <div class="col-md-12 pt-2">
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=11">
+                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=11">
                                 <img src="img/index-plant4.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -215,7 +215,7 @@
                             </div>        
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=13">
+                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=13">
                                 <img src="img/index-plant5.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -225,7 +225,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/template/front/module/plan/detailplan.php?Plant_ID=1">
+                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=1">
                                 <img src="img/เชอรี่.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">

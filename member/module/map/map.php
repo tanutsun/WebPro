@@ -45,7 +45,7 @@
         <font face="Supermarket">   
             <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
                 <!-- Brand/logo -->
-                <a class="navbar-brand" href="\webpro\template\front\index.php">
+                <a class="navbar-brand" href="\webpro\member\index.php">
                     <img src="../../img/logo-nav.png" alt="logo" style="width:40px;">
                 </a>        
                 <!-- Links -->
