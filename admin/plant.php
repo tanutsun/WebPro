@@ -63,28 +63,27 @@ if (isset($_POST['Add'])) {
          $(function(){
                $('#myTablee').DataTable();
             });
-            var currentRow,
-    id;
-$(document).on('click','.deletedata',function(){
-    id = $(this).attr('value'); // Get the clicked id for deletion
-    currentRow = $(this).closest('tr'); // Get a reference to the row that has the button we clicked
-    console.log(id)
-    $.ajax({
-        type:'POST',
-        url:location.pathname, // sending the request to the same page we're on right now
-        data:{'action':'deleteEntry','id':id},
-        success:function(response){
-            if (response == 'ok') {
-                // Hide the row nicely and remove it from the DOM once the animation is finished.
-                currentRow.slideUp(500,function(){
-                    currentRow.remove();
+            var currentRow
+            $(document).on('click','.deletedata',function(){
+                var id = $(this).attr('value'); // Get the clicked id for deletion
+                currentRow = $(this).closest('tr'); // Get a reference to the row that has the button we clicked
+                console.log(id)
+                $.ajax({
+                    type:'POST',
+                    url:location.pathname, // sending the request to the same page we're on right now
+                    data:{'action':'deleteEntry','id':id},
+                    success:function(response){
+                        if (response == 'ok') {
+                            // Hide the row nicely and remove it from the DOM once the animation is finished.
+                            currentRow.slideUp(500,function(){
+                                currentRow.remove();
+                            })
+                        } else {
+                            // throw an error modally to let the user know there was an error
+                        }
+                    }
                 })
-            } else {
-                // throw an error modally to let the user know there was an error
-            }
-        }
-    })
-});
+            });
 
     </script>
     <link rel="stylesheet" href="../admin/assets/css/event.css">
@@ -131,7 +130,7 @@ $(document).on('click','.deletedata',function(){
                 echo "<td>" . $row['Plant_Detail'] . "</td>";
                 echo "<td>" . $row['Plant_Date'] . "</td>";
                 echo "<td>" . "<img src=" . "../" . $row['Plant_Pic'] . " with='35px' height='35px'/" . "</td>";
-                echo "<td>" . "<button class='deletedata' value=" . $row['Plant_ID'] . ">Delete</button>" . "</td>";
+                echo "<td>" . "<a href='editplant.php?id=".$row['Plant_ID']."'><button class='editdata'>Edit</button></a><button class='deletedata' value=" . $row['Plant_ID'] . ">Delete</button>" . "</td>";
 
                 echo "</tr>";
             }

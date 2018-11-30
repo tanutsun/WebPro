@@ -125,7 +125,7 @@ while ($row = $product_->fetch()) {
     echo "<td>" . $row['Product_Date'] . "</td>";
     echo "<td>" . $row['Product_Price'] . "</td>";
     echo "<td>" . "<img src=" . "../" . $row['Product_Pic'] . " with='35px' height='35px'/" . "</td>";
-    echo "<td>" . "<button class='deletedata' value=" . $row['Product_ID'] . ">Delete</button>" . "</td>";
+    echo "<td>" . "<button class='editdata' value=" . $row['Product_ID'] . ">Edit</button><button class='deletedata' value=" . $row['Product_ID'] . ">Delete</button>" . "</td>";
     echo "</tr>";
 }
 ?>
