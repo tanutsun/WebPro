@@ -30,8 +30,9 @@ if(!$helper->checkLogin()){
     <!-- Bootstrap -->
     <script src="../admin/assets/option/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="../admin/assets/option/build//js/custom.min.js"></script>
-
+    <script src="../admin/assets/option/build/js/custom.min.js"></script>
+    <!-- Chart.js -->
+    <script src="../admin/assets/option/vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- edit css by tasto -->
     <link href="../admin/assets/css/home.css" rel="stylesheet">
 </head>
@@ -51,35 +52,61 @@ if(!$helper->checkLogin()){
             </nav>
         </div>
     </div>
-    <!-- <div class="col-md-12 col-sm-12 col-xs-12">
-        <h1 style="margin:2%;">ประเภทของบทความ</h1>
-        <hr style="color: black;width: 80%;">
-        <button class="btn-default"><a href="<?php echo ROOT_URL."/admin/event.php" ?>">กิจกรรมชุมชนบึงบัว</a></button>
-        <button class="btn-primary" ><a href="<?php echo ROOT_URL."/admin/product.php" ?>">ผลิตภัณฑ์ชุมชนบึงบัว</a></button>
-        <button class="btn-success"><a href="<?php echo ROOT_URL."/admin/plant.php" ?>">พันธุ์พืชในสวนชุมชนบึงบัว</a></button>
-        <button class="btn-info" ><a href="<?php echo ROOT_URL."/admin/productprocess.php" ?>">กระบวนการทำผลิตภัณฑ์ของชุมชนบึงบัว</a></button>
-    </div> -->
+
+    <br><br><br><br><br><br><br><br>
+    <div class="row" >
+        <div class="col-sm-4 textedit" style="margin-left: 20% ;background-color: darkolivegreen;">
+                <br><h3>คำสั่งซื้อของสินค้า</h3><br>
+                <h1>20</h1>
+                <a href="<?php echo ROOT_URL."/admin/productlist.php" ?>">
+                    <button class=" btn-lg btn-primary colorbutton" type="submit" style="margin-bottom:25px;">ดูคำสั่งซื้อทั้งหมด</button>
+                </a>
+            </div>
+        <div class="col-sm-4 textedit" style="background-color: #6b2f40;" >
+                <br><h3>คำสั่งซื้อของสินค้าทั้งหมด</h3><br>
+            <h1>20</h1>
+            <a href="<?php echo ROOT_URL."/admin/orderall.php" ?>">
+                <button class=" btn-lg btn-primary colorbutton" type="submit" style="margin-bottom:25px;">ดูคำสั่งซื้อทั้งหมด</button>
+            </a>
+        </div>
+        <div class="col-sm-4 textedit" style="background-color: #2f476b">
+                <br><h3>จำนวนของสินค้าทั้งหมด</h3><br>
+            <h1>20</h1>
+            <a href="<?php echo ROOT_URL."/admin/productall.php" ?>">
+                <button class=" btn-lg btn-primary colorbutton" type="submit" style="margin-bottom:25px;">ดูจำนวนสินค้าทั้งหมด</button>
+            </a>
+        </div>
+    </div>
+    <br><br><br>
+    <hr style="color: black;width: 80%;">
+    <center>
+        <div class="x_panel" style="width: 50%">
+            <div class="x_title">
+                <h2>Line graph<small>Sessions</small></h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+    </center>
 
     <div class="col-md-12 col-sm-12 col-xs-12">
         <h1 style="margin:2%;">ประเภทของบทความ</h1>
         <hr style="color: black;width: 80%;">
     </div>
+
     <div>
         <center>
             <a href="<?php echo ROOT_URL."/admin/event.php" ?>">
-                <img src="../admin/assets/images/event.png" width="250px" height="250px" style="margin-right:25%"></a>
+                <img src="../admin/assets/images/event.png" width="250px" height="250px" style="margin-right:5%;"></a>
             <a href="<?php echo ROOT_URL."/admin/product.php" ?>">
-                <img src="../admin/assets/images/product.png" width="250px" height="250px"></a>
-        </center>
-    </div>
-    <div>
-        <center>
+                <img src="../admin/assets/images/product.png" width="250px" height="250px" style="margin-right:5%;"></a>
             <a href="<?php echo ROOT_URL."/admin/plant.php" ?>">
-                <img src="../admin/assets/images/plant.png" width="250px" height="250px" style=" margin-top:5%;"></a>
-            <!-- <a href="<?php echo ROOT_URL."/admin/productprocess.php" ?>">
-                <img src="../admin/assets/images/productprocess.png" width="250px" height="250px" style=" margin-top:5%;"></a> -->
+                <img src="../admin/assets/images/plant.png" width="250px" height="250px" style=" margin-right:5%;"></a>
         </center>
     </div>
+    
     <br><br><br>
 
     <!-- Modal -->
