@@ -92,7 +92,7 @@
 
         <div class="highlight mb-5">
             <div><a href="\webpro\member\module\product\detailproduct.php?Product_ID=7" ><img src="img/index-highlight1.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
-            <div><a href="\webpro/member/module/plan/detailplan.php?Plant_ID=13" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="\webpro/user/module/plan/detailplan.php?Plant_ID=13" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
             <div><a href="\webpro\member\module\detail.activity\detail1.php" ><img src="img/index-highlight3.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
         </div>
         
@@ -171,7 +171,7 @@
                 <div class="col-md-12 pb-4">
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="\webpro/member/module/plant/detailplant.php">
+                            <a href="\webpro/user/module/plant/detailplant.php">
                                 <img src="img/index-plant1.jpg" style="width:100%; height:200px;"> 
                             </a> 
                             <div class="row">
@@ -181,7 +181,7 @@
                             </div>    
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=4">
+                            <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=4">
                                 <img src="img/ไผ่.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=15">
+                            <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=15">
                                 <img src="img/ละมุด.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -205,7 +205,7 @@
                 <div class="col-md-12 pt-2">
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=11">
+                            <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=11">
                                 <img src="img/index-plant4.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -215,7 +215,7 @@
                             </div>        
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=13">
+                            <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=13">
                                 <img src="img/index-plant5.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">
@@ -225,7 +225,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <a href="\webpro/member/module/plan/detailplan.php?Plant_ID=1">
+                            <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=1">
                                 <img src="img/เชอรี่.jpg" style="width:100%; height:200px;">
                             </a>
                             <div class="row">

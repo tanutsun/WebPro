@@ -51,17 +51,17 @@
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo ROOT_URL ."/member/module/product/product.php" ?>" > ผลิตภัณฑ์ </a>
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/product/product.php" ?>" > ผลิตภัณฑ์ </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo ROOT_URL ."/member/module/plan/plan.php" ?>">พันธุ์พืช</a>
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/plan/plan.php" ?>">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo ROOT_URL ."/member/module/activity/activity.php" ?>">กิจกรรม</a>
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/activity/activity.php" ?>">กิจกรรม</a>
                 </li>
          
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo ROOT_URL ."/member/module/map/map.php" ?>">แผนที่</a>
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/map/map.php" ?>">แผนที่</a>
                 </li>
             </ul>
         </nav>
