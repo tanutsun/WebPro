@@ -47,18 +47,19 @@
     </div>
     <div class="container" style="width:80%">
 
-        <h1>รายการการสั่งสินค้า</h2>
+        <h1>จำนวนสินค้าทั้งหมด</h2>
+            <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" style = "float:right">
+                <option value="plantall.html">ผลิตภัณ์</option>
+                <option value="productall.html">พันธุ์พืช</option>
+            </select>
             <hr>
             <table class="table table-bordered" id="myTable">
                 <thead>
                     <tr id="tablehead">
                         <th>ID</th>
                         <th>รายการสินค้า</th>
-                        <th>จำนวนสินค้า</th>
-                        <th>ยอดรวม</th>
-                        <th>วันที่สั่ง</th>
-                        <th>สถานะ</th>
-                        <th>ดูรายละเอียด</th>
+                        <th>จำนวนสินค้าคงเหลือ</th>
+                        <th>แก้ไขจำนวนสินค้า</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,121 +67,88 @@
                         <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
                             <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>01</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>02</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>03</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>04</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>05</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>06</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>07</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>08</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>09</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <td>10</td>
+                        <td>00</td>
                         <td>น้ำยาล้างจาน</td>
                         <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
                         <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                 </tbody>
@@ -213,34 +181,12 @@
                 <div class="modal-content" >
                     <center>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h1>รายการการสั่งซื้อ</h1>
+                        <h1>แก้ไขจำนวนสินค้า</h1>
                         <hr style="color: black;width: 80%;">
-                        <table class="table table-bordered" style="background-color:white;">
-                                <thead>
-                                    <tr id="tablehead" style="background-color:white;">
-                                        <th>รายการสินค้า</th>
-                                        <th>ชื่อสินค้า</th>
-                                        <th>จำนวนสินค้า</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="background-color:white;">
-                                        <td>00</td>
-                                        <td>น้ำยาล้างจาน</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr style="background-color:white;"> 
-                                            <td></td>
-                                            <td>ยอดรวม</td>
-                                            <td>500</td>
-                                        </tr>
-                                </tbody>
-                
-                
-                            </table>
-                        <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ยังไม่ได้ส่งสินค้า</button>
+                        <input type="text">
+                        <br>
                         <a href="">
-                            <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">จัดส่งสินค้าแล้ว</button>
+                            <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">ยืนยันการแก้ไข</button>
                         </a>
                     </center>
                 </div>
