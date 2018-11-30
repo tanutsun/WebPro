@@ -9,14 +9,13 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
-if (isset($_POST['Add'])) {
-
-    $target_dir = "C:\\xampp\htdocs\webpro\upload\images";
+if (isset($_POST['Add']) && $_FILES["fileToUpload"]["name"]) {
+    $target_dir = "C:\\xampp\htdocs\webpro\static\images";
     $target_file = $target_dir . "\\" . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
-    if (isset($_POST["submit"])) {
+    if (isset($_POST["Add"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if ($check !== false) {
 
@@ -115,12 +114,12 @@ if (isset($_POST['Add'])) {
     </div>
     <div class="container" style="width:95%">
         <div class="panel panel-default">
-            <div class="panel-heading">เขียนบทความใหม่</div>
+            <div class="panel-heading">เขียนกิจกรรมใหม่</div>
             <div class="panel-body">
                 <div class="container" style="width:80%">
                     <form method="POST"  enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
+                            <label for="name">ชื่อกิจกรรม : <span style="color:red">*</span></label>
                             <input type="text" class="form-control" id="" name="Activity_name">
                         </div>
                         <br>
@@ -162,7 +161,7 @@ if (isset($_POST['Add'])) {
                                 });
                             </script>
                         </div>
-                            <input type="submit" class="btn btn-success" name="Add" value="บันทึก" style="float: right">
+	            <input type="submit" class="btn btn-success" name="Add" value="บันทึก" style="float: right">
                     </form>
                 </div>
             </div>

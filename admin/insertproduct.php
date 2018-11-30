@@ -9,16 +9,54 @@ if (!$helper->checkLogin()) {
     $helper->redirectLogin();
     exit();
 }
+
 if (isset($_POST['Add'])) {
-    $ID = rand(0, 9999);
-    $name = $_POST['product_name'];
-    $detail = $_POST['product_detail'];
-    $date = $_POST['product_date'];
-    $price = $_POST['product_price'];
-    $quy = "INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`,`Admin_ID`) VALUES($ID,'$name','$detail','$date',$price, 'static/images/image-not-found.png', 1)";
-    $result = $db->query($quy);
+
+    $target_dir = "C:\\xampp\htdocs\webpro\static\images";
+    $target_file = $target_dir . "\\" . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+    if (isset($_POST["Add"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if ($check !== false) {
+
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+// Check if file already exists
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        echo $target_file;
+        $uploadOk = 0;
+    }
+
+// Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $ID = rand(0, 9999);
+            $name = $_POST['product_name'];
+            $detail = $_POST['product_detail'];
+            $date = $_POST['product_date'];
+            $price = $_POST['product_price'];
+            $pic = "static/images/" . basename($_FILES["fileToUpload"]["name"]);
+            $quy = "INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`,`Admin_ID`) VALUES($ID,'$name','$detail','$date',$price, '$pic', 1)";
+            $result = $db->query($quy);
+            echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
 
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,7 +113,7 @@ if (isset($_POST['Add'])) {
             <div class="panel-heading">เขียนบทความใหม่</div>
             <div class="panel-body">
                 <div class="container" style="width: 80%">
-                    <form method="POST" nctype="multipart/form-data">
+                    <form method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
                             <input type="text" class="form-control" name="product_name" require>
@@ -83,7 +121,7 @@ if (isset($_POST['Add'])) {
                         <br>
                         <label>
                             ภาพหน้าปก : <span style="color:red">*</span>รูปที่ทำการอัพโหลดต้องมีขนาด 1370 x 700 Pixels
-                            <br><br><input type="file" name="files">
+                            <br><br>    <input type="file" name="fileToUpload" id="fileToUpload">
                         </label>
                         <br>
                         <br>
