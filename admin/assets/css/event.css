@@ -1,5 +1,6 @@
-body {
-    font-size: 18px;
+body{
+	font-family: 'supermarketregular', 'supermarketregular';
+	font-size: 150%;
 }
 table th{
     text-align: center;

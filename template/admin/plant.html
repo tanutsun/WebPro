@@ -9,6 +9,10 @@
     <link href="../../admin/assets/option/vendors//bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../../admin/assets/option/build/css/custom.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../admin/assets/option/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
     <!-- jQuery -->
     <script src="../../admin/assets/option/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -16,13 +20,10 @@
     <!-- Datatable-->
     <script src="../../admin/assets/option/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="../../admin/assets/option/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <!-- Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-        crossorigin="anonymous">
     <script>
-        $(function(){
-                $('#myTable').dataTable();
-            });
+        $(function () {
+            $('#myTable').dataTable();
+        });
     </script>
 
     <link rel="stylesheet" href="../../admin/assets/css/event.css">
@@ -35,8 +36,9 @@
                 <img src="../../admin/assets/images/navbar.png" style="margin-left: 1%;">
                 <ul class="nav navbar-nav navbar-right">
                     <a href="login.html">
-                        <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%">LOGOUT</button>
                     </a>
+                    <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%" data-toggle="modal"
+                        data-target="#myModal">LOGOUT</button>
                     <!--เมนูด้านขวา -->
                 </ul>
             </nav>
@@ -64,8 +66,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -73,8 +75,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -82,8 +84,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -91,8 +93,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -100,8 +102,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -109,8 +111,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -118,8 +120,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -127,8 +129,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -136,8 +138,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -145,8 +147,8 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -154,14 +156,32 @@
                         <td>กิจกรรมน้ำยาล้างจาน</td>
                         <td>27/02/40</td>
                         <td>
-                            <a href="" class="btn btn-warning"><i class="far fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                            <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                 </tbody>
 
 
             </table>
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="background-color: red; color: white;">
+                <center>
+                    <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i>
+                    <h1>ทำการยืนยันเพื่อออกจากระบบ</h1>
+                    <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
+                    <a href="login.html">
+                        <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
+                    </a>
+                </center>
+            </div>
+
+        </div>
     </div>
 </body>
 

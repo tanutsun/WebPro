@@ -10,3 +10,14 @@ body{
     background: -moz-linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(rgb(243, 209, 84), rgb(252, 252, 252)); 
 }
+.textedit{
+  width: 20%;
+  border-radius: 5%;
+  text-align: center;
+  margin: 1%;
+  color: #ffff;
+}
+.colorbutton{
+  background-color: #4e95d2;
+  border-radius: 60%;
+}

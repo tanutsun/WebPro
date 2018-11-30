@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>บึงบัว</title>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <!-- Bootstrap -->
+    <link href="../../admin/assets/option/vendors//bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="../../admin/assets/option/build/css/custom.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../admin/assets/option/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- jQuery -->
+    <script src="../../admin/assets/option/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../admin/assets/option/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Datatable-->
+    <script src="../../admin/assets/option/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../../admin/assets/option/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#myTable').dataTable();
+        });
+    </script>
+
+    <link rel="stylesheet" href="../../admin/assets/css/event.css">
+</head>
+
+<body>
+    <div class="top_nav">
+        <div class="nav_menu">
+            <nav class="">
+                <img src="../../admin/assets/images/navbar.png" style="margin-left: 1%;">
+                <ul class="nav navbar-nav navbar-right">
+                    <a href="login.html">
+                    </a>
+                    <button class=" btn-lg btn-danger" type="submit" style="margin-top:25px;width: 12%" data-toggle="modal"
+                        data-target="#myModal">LOGOUT</button>
+                    <!--เมนูด้านขวา -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container" style="width:80%">
+
+        <h1>รายการการสั่งซื้อสินค้า</h2>
+            <hr>
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr id="tablehead">
+                        <th>ID</th>
+                        <th>รายการสินค้า</th>
+                        <th>จำนวนสินค้า</th>
+                        <th>ยอดรวม</th>
+                        <th>วันที่สั่ง</th>
+                        <th>สถานะ</th>
+                        <th>ดูรายละเอียด</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>00</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>น้ำยาล้างจาน</td>
+                        <td>10</td>
+                        <td>300</td>
+                        <td>27/02/40</td>
+                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
+                        <td>
+                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+
+
+            </table>
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content" style="background-color: red; color: white;">
+                <center>
+                    <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i>
+                    <h1>ทำการยืนยันเพื่อออกจากระบบ</h1>
+                    <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
+                    <a href="login.html">
+                        <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%" >ยืนยัน</button>
+                    </a>
+                </center>
+            </div>
+
+        </div>
+    </div>
+    <div id="myModal2" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+    
+                <!-- Modal content-->
+                <div class="modal-content" >
+                    <center>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1>รายการการสั่งซื้อ</h1>
+                        <hr style="color: black;width: 80%;">
+                        <table class="table table-bordered" style="background-color:white;">
+                                <thead>
+                                    <tr id="tablehead" style="background-color:white;">
+                                        <th>รายการสินค้า</th>
+                                        <th>ชื่อสินค้า</th>
+                                        <th>จำนวนสินค้า</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color:white;">
+                                        <td>00</td>
+                                        <td>น้ำยาล้างจาน</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr style="background-color:white;"> 
+                                            <td></td>
+                                            <td>ยอดรวม</td>
+                                            <td>500</td>
+                                        </tr>
+                                </tbody>
+                
+                
+                            </table>
+                        <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ยังไม่ได้ส่งสินค้า</button>
+                        <a href="">
+                            <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">จัดส่งสินค้าแล้ว</button>
+                        </a>
+                    </center>
+                </div>
+    
+            </div>
+        </div>
+        <div id="myModal3" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+        
+                    <!-- Modal content-->
+                    <div class="modal-content" style="background-color: black; color: white;">
+                        <center>
+                                <div class="picture">
+                                        <center>
+                                            <img src="../../admin/assets/images/login.png" style="width:320px;margin-bottom: 2%;margin-top: 5%; ">
+                                        </center>
+                                    </div>
+                            <h1>คุณต้องการทำการแก้สถานะใช่ไหม</h1><br>
+                            <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
+                            <a href="">
+                                <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
+                            </a>
+                        </center>
+                    </div>
+        
+                </div>
+            </div>
+</body>
+
+</html>
