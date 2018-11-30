@@ -1,4 +1,6 @@
 <?php
+if(isset($_POST['submit'])) {
+
 $target_dir = "C:\\xampp\htdocs\webpro\upload\images";
 $target_file = $target_dir . "\\" .basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -33,4 +35,18 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+    
+}
 ?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<form method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+</body>
+</html>
