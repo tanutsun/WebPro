@@ -29,7 +29,7 @@ if (isset($_POST['Add'])) {
     $detail = $_POST['plant_detail'];
     $date = $_POST['plant_date'];
     $q = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
-     VALUES($ID, $name, $detail, $date, 'upload/images/image-not-found.png', 1,00)";
+     VALUES($ID, $name, $detail, $date, 'static/images/image-not-found.png', 1,00)";
     $result = $db->query($q);
 }
 ?>

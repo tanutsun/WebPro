@@ -45,7 +45,7 @@ if (isset($_POST['Add'])) {
             $detail = $_POST['plant_detail'];
             $date = $_POST['plant_date'];
             $mapid = $_POST['Map_id'];
-            echo $pic = "upload/images/" . basename($_FILES["fileToUpload"]["name"]);
+            echo $pic = "static/images/" . basename($_FILES["fileToUpload"]["name"]);
             $qu = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
      VALUES($ID, '$name', '$detail', '$date', '$pic', 1, '$mapid')";
             $result = $db->query($qu);

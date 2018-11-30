@@ -44,7 +44,7 @@ if (isset($_POST['Add'])) {
             $name = $_POST['Activity_name'];
             $detail = $_POST['Activity_detail'];
             $date = $_POST['Activity_date'];
-            $pic = "upload/images/" . basename($_FILES["fileToUpload"]["name"]);
+            $pic = "static/images/" . basename($_FILES["fileToUpload"]["name"]);
 
             $qu = "INSERT INTO `activity` (`Activity_ID`, `Activity_Name`, `Activity_Detail`, `Activity_Date`, `Admin_ID`,`Activity_Pic`)
       VALUES($ID, '$name', '$detail', '$date', 1,'$pic')";

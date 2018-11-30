@@ -15,7 +15,7 @@ if (isset($_POST['Add'])) {
     $detail = $_POST['product_detail'];
     $date = $_POST['product_date'];
     $price = $_POST['product_price'];
-    $quy = "INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`,`Admin_ID`) VALUES($ID,'$name','$detail','$date',$price, 'upload/images/image-not-found.png', 1)";
+    $quy = "INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`,`Admin_ID`) VALUES($ID,'$name','$detail','$date',$price, 'static/images/image-not-found.png', 1)";
     $result = $db->query($quy);
 
 }
