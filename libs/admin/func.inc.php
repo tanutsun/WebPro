@@ -52,6 +52,18 @@ class helperAdmin
         return $plant = $db->query($sql);
 
     }
+
+    /**  */
+    public function PlantQueryOne($db, $id)
+    {
+        $sql = "SELECT * FROM plant left join map on plant.Map_ID = map.Map_ID where Plant_ID = '$id'";
+        $stmt = $db->prepare($sql); 
+        $stmt->execute(); 
+        $row = $stmt->fetch();
+        return $row;
+
+    }
+
     /**  */
     public function EventQuery($db)
     {

@@ -103,7 +103,7 @@ while ($row = $event->fetch()) {
     echo "<td>" . $row['Activity_Detail'] . "</td>";
     echo "<td>" . $row['Activity_Date'] . "</td>";
     echo "<td>" . "<img src=" . "../" . $row['Activity_Pic'] . " with='35px' height='35px'/" . "</td>";
-    echo "<td>" . "<button class='deletedata' value=" . $row['Activity_ID'] . ">Delete</button>" . "</td>";
+    echo "<td>" . "<button class='editdata' value=" . $row['Activity_ID'] . ">Edit</button><button class='deletedata' value=" . $row['Activity_ID'] . ">Delete</button>" . "</td>";
     echo "</tr>";
 }
 ?>
