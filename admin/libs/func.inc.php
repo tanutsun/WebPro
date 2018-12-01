@@ -39,7 +39,7 @@ class helperAdmin
 
         return;
     }
-/** */
+    /** */
     public function productQuery($db)
     {
         $sql = "SELECT * FROM product";
@@ -52,13 +52,26 @@ class helperAdmin
         return $plant = $db->query($sql);
 
     }
+    /**  */
+    public function productmodal($db,$id)
+    {
+        $sql = "SELECT * FROM sell WHERE Sell_ID=" . $id . " LIMIT 1";
+        return $modal = $db->query($sql);
 
+    }
+    /** */
+    public function ProductPending($db)
+    {
+        $sql = "SELECT * FROM sell Where Status ='pending' or Status = 'paid'";
+        return $productlist = $db->query($sql);
+
+    }
     /**  */
     public function PlantQueryOne($db, $id)
     {
         $sql = "SELECT * FROM plant left join map on plant.Map_ID = map.Map_ID where Plant_ID = '$id'";
-        $stmt = $db->prepare($sql); 
-        $stmt->execute(); 
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
         $row = $stmt->fetch();
         return $row;
 
