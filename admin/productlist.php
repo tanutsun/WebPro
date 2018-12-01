@@ -11,8 +11,6 @@ if (!$helper->checkLogin()) {
 
 }
 $productlist = $helper->ProductPending($db);
-$modal;
-echo 'test';
 // Include database connection
 // if (isset($_POST['rowid'])) {
 //     $id = $_POST['rowid']; //escape string
@@ -52,19 +50,30 @@ echo 'test';
             $('#myTable').dataTable();
         });
 
-        $(document).ready(function(){
-    $('#myModal2').on('show.bs.modal', function (e) {
-        var rowid = $(e.relatedTarget).data('id');
-        $.ajax({
-            type : 'post',
-            url:location.pathname, //Here you will fetch records 
-            data :  {'rowid':rowid}, //Pass $id
-            success : function(data){
-            $('.fetched-data').html(data);//Show fetched data from database
-            }
-        });
-     });
-});
+//         $(document).ready(function(){
+//     $('#myModal2').on('show.bs.modal', function (e) {
+//         var rowid = $(e.relatedTarget).data('id');
+//         console.log(rowid , location.pathname)
+//         $.ajax({
+//             type : 'get',
+//             url:location.pathname+'?id='+rowid, //Here you will fetch records 
+//             data :  {'rowid':rowid}, //Pass $id
+//             success : function(data){
+//             $('.fetched-data').html(data);//Show fetched data from database
+//             }
+//         });
+//      });
+// });
+$("#myModal2").on('show.bs.modal', function(event){
+        var button = $(event.relatedTarget);           
+        var id = button.data('formid');
+        //alert(id);        
+        $.get(location.pathname+'id='+id,
+            function(data) {
+                console.log(data)
+             $("#myModal2").html(data);   
+                });
+            });
 
     </script>
 
@@ -159,23 +168,30 @@ echo 'test';
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php
-                                if (isset($_POST['rowid'])) {
-                                    $id = $_POST['rowid'];
+                    <?php 
+                    if (isset($_REQUEST['id'])) {
 
-                                }
-                                $modal = $helper->productmodal($db, $id);
-                                ?>
-                             <?php 
+                        $id = $_REQUEST['id'];
+                        echo $id;
+                        // while ($row = $modal->fetch()) {
+                            //     echo "<tr>";
+                            //     echo "<td>" . $row['Sell_ID'] . "</td>";
+                            //     echo "<td>" . $row['All_Product'] . "</td>";
+                            //     echo "<td>" . $row['Total_Price'] . " บาท" . "</td>";
+                            //     echo "</tr>";
+                            // }
+                    }
+                    ?>
+                            //  <?php 
 
-                            while ($row = $modal->fetch()) {
-                                echo "<tr>";
-                                echo "<td>" . $row['Sell_ID'] . "</td>";
-                                echo "<td>" . $row['All_Product'] . "</td>";
-                                echo "<td>" . $row['Total_Price'] . " บาท" . "</td>";
-                                echo "</tr>";
-                            }
-                            ?>
+                            // while ($row = $modal->fetch()) {
+                            //     echo "<tr>";
+                            //     echo "<td>" . $row['Sell_ID'] . "</td>";
+                            //     echo "<td>" . $row['All_Product'] . "</td>";
+                            //     echo "<td>" . $row['Total_Price'] . " บาท" . "</td>";
+                            //     echo "</tr>";
+                            // }
+                            // ?>
                                 </tbody>
                 
                 
