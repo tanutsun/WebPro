@@ -130,7 +130,7 @@ if (isset($_POST['Add'])) {
                 echo "<td>" . $row['Plant_Detail'] . "</td>";
                 echo "<td>" . $row['Plant_Date'] . "</td>";
                 echo "<td>" . "<img src=" . "../" . $row['Plant_Pic'] . " with='35px' height='35px'/" . "</td>";
-                echo "<td>" . "<a href='editplant.php?id=".$row['Plant_ID']."'><button class='editdata'>Edit</button></a><button class='deletedata' value=" . $row['Plant_ID'] . ">Delete</button>" . "</td>";
+                echo "<td>" . "<a href='editplant.php?id=" . $row['Plant_ID'] . "'><button class='editdata'>Edit</button></a><button class='deletedata' value=" . $row['Plant_ID'] . ">Delete</button>" . "</td>";
 
                 echo "</tr>";
             }
