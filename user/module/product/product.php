@@ -74,70 +74,38 @@
         <div class="container-fluid">
 
             <div class="row m-0 pt-5">
+           <?php
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL);
+                     $con=mysqli_connect("localhost","root","","webpro");
+                    $con->set_charset("utf8");
+                    $sql="SELECT Product_ID,Product_Name,Product_Pic FROM product ";                   
+                    $result=mysqli_query($con,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                    $Product_ID =$row['Product_ID'];
+                    $Product_Name=$row['Product_Name'];
+                    $Product_Pic=$row['Product_Pic'];
+                  
+                 ?> 
+
                 <div class="col-sm-4">
                     <div class="row m-0">
                         <div class="col-sm-12">
-                            <img src="../../img/type-product6.jpg" style="width:100%;  height:250px;">
+                            <img src="../../../<?php echo $Product_Pic; ?>" style="width:100%;  height:250px;">
                         </div>
                         <div class="col-sm-12 pt-3">
-                            <a href="detailproduct.php?Product_ID=7"><p class="text-center">สบู่สมุนไพร</p></a>
+                            <a href="detailproduct.php?Product_ID=<?php echo $Product_ID;?>"><p class="text-center"><?php echo $Product_Name;?></p></a>
                         </div>
                     </div>          
                 </div>
-                <div class="col-sm-4">
-                    <div class="row m-0">
-                        <div class="col-sm-12">
-                            <img src="../../img/type-product2.jpg" style="width:100%;  height:250px;">
-                        </div>
-                        <div class="col-sm-12 pt-3">
-                            <a href="detailproduct.php?Product_ID=2"><p class="text-center">กล้วยตาก</p></a>
-                        </div>
-                    </div>          
-                </div>
-                <div class="col-sm-4">
-                    <div class="row m-0">
-                        <div class="col-sm-12">
-                            <img src="../../img/type-product3.jpg" style="width:100%;  height:250px;">
-                        </div>
-                        <div class="col-sm-12 pt-3">
-                            <a href="detailproduct.php?Product_ID=6"><p class="text-center">น้ำยาซักผ้า</p></a>
-                        </div>
-                    </div>          
-                </div>
+               <?php
+                    }
+                    ?>
+                
             </div>
 
-            <div class="row m-0 pt-5">
-                <div class="col-sm-4">
-                    <div class="row m-0">
-                        <div class="col-sm-12">
-                            <img src="../../img/type-product4.jpg" style="width:100%;  height:250px;">
-                        </div>
-                        <div class="col-sm-12 pt-3">
-                            <a href="detailproduct.php?Product_ID=5"><p class="text-center">น้ำยาล้างจาน</p></a>
-                        </div>
-                    </div>          
-                </div>
-                <div class="col-sm-4">
-                    <div class="row m-0">
-                        <div class="col-sm-12">
-                            <img src="../../img/type-product5.jpg" style="width:100%;  height:250px;">
-                        </div>
-                        <div class="col-sm-12 pt-3">
-                            <a href="detailproduct.php?Product_ID=7"><p class="text-center">สบู่สมุนไพร</p></a>
-                        </div>
-                    </div>          
-                </div>
-                <div class="col-sm-4">
-                    <div class="row m-0">
-                        <div class="col-sm-12">
-                            <img src="../../img/type-product1.jpg" style="width:100%;  height:250px;">
-                        </div>
-                        <div class="col-sm-12 pt-3">
-                            <a href="detailproduct.php?Product_ID=1"><p class="text-center">สมุนไพรไข่เค็ม</p></a>
-                        </div>
-                    </div>          
-                </div>
-            </div>
+            
          
             <nav aria-label="Page navigation example" style="padding-top:120px;">
                 <ul class="pagination justify-content-end">

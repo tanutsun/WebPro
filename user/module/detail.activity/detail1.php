@@ -1,6 +1,6 @@
 <?php 
   require_once(__DIR__ . "/../../libs/config.inc.php");
-  
+  $ID = $_GET["Activity_ID"];
   ?>
 <html>
     <head>
@@ -72,21 +72,41 @@
 
         <!--stat detail activity--> 
       
+        <?php 
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+                    $con=mysqli_connect("localhost","root","","webpro");
+                    $con->set_charset("utf8");
+                    $sql="SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic FROM Activity  where Activity_ID= $ID ";
+                    
+                    $result=mysqli_query($con,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                        $Activity_ID =$row['Activity_ID'];
+                        $Activity_Name=$row['Activity_Name'];
+                        $Activity_Detail=$row['Activity_Detail'];
+                        $Activity_Pic =$row['Activity_Pic'];
+                  
+
+                  
+
+                    ?>
         
             <div class="container" style="padding-bottom: 20%;">
           
 				<center>
-       			 <img src="../../img/activity/activity1.2.jpg" style="width:550px; height:450px; padding-top:7%;">
+       			 <img src="../../../<?php echo $Activity_Pic; ?>" style="width:550px; height:450px; padding-top:7%;">
         		 <br><br>
-        			<h2><b>กิจกรรมรวมใจปลูกป่า</b></h2>
+        			<h2><b><?php echo $Activity_Name ;?></b></h2>
                 </center>
                 <br>
     				<h3 style="padding-top:5%"><b>รายละเอียดกิจกรรม</b></h3><hr>
-    				
-                    <br>- ได้จัดทำขึ้นในวันที่ 23 ตุลาคม 2561 ณ.ชุมชนบึงบัว
-                    <br>- ตั้งเเต่เวลา 9.00-12.00 
-                    <br>## งานนี้ฟรีตลอดงาน เเถมยังได้ผลิตภัณฑ์ที่ผู้เข้าร่วมได้ทำกลับบ้านไปใช้ได้ด้วย</h5>
+    				<?php echo $Activity_Detail; ?>
+                   </h5>
                     </div>
+                    <?php 
+                    }
+                    ?>
 
 
         <footer>

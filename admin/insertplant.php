@@ -11,7 +11,7 @@ if (!$helper->checkLogin()) {
 }
 if (isset($_POST['Add'])) {
 
-    $target_dir = "C:\\xampp\htdocs\webpro\upload\images";
+    $target_dir = "C:\\xampp\htdocs\webpro\static\images";
     $target_file = $target_dir . "\\" . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
