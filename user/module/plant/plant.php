@@ -1,3 +1,7 @@
+<?php 
+require_once(__DIR__ . "/../../libs/config.inc.php");
+?>
+
 <html>
 
 <head>
@@ -10,63 +14,58 @@
 
     <title> บึงบัว </title>
     <style>
-
         .font {
-             font-family: 'Supermarket';
-        }
-        @font-face {
-            font-family: 'Supermarket';
-            src: url('../../font/Supermarket/supermarket.ttf');
-            src: local('Souses Regular'), local('Supermarket Web'),
-            url("../../font/Supermarket/supermarket.woff") format("woff"),
-            url("../../font/Supermarket/supermarket.otf") format("opentype"),
-            url("../../font/Supermarket/supermarket.svg#grablau") format("svg");
-        }
-        .bg-nav{
-            background-color:#215732;
-        }
-        footer{
-            background-color:#215732;
-            height:10%;
-            margin: 0px;
-            padding: 10px; 
-            color: white;
-        }
-        .fa-facebook{
-            font-size:14px;
-            color:white
-        }
-        
-        .container .row {
-            padding-top: 5%;
-        }
-        .col-sm .plantDetail{
-            padding-left: auto;
-        }
-        .plantImg {
-            display: grid;
-            width: auto;
-            height: 250px;
-        }
-        h5 {
-            padding-top: 1.5em;
-        }
-        .detail {
-            font-size: large;
-            text-indent: 1.8em;
-        }
-        .more {
-            display: none;
-        }
+                 font-family: 'Supermarket';
+            }
 
-        .btn-read{
-            background-color:grey;
-            border-radius: 25px;
-            color:black;
-            font-size:18px;
-        }
+            @font-face {
+                font-family: 'Supermarket';
+                src: url('../../font/Supermarket/supermarket.ttf');
+                src: local('Souses Regular'), local('Supermarket Web'),
+                url("../../font/Supermarket/supermarket.woff") format("woff"),
+                url("../../font/Supermarket/supermarket.otf") format("opentype"),
+                url("../../font/Supermarket/supermarket.svg#grablau") format("svg");
+            }
 
-    </style>
+            .bg-nav{
+                background-color:#215732;
+            }
+
+            footer{
+                background-color:#215732;
+                height:10%;
+                margin: 0px;
+                padding: 10px; 
+                color: white;
+            }
+
+            .fa-facebook{
+                font-size:14px;
+                color:white
+            }
+            
+            .container .row {
+                padding-top: 5%;
+            }
+            .col-sm .plantDetail{
+                padding-left: auto;
+            }
+            .plantImg {
+                display: grid;
+                width: auto;
+                height: 250px;
+            }
+            h5 {
+                padding-top: 1.5em;
+            }
+            .detail {
+                font-size: large;
+                text-indent: 1.8em;
+            }
+            .more {
+                display: none;
+            }
+        </style>
 </head>
 
 <body>
@@ -95,64 +94,77 @@
             </ul>
         </nav>
 
-
         <!-- Main Content -->
-        <div class="container-fluid">
-            <div class="row m-0 pt-5 pl-3 pr-3">
-                <div class="col-sm">
-                    <img class="plantImg" src="../../img/type-plant1.jpg" style="width:100%;  height:350px;">
-                </div>
-                <div class="col-sm">
-                    <h5><b>ต้นใบเตย</b></h5>
-                    <p class="plantDetail detail">
-                        ใบเตย จัดเป็นไม้ยืนต้นพุ่มเล็ก ขึ้นเป็นกอ มีใบเป็นใบเดี่ยวเรียงสลับเวียนเป็นเกลียวจนถึงยอดใบ ลักษณะของเป็นทางยาว สีเขียวเป็นมัน ...<span class="more">ใบค่อนข้างแข็งมีขอบใบเรียบ ซึ่งเราสามารถนำใบเตยมาใช้ได้ทั้งใบสดและใบแห้ง ในใบเตยจะมีกลิ่นหอมของน้ำมันหอมระเหย (Fragrant Screw Pine) โดยกลิ่นหอมของใบเตยนั้นมากจากสารเคมีที่ชื่อว่า 2-acetyl-1-pyrroline ซึ่งเป็นกลิ่นเดียวกันกับที่ได้ใน ข้าวหอมมะลิ ขนมปังขาว และดอกชมนาด</span> 
-                    </p>
-                    <a href="detailplant.php" class="btn btn-read">อ่านเพิ่มเติม</a>
+        <div class="container">
+        <?php 
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+                    $con=mysqli_connect("localhost","root","","webpro");
+                    $con->set_charset("utf8");
+                    $sql="SELECT Plant_ID,Plant_Name,Plant_Pic,Plant_Detail  FROM plant ";
+                    $result=mysqli_query($con,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                     $Plant_ID =$row['Plant_ID'];
+                    $Plant_Name=$row['Plant_Name'];
+                    $Plant_Pic=$row['Plant_Pic'];
+                    $Plant_Detail=$row['Plant_Detail'];
+
                    
-                </div>
-            </div>
-            <div class="row m-0 pt-5 pl-3 pr-3">
+                    ?>
+            <div class="row">
                 <div class="col-sm">
-                    <img class="plantImg" src="../../img/ไผ่.jpg" style="width:100%;  height:350px;">
+                    <img class="plantImg" src="<?php echo ROOT_URL."/".$Plant_Pic?>">
                 </div>
+
+                <form action ="detailplant.php" method="get">
                 <div class="col-sm">
-                    <h5><b>ต้นไผ่</b></h5>
+                    <h5><b><?php echo $Plant_Name ?></b></h5>
                     <p class="plantDetail detail">
-                    ไผ่ เป็นไม้พุ่มหลายชนิดและหลายสกุลใน วงศ์หญ้า (วงศ์ Poaceae; เดิมคือวงศ์ Gramineae) วงศ์ย่อย Bambusoideae เป็นไม้ไม่ผลัดใบใน ขึ้นเป็นกอ ลำต้นเป็นปล้องๆ เช่น ไผ่จีน (Arundinaria suberecta Munro) ไผ่ป่า (Bambusa arundinacea Willd.) ไผ่สีสุก (B. flexuosa Munro และ B. blumeana Schult.) ไผ่ไร่ (Gigantochloa albociliata Munro) ไผ่ดำ (Phyllostachys nigra Munro)
-                        <br><br><br>
+                        <?php  echo $Plant_Detail ?>
+                        <span class="more">ใบค่อนข้างแข็งมีขอบใบเรียบ ซึ่งเราสามารถนำใบเตยมาใช้ได้ทั้งใบสดและใบแห้ง ในใบเตยจะมีกลิ่นหอมของน้ำมันหอมระเหย (Fragrant Screw Pine) โดยกลิ่นหอมของใบเตยนั้นมากจากสารเคมีที่ชื่อว่า 2-acetyl-1-pyrroline ซึ่งเป็นกลิ่นเดียวกันกับที่ได้ใน ข้าวหอมมะลิ ขนมปังขาว และดอกชมนาด</span> 
                     </p>
-                    <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=4" class="btn btn-read">อ่านเพิ่มเติม</a>
-                
-                </div>
-            </div>
-            <div class="row m-0 pt-5 pl-3 pr-3">
-                <div class="col-sm">
-                    <img class="plantImg" src="../../img/type-plant3.jpg" style="width:100%;  height:350px;">
-                </div>
-                <div class="col-sm">
-                    <h5><b>ต้นมะม่วง</b></h5>
-                    <p class="plantDetail detail">
-                        มะม่วงเป็นไม้ยืนต้นในสกุล Mangifera ซึ่งเป็นไม้ผลเมืองร้อนในวงศ์ Anacardiaceae (กลุ่มเดียวกับถั่วพิสตาชีโอและมะม่วงหิมพานต์)  
-                        <br><br><br>
-                    </p>
-                    <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=11" class="btn btn-read">อ่านเพิ่มเติม</a>
-                    
-                </div>
-            </div>
-            <div class="row m-0 pt-5 pl-3 pr-3">
-                <div class="col-sm">
-                    <img class="plantImg" src="../../img/type-plant4.jpg" style="width:100%;  height:350px;">
-                </div>
-                <div class="col-sm">
-                    <h5><b>ต้นมะละกอ</b></h5>
-                    <p class="plantDetail detail">
-                        ไม้ล้มลุกอายุหลายปีขนาดใหญ่ อายุหลายปี สูง 2-8 ม. ลำต้นตั้งตรงมักไม่แตกกิ่ง ไม่มีแก่น ต้นอวบน้ำ มีรอยแผลเป็นของก้านใบที่หลุดร่วงไป
-                        <br><br><br>
-                    </p>
-                    <a href="\webpro/user/module/plan/detailplan.php?Plant_ID=13" class="btn btn-read">อ่านเพิ่มเติม</a>
+                    <a href="detailplant.php?Plant_ID=<?= $Plant_ID; ?>">อ่านเพิ่มเติม</a>
+                    <br><br>
+                    <img src="../../img/locationPin.png" data-toggle="modal" data-target="#modalMiniMap_1" >
+                    <div class="modal fade modal-fullscreen " id="modalMiniMap_1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&timesb;</button>
+                                </div>
+                            
+                                <div class="modal-body ">
+                                  
+                                  
+        <div id="googleMap"></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.3984763828053!2d100.7845000143117!3d
+        13.753617300958133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6b9b41bb0e0664!2z4Lio4Li54LiZ4
+        Lii4LmM4LiB4Liy4Lij4LmA4Lij4Li14Lii4LiZ4Lij4Li54LmJ4LiE4LiZ4LmA4Lih4Li34Lit4LiHIOC4muC4tuC4h-C4muC4seC4pw!5e
+        1!3m2!1sth!2sth!4v1540799335281" width="70%" height="70%" frameborder="0" style="border:0" ></iframe> 
     
+        </form>
+        <script>
+            function myMap() {
+                var mapProp = {
+                    center: new google.maps.LatLng(13.754784, 100.786722),
+                    zoom: 5,
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            }
+        </script>
+    
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                    </div><?php } ?>
+           
 
             <!--Pagination-->
             <nav aria-label="Page navigation example" style="padding-top:120px;">

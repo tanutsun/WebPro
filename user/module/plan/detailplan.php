@@ -73,7 +73,7 @@ $ID = $_GET["Plant_ID"];
                     <a class="nav-link" href="/webpro/user/module/product/product.php">ผลิตภัณฑ์</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="plan.php">พันธุ์พืช</a>
+                    <a class="nav-link" href="plant.php">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/webpro/user/module/activity/activity.php">กิจกรรม</a>

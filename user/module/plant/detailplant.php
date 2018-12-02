@@ -1,3 +1,8 @@
+<?php 
+require_once(__DIR__ . "/../../libs/config.inc.php");
+$ID = $_GET["Plant_ID"];
+?>
+
 <html>
     <head>
         <!-- Required meta tags -->
@@ -12,6 +17,7 @@
             .font {
                  font-family: 'Supermarket';
             }
+
             @font-face {
                 font-family: 'Supermarket';
                 src: url('../../font/Supermarket/supermarket.ttf');
@@ -51,18 +57,6 @@
                 font-size: large;
                 text-indent: 1.8em;
             }
-
-            .btn-sub{
-                background-color:#FF9C2C;
-                border-radius: 25px;
-                color:whitesmoke;
-            }
-            .btn-back{
-                background-color:#2054FF;
-                border-radius: 25px;
-                color:whitesmoke;
-            }
-
         </style>
     </head>
     <body>
@@ -79,7 +73,7 @@
                     <a class="nav-link" href="/webpro/user/module/product/product.php">ผลิตภัณฑ์</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="plan.php">พันธุ์พืช</a>
+                    <a class="nav-link" href="plant.php">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/webpro/user/module/activity/activity.php">กิจกรรม</a>
@@ -90,32 +84,54 @@
                 </li>
             </ul>
         </nav>
-
-
         <!-- Main Content -->
-        <div class="container-fluid">
-            <div class="row pt-5 pb-5">
-                <div class="col-sm-8">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <center><img src="../../img/plant1.jpg" style="width:90%; height:450px;"></center>
-                        </div>
-                    <div class="col-sm-10 offset-sm-1 pt-3">
-                        <h5 class="text-center">ต้นใบเตย</h5>
-                            <p class="detail">
-                                ใบเตย จัดเป็นไม้ยืนต้นพุ่มเล็ก ขึ้นเป็นกอ มีใบเป็นใบเดี่ยวเรียงสลับเวียนเป็นเกลียวจนถึงยอดใบ ลักษณะของเป็นทางยาว สีเขียวเป็นมัน ใบค่อนข้างแข็งมีขอบใบเรียบ ซึ่งเราสามารถนำใบเตยมาใช้ได้ทั้งใบสดและใบแห้ง ในใบเตยจะมีกลิ่นหอมของน้ำมันหอมระเหย (Fragrant Screw Pine) โดยกลิ่นหอมของใบเตยนั้นมากจากสารเคมีที่ชื่อว่า 2-acetyl-1-pyrroline ซึ่งเป็นกลิ่นเดียวกันกับที่ได้ใน ข้าวหอมมะลิ ขนมปังขาว และดอกชมนาด
-                            </p>
-                        <br>
-                        <img src="../../img/locationPin.png"> <a data-toggle="modal" href="#modalMiniMap"><p style="display: inline;font-size: large">คลิกเพื่อดูแผนที่</p></a>
-                        <div class="modal fade modal-fullscreen " id="modalMiniMap" role="dialog">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&timesb;</button>
-                                    </div>
-                                    <div class="modal-body ">
-                                    <div id="googleMap"></div>
+        
+
+
+         <?php 
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+                    $con=mysqli_connect("localhost","root","","webpro");
+                    $con->set_charset("utf8");
+                    $sql="SELECT Plant_ID,Plant_Name,Plant_Pic,Plant_Detail FROM plant  where Plant_ID= $ID ";
+                    
+                    $result=mysqli_query($con,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                    $Plant_ID =$row['Plant_ID'];
+                    $Plant_Name=$row['Plant_Name'];
+                    $Plant_Pic=$row['Plant_Pic'];
+                    $Plant_Detail=$row['Plant_Detail'];
+                  
+
+                  
+
+                    ?>
+        <div class="container" style="padding-bottom: 7%;">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <img class="plantImg" src="<?php echo ROOT_URL."/".$Plant_Pic?>">
+                    <br><br>
+                    <h3 align="center"><b><?php echo $Plant_Name; ?></b></h3>
+                    <br>
+                </div>
+                <div class="col-md-8 offset-md-2">
+                    <p class="detail">
+                        <?php echo $Plant_Detail; ?>
+                    </p>
+                    <br>
+                    <img src="../../img/locationPin.png"> <a data-toggle="modal" href="#modalMiniMap"><p style="display: inline;font-size: large">คลิกเพื่อดูแผนที่</p></a>
+                    <div class="modal fade modal-fullscreen " id="modalMiniMap" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&timesb;</button>
+                                </div>
+                                <div class="modal-body ">
+                                    
+                                                         
+        <div id="googleMap"></div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.3984763828053!2d100.7845000143117!3d
         13.753617300958133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6b9b41bb0e0664!2z4Lio4Li54LiZ4
         Lii4LmM4LiB4Liy4Lij4LmA4Lij4Li14Lii4LiZ4Lij4Li54LmJ4LiE4LiZ4LmA4Lih4Li34Lit4LiHIOC4muC4tuC4h-C4muC4seC4pw!5e
@@ -140,92 +156,15 @@
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
 
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         
-            <div class="col-sm-4">
-                <div class="row" >
-                    <div class="col-sm-10 p-3" style="background-color:#F8F8F8;">
-                        <form>
-                            <div class="form-group">
-                                <label for="FormControlSelect1"> จำนวนที่ต้องการซื้อ </label>
-                                <select class="form-control" id="FormControlSelect1" style="width:20%">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div> 
-                        ช่องทางการชำระเงิน:
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" name="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">PromptPay</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" name="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Paypal</label>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="comment">ที่อยู่ในการจัดส่ง</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
-                        </div> 
-                        <center>
-                            <button id="showModal" class="btn btn-sub" type="button" data-toggle="modal" data-target="#buyPlant">ซื้อสินค้า</button>
-                            <div class="modal fade modal-fullscreen " id="buyPlant" role="dialog">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h3 class="modal-title w-100 text-center">ยืนยันรายละเอียดสินค้า</h3>
-                                            <button type="button" class="close" data-dismiss="modal">&timesb;</button>
-                                        </div>
-                                        <div class="modal-body ">
-                                            
-                                            <center>
-                                                <table style="align-self: auto">
-                                                    <tr>
-                                                        <td><label>ราคาต่อชิ้น : </label></td>
-                                                        <td><label id="price">150</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><label>จำนวนที่ต้องการซื้อ : </label></td>
-                                                        <td><label id="totalPlant">2</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><label>ราคารวม : </label></td>
-                                                        <td><label id="totalPrice">300</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><label id="payment">ชำระเงินผ่านทาง Paypal</label></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="2"><center><input class="btn btn-sub" type="submit" value="ยืนยัน"></center></td>
-                                                    </tr>
-                                                </table>
-                                            </center>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </center>                       
-                    </form>                        
-                </div>
-            </div>
-        </div>
-    </div>
-            <center>
-            <a href="plant.php" class="btn btn-back">กลับสู่หน้าพืชพันธุ์</a>
-            </center>
-            <br>
-        </div>
-
+        <?php }?>
         <!-- Footer -->
         <footer>
             <div class="row">
