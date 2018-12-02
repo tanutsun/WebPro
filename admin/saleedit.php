@@ -17,6 +17,8 @@ $Address=$_REQUEST['Address'];
 $SellDate=$_REQUEST['Sell_Date'];
 $Status =$_REQUEST['Status'];
 $ProductName =$_REQUEST['ProductName'];
+$Product_ID=$_REQUEST['Product_ID'];
+$Product_Quantity=$_REQUEST['Product_Quantity'];
 
 ?>
 
@@ -81,20 +83,21 @@ $ProductName =$_REQUEST['ProductName'];
                                         <th>ราคารวม</th>
                                     </tr>
 
-                                     <tr id="table" style="background-color:white;">
+                                    
+                                </thead>
+                                <tbody>
+                                
+                                <tr id="table" style="background-color:white;">
                                         <th>1</th>
                                         <th><?php echo $ProductName ;?></th>
                                         <th><?php echo $AllProduct;?></th>
                                         <th><?php echo $ToTalPrice;?></th>
                                     </tr>
-                                    
-                                </thead>
-                                <tbody>
                                 </tbody>
                 
                 
                             </table>
-                            <a href="productlist.php"><button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ยังไม่ได้ส่งสินค้า</button></a>
+                            <a href="salelist.php"><button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ยังไม่ได้ส่งสินค้า</button></a>
                             <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;"  data-toggle="modal" data-target="#myModal3">จัดส่งสินค้าแล้ว</button>
     </center>
     </div>
@@ -129,7 +132,7 @@ $ProductName =$_REQUEST['ProductName'];
                                     </div>
                             <h1>คุณต้องการทำการแก้สถานะใช่ไหม</h1><br>
                             <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                            <a href='productedit_action.php?Sell_ID="<?php echo $sell_ID; ?>"&Status="success"'>
+                            <a href='saleedit_action.php?Sell_ID=<?php echo $sell_ID; ?>&AllProduct=<?php echo $AllProduct;?>&Product_Quantity=<?php echo $Product_Quantity ;?>&Product_ID=<?php echo $Product_ID;?>&Status="success"'>
                             <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;"  >จัดส่งสินค้าแล้ว</button>
                         </a>
                         </center>

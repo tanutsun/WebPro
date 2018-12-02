@@ -73,6 +73,7 @@ $Orderalllist = $helper->OrderallPending($db);
                         <th>ยอดรวม</th>
                         <th>วันที่สั่ง</th>
                         <th>สถานะ</th>
+                        <th>หมายเหตุ</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,7 +96,7 @@ while ($row = $Orderalllist->fetch()) {
    // echo "<td>" . $Address. "</td>";
     echo "<td>" . $SellDate . "</td>";
     echo "<td>" . $Status . "</td>";
- //   echo "<td>" . "<a href='productedit.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-edit'></a>" . "</td>";
+    echo "<td>" . "<a href='saleview.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-search'></a>" . "</td>";
     echo "</tr>";
 }
 ?>
@@ -103,84 +104,13 @@ while ($row = $Orderalllist->fetch()) {
 
 
             </table>
-    </div>
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+            <center>
 
-            <!-- Modal content-->
-            <div class="modal-content" style="background-color: red; color: white;">
-                <center>
-                    <i class="fa fa-sign-out" style="font-size: 1000%;margin-top: 5%;"></i>
-                    <h1>ทำการยืนยันเพื่อออกจากระบบ</h1>
-                    <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                    <a href="<?php echo ROOT_URL."/admin/logout.php" ?>">
-                        <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%" >ยืนยัน</button>
-                    </a>
-                </center>
-            </div>
-
-        </div>
+                                        <a href="dashboard.php"><button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ย้อนกลับ</button></a>
+</center>
     </div>
-    <div id="myModal2" class="modal fade" role="dialog">
-            <div class="modal-dialog">
     
-                <!-- Modal content-->
-                <div class="modal-content" >
-                    <center>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h1>รายการการสั่งซื้อ</h1>
-                        <hr style="color: black;width: 80%;">
-                        <table class="table table-bordered" style="background-color:white;">
-                                <thead>
-                                    <tr id="tablehead" style="background-color:white;">
-                                        <th>รายการสินค้า</th>
-                                        <th>ชื่อสินค้า</th>
-                                        <th>จำนวนสินค้า</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="background-color:white;">
-                                        <td>00</td>
-                                        <td>น้ำยาล้างจาน</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr style="background-color:white;"> 
-                                            <td></td>
-                                            <td>ยอดรวม</td>
-                                            <td>500</td>
-                                        </tr>
-                                </tbody>
-                
-                
-                            </table>
-                        <button class=" btn-lg btn-danger" type="button" style="margin-top:25px;" data-dismiss="modal">กลับไปหน้าคำสั่งซื้อสินค้า</button>
-                    </center>
-                </div>
-    
-            </div>
-        </div>
-        <div id="myModal3" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-        
-                    <!-- Modal content-->
-                    <div class="modal-content" style="background-color: black; color: white;">
-                        <center>
-                                <div class="picture">
-                                        <center>
-                                            <img src="../../admin/assets/images/login.png" style="width:320px;margin-bottom: 2%;margin-top: 5%; ">
-                                        </center>
-                                    </div>
-                            <h1>คุณต้องการทำการแก้สถานะใช่ไหม</h1><br>
-                            <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                            <a href="">
-                                <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
-                            </a>
-                        </center>
-                    </div>
-        
-                </div>
-            </div>
+   
 </body>
 
 </html>

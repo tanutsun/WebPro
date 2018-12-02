@@ -14,6 +14,15 @@ $Countnotsent = $helper->CountProductlistnotsent($db);
 while ($row = $Countnotsent->fetch()) {
    $Count= $row['count(Sell_ID)'];
 }
+$Countall = $helper->Countoverall($db);
+while ($row = $Countall ->fetch()) {
+    $CountA= $row['count(Sell_ID)'];
+ }
+
+ $CountallProduct= $helper->CountProduct($db);
+while ($row = $CountallProduct ->fetch()) {
+    $CountP= $row['count(Product_ID)'];
+ }
 
 $dataGraph = $helper->sumProductGraph($db);
 
@@ -92,20 +101,20 @@ for($i = 0; $i< count($dataGraph); $i++){
         <div class="col-sm-4 textedit" style="margin-left: 20% ;background-color: darkolivegreen;">
                 <br><h3>คำสั่งซื้อของสินค้าที่ยังไม่ได้ส่ง</h3><br>
                 <h1> <?php echo $Count; ?></h1>
-                <a href="<?php echo ROOT_URL."/admin/productlist.php" ?>">
+                <a href="<?php echo ROOT_URL."/admin/salelist.php" ?>">
                     <button class=" btn-lg btn-primary colorbutton" type="submit" style="margin-bottom:25px;">ดูคำสั่งซื้อทั้งหมด</button>
                 </a>
             </div>
         <div class="col-sm-4 textedit" style="background-color: #6b2f40;" >
                 <br><h3>คำสั่งซื้อของสินค้าทั้งหมด</h3><br>
-            <h1>20</h1>
+            <h1><?php echo $CountA; ?></h1>
             <a href="<?php echo ROOT_URL."/admin/orderall.php" ?>">
                 <button class=" btn-lg btn-primary colorbutton" type="submit" style="margin-bottom:25px;">ดูคำสั่งซื้อทั้งหมด</button>
             </a>
         </div>
         <div class="col-sm-4 textedit" style="background-color: #2f476b">
                 <br><h3>จำนวนของสินค้าทั้งหมด</h3><br>
-            <h1>20</h1>
+            <h1><?php echo $CountP; ?></h1>
             <a href="<?php echo ROOT_URL."/admin/productall.php" ?>">
                 <button class=" btn-lg btn-primary colorbutton" type="submit" style="margin-bottom:25px;">ดูจำนวนสินค้าทั้งหมด</button>
             </a>
