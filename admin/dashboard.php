@@ -8,6 +8,11 @@ $helper = new helperAdmin($db);
 if(!$helper->checkLogin()){
     $helper->redirectLogin();
     exit();
+
+}
+$Countnotsent = $helper->CountProductlistnotsent($db);
+while ($row = $Countnotsent->fetch()) {
+   $Count= $row['count(Sell_ID)'];
 }
 ?>
 
@@ -56,8 +61,8 @@ if(!$helper->checkLogin()){
     <br><br><br><br><br><br><br><br>
     <div class="row" >
         <div class="col-sm-4 textedit" style="margin-left: 20% ;background-color: darkolivegreen;">
-                <br><h3>คำสั่งซื้อของสินค้า</h3><br>
-                <h1>20</h1>
+                <br><h3>คำสั่งซื้อของสินค้าที่ยังไม่ได้ส่ง</h3><br>
+                <h1> <?php echo $Count; ?></h1>
                 <a href="<?php echo ROOT_URL."/admin/productlist.php" ?>">
                     <button class=" btn-lg btn-primary colorbutton" type="submit" style="margin-bottom:25px;">ดูคำสั่งซื้อทั้งหมด</button>
                 </a>

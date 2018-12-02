@@ -43,7 +43,7 @@ $ProductName =$_REQUEST['ProductName'];
                 
                             </table>
                         <a href="productlist.php"><button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ยังไม่ได้ส่งสินค้า</button></a>
-                        <a href="">
+                        <a href='productedit_action.php?Sell_ID="<?php echo $sell_ID; ?>"&Status="success"'>
                             <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">จัดส่งสินค้าแล้ว</button>
                         </a>
                     </center>

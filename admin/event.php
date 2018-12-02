@@ -14,7 +14,7 @@ $event = $helper->EventQuery($db);
 if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
     $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
     if ($id > 0) {
-        $query = "DELETE FROM plant WHERE Activity_ID=" . $id . " LIMIT 1";
+        $query = "DELETE FROM activity WHERE Activity_ID=" . $id . " LIMIT 1";
         $result = $db->query($query);
         echo 'ok';
     } else {
@@ -55,6 +55,27 @@ if (isset($_POST['action']) && $_POST['action'] == 'deleteEntry') {
     <script>
          $(function(){
                 $('#myTable').dataTable();
+            });
+            var currentRow
+            $(document).on('click','.deletedata',function(){
+                var id = $(this).attr('value'); // Get the clicked id for deletion
+                currentRow = $(this).closest('tr'); // Get a reference to the row that has the button we clicked
+                console.log(id)
+                $.ajax({
+                    type:'POST',
+                    url:location.pathname, // sending the request to the same page we're on right now
+                    data:{'action':'deleteEntry','id':id},
+                    success:function(response){
+                        if (response == 'ok') {
+                            // Hide the row nicely and remove it from the DOM once the animation is finished.
+                            currentRow.slideUp(500,function(){
+                                currentRow.remove();
+                            })
+                        } else {
+                            // throw an error modally to let the user know there was an error
+                        }
+                    }
+                })
             });
     </script>
 
@@ -103,7 +124,7 @@ while ($row = $event->fetch()) {
     echo "<td>" . $row['Activity_Detail'] . "</td>";
     echo "<td>" . $row['Activity_Date'] . "</td>";
     echo "<td>" . "<img src=" . "../" . $row['Activity_Pic'] . " with='35px' height='35px'/" . "</td>";
-    echo "<td>" . "<button class='editdata' value=" . $row['Activity_ID'] . ">Edit</button><button class='deletedata' value=" . $row['Activity_ID'] . ">Delete</button>" . "</td>";
+    echo "<td>" . "<a href='editevent.php?id=" . $row['Activity_ID'] . "'><button class='editdata'>Edit</button><button class='deletedata' value=" . $row['Activity_ID'] . ">Delete</button>" . "</td>";
     echo "</tr>";
 }
 ?>

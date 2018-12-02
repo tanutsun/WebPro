@@ -9,6 +9,7 @@ if(!$helper->checkLogin()){
     $helper->redirectLogin();
     exit();
 }
+$Productalllist = $helper->ProductallPending($db);
 ?>
 
 <!DOCTYPE html>
@@ -76,94 +77,25 @@ if(!$helper->checkLogin()){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
+                <?php
+
+while ($row = $Productalllist->fetch()) {
+    $SellID=$row['Sell_ID'];
+    $ProductName=$row['Product_name'];
+    $AllProduct=$row['All_Product'];
+    $TotalPrice=$row['Total_Price'];
+    $Address=$row['Address'] ;
+    $SellDate=$row['Sell_Date'] ;
+    $Status=$row['Status'];
+    echo "<tr>";
+
+    echo "<td>" .$SellID . "</td>";
+    echo "<td>" .$ProductName . "</td>";
+    echo "<td>" .$AllProduct . "</td>";
+    echo "<td>" . "<a href='productedit.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-edit'></a>" . "</td>";
+    echo "</tr>";
+}
+?>
                 </tbody>
 
 
