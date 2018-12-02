@@ -10,13 +10,13 @@ if (!$helper->checkLogin()) {
     exit();
 }
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $plant = $helper->PlantQueryOne($db, $id);
 }
 
 if (isset($_POST['Edit'])) {
-    $ID = rand(0, 9999);
+    $ID = $_POST['plant_ID'];
     $name = $_POST['plant_name'];
     $detail = $_POST['plant_detail'];
     $date = $_POST['plant_date'];
@@ -26,16 +26,21 @@ if (isset($_POST['Edit'])) {
     $latlong = explode(',', $mapValue);
     $lat = trim($latlong[0]);
     $long = trim($latlong[1]);
-    
+
     $sql_update_map = "UPDATE map
                         SET Latitude = '$lat', Longtitude = '$long'
                         WHERE Map_ID = '$mapid';";
     $result = $db->query($sql_update_map);
-    
+
+
+    $quy = "UPDATE plant SET Plant_Name = '$name' , Plant_Detail = '$detail' , Plant_Date = '$date' , Map_ID='$mapid' WHERE Plant_ID = '$ID';";
+    $result = $db->query($quy);
 
     $qu = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
      VALUES($ID, '$name', '$detail', '$date', 'static/images/image-not-found.png', 1, '$mapid')";
     $result = $db->query($qu);
+    header("Location:plant.php");
+    exit();
 }
 
 ?>
@@ -100,6 +105,8 @@ if (isset($_POST['Edit'])) {
                 <div class="container" style="width: 80%">
                     <form method="POST">
                         <div class="form-group">
+                          <label for="name">id :</label>
+                            <input type="text" class="form-control" name="plant_ID" value="<?php echo $plant['Plant_ID']; ?>" readonly>
                             <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
                             <input type="text" class="form-control" name="plant_name" value="<?php echo $plant['Plant_Name']; ?>">
                         </div>

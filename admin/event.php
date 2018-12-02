@@ -124,7 +124,7 @@ while ($row = $event->fetch()) {
     echo "<td>" . $row['Activity_Detail'] . "</td>";
     echo "<td>" . $row['Activity_Date'] . "</td>";
     echo "<td>" . "<img src=" . "../" . $row['Activity_Pic'] . " with='35px' height='35px'/" . "</td>";
-    echo "<td>" . "<a href='editevent.php?id=" . $row['Activity_ID'] . "'><button class='editdata'>Edit</button><button class='deletedata' value=" . $row['Activity_ID'] . ">Delete</button>" . "</td>";
+    echo "<td>" . "<a href='editevent.php?id=" . $row['Activity_ID'] . "'><button class='editdata'>Edit</button></a><button class='deletedata' value=" . $row['Activity_ID'] . ">Delete</button>" . "</td>";
     echo "</tr>";
 }
 ?>
