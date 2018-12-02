@@ -69,7 +69,7 @@ $productall = $helper->SellPending($db);
                     <tr id="tablehead">
                         <th>ID</th>
                         <th>รายการสินค้า</th>
-                        <th>จำนวนสินค้าคงเหลือ</th>
+                        <th>จำนวนสินค้าที่ขายไป</th>
                        
                     </tr>
                 </thead>

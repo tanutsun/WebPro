@@ -82,7 +82,7 @@ require_once(__DIR__ . "/../../libs/config.inc.php");
                     <a class="nav-link" href="/webpro/user/module/product/product.php">ผลิตภัณฑ์</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="plan.php">พันธุ์พืช</a>
+                    <a class="nav-link" href="plant.php">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/webpro/user/module/activity/activity.php">กิจกรรม</a>
@@ -113,7 +113,7 @@ require_once(__DIR__ . "/../../libs/config.inc.php");
                    
                     ?>
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm-12">
                     <img class="plantImg" src="<?php echo ROOT_URL."/".$Plant_Pic?>">
                 </div>
 
@@ -138,11 +138,11 @@ require_once(__DIR__ . "/../../libs/config.inc.php");
                                 <div class="modal-body ">
                                   
                                   
-        <div id="googleMap"></div>
+        <!-- <div id="googleMap"></div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.3984763828053!2d100.7845000143117!3d
         13.753617300958133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc6b9b41bb0e0664!2z4Lio4Li54LiZ4
         Lii4LmM4LiB4Liy4Lij4LmA4Lij4Li14Lii4LiZ4Lij4Li54LmJ4LiE4LiZ4LmA4Lih4Li34Lit4LiHIOC4muC4tuC4h-C4muC4seC4pw!5e
-        1!3m2!1sth!2sth!4v1540799335281" width="70%" height="70%" frameborder="0" style="border:0" ></iframe> 
+        1!3m2!1sth!2sth!4v1540799335281" width="70%" height="70%" frameborder="0" style="border:0" ></iframe>  -->
     
         </form>
         <script>

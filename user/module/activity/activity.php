@@ -10,7 +10,7 @@
     <title> activity </title>
         <style>
            body {
-               background-image: url("../../img/bg/bg.png");
+               /* background-image: url("../../img/bg/bg.png"); */
                width: 100%;
            }
             .font {

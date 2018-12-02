@@ -9,7 +9,7 @@ $Product_ID=$_REQUEST['Product_ID'];
 $Product_Quantity=$_REQUEST['Product_Quantity'];
 
 
- $SumProduct= $Product_Quantity-$AllProduct;
+ $SumProduct= $Product_Quantity+$AllProduct;
 echo $SumProduct;
 
 
