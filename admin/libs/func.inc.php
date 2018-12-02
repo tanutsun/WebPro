@@ -103,7 +103,26 @@ class helperAdmin
         return $row;
 
     }
+    /**  */
+    public function EventQueryOne($db, $id)
+    {
+        $sql = "SELECT * FROM activity WHERE Activity_ID = '$id'";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        return $row;
 
+    }
+    /**  */
+    public function ProductQueryOne($db, $id)
+    {
+        $sql = "SELECT * FROM product WHERE Product_ID = '$id'";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        return $row;
+
+    }
     /**  */
     public function EventQuery($db)
     {

@@ -10,32 +10,20 @@ if (!$helper->checkLogin()) {
     exit();
 }
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $plant = $helper->PlantQueryOne($db, $id);
+    $event = $helper->EventQueryOne($db, $id);
+
 }
 
 if (isset($_POST['Edit'])) {
-    $ID = rand(0, 9999);
-    $name = $_POST['plant_name'];
-    $detail = $_POST['plant_detail'];
-    $date = $_POST['plant_date'];
-    $mapid = $_POST['Map_ID'];
-    $mapValue = $_POST['Map_Value'];
-
-    $latlong = explode(',', $mapValue);
-    $lat = trim($latlong[0]);
-    $long = trim($latlong[1]);
-    
-    $sql_update_map = "UPDATE map
-                        SET Latitude = '$lat', Longtitude = '$long'
-                        WHERE Map_ID = '$mapid';";
-    $result = $db->query($sql_update_map);
-    
-
-    $qu = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
-     VALUES($ID, '$name', '$detail', '$date', 'static/images/image-not-found.png', 1, '$mapid')";
-    $result = $db->query($qu);
+    $ID = $_POST['Activity_ID'];
+    $name = $_POST['Activity_name'];
+    $detail = $_POST['Activity_detail'];
+    $date = $_POST['Activity_date'];
+    $pic = $_POST['Activity_Pic'];
+    $quy = "UPDATE activity SET Activity_Name = '$name' , Activity_detail = '$detail' , Activity_date = '$date' WHERE Activity_ID = '$ID';";
+    $result = $db->query($quy);
 }
 
 ?>
@@ -49,7 +37,6 @@ if (isset($_POST['Edit'])) {
     <meta name="viewport">
    <!-- Bootstrap -->
    <link href="../admin/assets/option/vendors//bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="../admin/assets/option/build/css/custom.min.css" rel="stylesheet">
     <!-- jQuery -->
@@ -100,36 +87,34 @@ if (isset($_POST['Edit'])) {
                 <div class="container" style="width: 80%">
                     <form method="POST">
                         <div class="form-group">
+                        <label for="name">id :</label>
+                            <input type="text" class="form-control" name="Activity_ID" value="<?php echo $event['Activity_ID']; ?>" readonly>
                             <label for="name">ชื่อบทความ : <span style="color:red">*</span></label>
-                            <input type="text" class="form-control" name="plant_name" value="<?php echo $plant['Plant_Name']; ?>">
+                            <input type="text" class="form-control" name="Activity_name" value="<?php echo $event['Activity_Name']; ?>">
                         </div>
                         <br>
                         <label>
                             ภาพหน้าปก : <span style="color:red">*</span>รูปที่ทำการอัพโหลดต้องมีขนาด 1370 x 700 Pixels
-                            <br><br><input type="file" hidden>
+                            <br><br><input type="file" value="<?php $event['Activity_Pic'] ?>">
                         </label>
                         <br>
                         <br>
                         รายละเอียด : <span style="color:red">*</span>
                         <br>
-                        <textarea rows="10" cols="80" name="plant_detail" id="editor1">
-                            <?php echo $plant['Plant_Detail']; ?>
+                        <textarea rows="10" cols="80" name="Activity_detail" id="editor1">
+                            <?php echo $event['Activity_Detail']; ?>
                         </textarea>
                         <script>
                             CKEDITOR.replace('editor1');
                         </script>
 
                         <div class="row">
-                            <div class="col-sm-6"><label for="name">ประเภทบทความ : </label>
-                                <br>
-                                <input type="text" size="60">
-                            </div>
 
                             <div class="col-sm-6"><label for="name">วันที่ :</label>
                                 <br>
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker' >
-                                        <input type='date' class="form-control" name="plant_date" require value="<?php echo $plant['Plant_Date']; ?>">
+                                        <input type='date' class="form-control" name="Activity_date" require value="<?php echo $event['Activity_Date']; ?>">
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -141,11 +126,6 @@ if (isset($_POST['Edit'])) {
                                     $('#datetimepicker').datetimepicker();
                                 });
                             </script>
-                            <div class="col-sm-6"><label for="name">ค่าละติจูด และ ค่าลองติจูด : <span style="color:red">*</span></label>
-                                <br>
-                                <input type="hidden" name="Map_ID" value="<?php echo $plant['Map_ID']; ?>">
-                                <input type="text" size="60" name="Map_Value" value="<?php echo $plant['Latitude']; ?>, <?php echo $plant['Longtitude'] ?>" require>
-                            </div>
                         </div>
 	            <input type="submit" class="btn btn-success" name="Edit" value="บันทึก" style="float: right">
                     </form>

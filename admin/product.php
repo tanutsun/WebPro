@@ -117,18 +117,18 @@ $(document).on('click','.deletedata',function(){
         </thead>
         <tbody>
         <?php
-while ($row = $product_->fetch()) {
-    echo "<tr>";
-    echo "<td>" . $row['Product_ID'] . "</td>";
-    echo "<td>" . $row['Product_Name'] . "</td>";
-    echo "<td>" . $row['Product_Detail'] . "</td>";
-    echo "<td>" . $row['Product_Date'] . "</td>";
-    echo "<td>" . $row['Product_Price'] . "</td>";
-    echo "<td>" . "<img src=" . "../" . $row['Product_Pic'] . " with='35px' height='35px'/" . "</td>";
-    echo "<td>" . "<button class='editdata' value=" . $row['Product_ID'] . ">Edit</button><button class='deletedata' value=" . $row['Product_ID'] . ">Delete</button>" . "</td>";
-    echo "</tr>";
-}
-?>
+        while ($row = $product_->fetch()) {
+            echo "<tr>";
+            echo "<td>" . $row['Product_ID'] . "</td>";
+            echo "<td>" . $row['Product_Name'] . "</td>";
+            echo "<td>" . $row['Product_Detail'] . "</td>";
+            echo "<td>" . $row['Product_Date'] . "</td>";
+            echo "<td>" . $row['Product_Price'] . "</td>";
+            echo "<td>" . "<img src=" . "../" . $row['Product_Pic'] . " with='35px' height='35px'/" . "</td>";
+            echo "<td>" . "<a href='editproduct.php?id=" . $row['Product_ID'] . "'><button class='editdata'>Edit</button><button class='deletedata' value=" . $row['Product_ID'] . ">Delete</button>" . "</td>";
+            echo "</tr>";
+        }
+        ?>
         </tbody>
     </table>
     </div>
