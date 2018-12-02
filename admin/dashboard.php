@@ -14,6 +14,26 @@ $Countnotsent = $helper->CountProductlistnotsent($db);
 while ($row = $Countnotsent->fetch()) {
    $Count= $row['count(Sell_ID)'];
 }
+
+$dataGraph = $helper->sumProductGraph($db);
+
+$line_quantity = array();
+$line_money = array();
+
+for($i = 0; $i< count($dataGraph); $i++){
+    $line_quantity[] = array(
+                            // 'date' => date('D M d Y H:i:s O', strtotime($dataGraph[$i]['Sell_Date'])),
+                            'date' => $dataGraph[$i]['Sell_Date'],
+                            'value' => number_format($dataGraph[$i]['quantity'], 2,'.', ',')
+                        );
+    $line_money[] = array(
+        // 'date' => date('D M d Y H:i:s O', strtotime($dataGraph[$i]['Sell_Date'])),
+        'date' => $dataGraph[$i]['Sell_Date'],
+        'value' => number_format($dataGraph[$i]['total_Price'], 2,'.', ',')
+    );
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -36,10 +56,19 @@ while ($row = $Countnotsent->fetch()) {
     <script src="../admin/assets/option/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../admin/assets/option/build/js/custom.min.js"></script>
-    <!-- Chart.js -->
-    <script src="../admin/assets/option/vendors/Chart.js/dist/Chart.min.js"></script>
     <!-- edit css by tasto -->
     <link href="../admin/assets/css/home.css" rel="stylesheet">
+
+    <style>
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+
+    </style>
+
+
+
 </head>
 
 <body class="body backgroud">
@@ -85,13 +114,13 @@ while ($row = $Countnotsent->fetch()) {
     <br><br><br>
     <hr style="color: black;width: 80%;">
     <center>
-        <div class="x_panel" style="width: 50%">
+        <div class="x_panel" style="width: 80%">
             <div class="x_title">
-                <h2>Line graph<small>Sessions</small></h2>
+                <h2>สถิติการขาย<small>จำนวนสินค้าที่ขายได้ / จำนวนเงินที่ขายได้</small></h2>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <canvas id="lineChart"></canvas>
+                <div id="chartdiv"></div>
             </div>
         </div>
     </center>
@@ -133,9 +162,84 @@ while ($row = $Countnotsent->fetch()) {
         </div>
     </div>
 
+
+ <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+
+    <script>
+        // Themes begin
+            // am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+        var data = <?php echo json_encode($line_quantity) ?>;
+        var data2 = <?php echo json_encode($line_money) ?>;
+        var value = 50;
+
+        if(data.length == 0){
+            for(let i = 0; i < 300; i++){
+                let date = new Date();
+                date.setHours(0,0,0,0);
+                date.setDate(i);
+                console.log(date);
+                value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+                data.push({date:date, value: value});
+            }
+
+        }
+
+        if(data2.length == 0){
+            for(let i = 0; i < 300; i++){
+                let date = new Date();
+                date.setHours(0,0,0,0);
+                date.setDate(i);
+                console.log(date);
+                value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+                data2.push({date:date, value: value});
+            }
+
+        }
+        
+        chart.data = data;
+
+        // Create axes
+        var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+        dateAxis.renderer.minGridDistance = 60;
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+        // Create series
+        var series = chart.series.push(new am4charts.LineSeries());
+        series.dataFields.valueY = "value";
+        series.dataFields.dateX = "date";
+        series.tooltipText = "จำนวนสินค้าที่ขายได้ทั้งหมด {value}"
+        series.data = data
+
+        series.tooltip.pointerOrientation = "vertical";
+
+
+        // Create series
+        var series2 = chart.series.push(new am4charts.LineSeries());
+        // series2.stroke = am4core.color("#ff0000"); 
+        series2.dataFields.valueY = "value";
+        series2.dataFields.dateX = "date";
+        series2.tooltipText = "จำนวนเงินที่ขายได้ {value}"
+        series2.data = data2
+
+        series2.tooltip.pointerOrientation = "vertical";
+
+        chart.cursor = new am4charts.XYCursor();
+
+        //chart.scrollbarY = new am4core.Scrollbar();
+        chart.scrollbarX = new am4core.Scrollbar();
+    </script>
 </body>
 
 </html>
+
+
 
 
 <!-- <h2>Hear is Dashboard</h2>
@@ -144,5 +248,8 @@ while ($row = $Countnotsent->fetch()) {
   //  $helper->showMsg();
 ?>
 
+
+
+   
 
 <p><a href="<?php echo ROOT_URL."/admin/logout.php" ?>">Logout</a></p> -->

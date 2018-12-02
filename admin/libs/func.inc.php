@@ -64,6 +64,14 @@ class helperAdmin
         $sql ="SELECT count(Sell_ID) from sell s inner join product p On p.Product_ID=s.Product_ID Where Status ='pending' or Status = 'paid'";
         return $Countnotsent = $db->query($sql);
     }
+    public function sumProductGraph($db)
+    {
+        $sql ="SELECT sum(All_Product) as quantity, sum(Total_Price) as total_Price, Sell_Date FROM `sell` where Status = 'success' GROUP BY Sell_Date";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll();
+        return $row;
+    }
     /** */
     public function ProductPending($db)
     {
