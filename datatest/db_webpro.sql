@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2018 at 07:03 PM
+-- Generation Time: Dec 02, 2018 at 06:03 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -188,7 +188,7 @@ CREATE TABLE `sell` (
   `All_Product` int(11) NOT NULL,
   `Total_Price` int(11) NOT NULL,
   `Address` text COLLATE utf8_unicode_ci NOT NULL,
-  `Sell_Date` date NOT NULL,
+  `Sell_Date` datetime NOT NULL,
   `Status` enum('pending','success','cancel') COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -197,13 +197,13 @@ CREATE TABLE `sell` (
 --
 
 INSERT INTO `sell` (`Sell_ID`, `Tracking_ID`, `Product_ID`, `All_Product`, `Total_Price`, `Address`, `Sell_Date`, `Status`) VALUES
-(1, '51525152', 1, 2, 100, 'Address 1', '0000-00-00', 'pending'),
-(2, '91515122', 3, 1, 20, 'Address 2', '0000-00-00', 'pending'),
-(3, '45846132', 5, 3, 300, 'Address 3', '0000-00-00', 'pending'),
-(4, '51613213', 5, 1, 30, 'Address 4', '0000-00-00', 'pending'),
-(5, '89411354', 5, 1, 100, 'Address 5', '0000-00-00', 'pending'),
-(6, '91484123', 5, 2, 40, 'Address 6', '0000-00-00', 'pending'),
-(7, '41945313', 5, 3, 90, 'Address 7', '0000-00-00', 'pending');
+(1, '51525152', 1, 2, 100, 'Address 1', '2018-12-01 00:00:00', 'success'),
+(2, '91515122', 3, 1, 20, 'Address 2', '2018-12-03 00:00:00', 'success'),
+(3, '45846132', 5, 3, 300, 'Address 3', '2018-12-03 00:00:00', 'success'),
+(4, '51613213', 5, 1, 30, 'Address 4', '2018-12-03 00:00:00', 'success'),
+(5, '89411354', 5, 1, 100, 'Address 5', '2018-12-11 00:00:00', 'success'),
+(6, '91484123', 5, 2, 40, 'Address 6', '2018-11-01 00:00:00', 'pending'),
+(7, '41945313', 5, 3, 90, 'Address 7', '2018-11-24 00:00:00', 'pending');
 
 --
 -- Indexes for dumped tables
