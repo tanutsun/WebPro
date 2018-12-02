@@ -27,7 +27,8 @@ if (isset($_POST['Edit'])) {
 
     $quy = "UPDATE product SET Product_Name = '$name' , Product_Detail = '$detail' , Product_Date = '$date' , Product_Price = '$price' WHERE Product_ID = '$ID';";
     $result = $db->query($quy);
-
+    header("Location:product.php");
+    exit();
 }
 
 ?>

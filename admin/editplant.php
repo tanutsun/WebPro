@@ -39,6 +39,8 @@ if (isset($_POST['Edit'])) {
     $qu = "INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`,`Plant_Pic`, `Admin_ID`,`Map_ID`)
      VALUES($ID, '$name', '$detail', '$date', 'static/images/image-not-found.png', 1, '$mapid')";
     $result = $db->query($qu);
+    header("Location:plant.php");
+    exit();
 }
 
 ?>

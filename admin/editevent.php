@@ -21,9 +21,11 @@ if (isset($_POST['Edit'])) {
     $name = $_POST['Activity_name'];
     $detail = $_POST['Activity_detail'];
     $date = $_POST['Activity_date'];
-    $pic = $_POST['Activity_Pic'];
+    // $pic = $_POST['Activity_Pic'];
     $quy = "UPDATE activity SET Activity_Name = '$name' , Activity_detail = '$detail' , Activity_date = '$date' WHERE Activity_ID = '$ID';";
     $result = $db->query($quy);
+    header("Location:event.php");
+    exit();
 }
 
 ?>
