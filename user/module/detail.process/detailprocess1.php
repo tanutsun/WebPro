@@ -54,7 +54,7 @@
                     <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/product/product.php" ?>" > ผลิตภัณฑ์ </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/plan/plan.php" ?>">พันธุ์พืช</a>
+                    <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/plant/plant.php" ?>">พันธุ์พืช</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="<?php echo ROOT_URL ."/user/module/activity/activity.php" ?>">กิจกรรม</a>
