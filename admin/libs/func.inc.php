@@ -62,7 +62,7 @@ class helperAdmin
     /** */
     public function ProductPending($db)
     {
-        $sql = "SELECT * FROM sell Where Status ='pending' or Status = 'paid'";
+        $sql = "select Sell_ID,Product_name,Tracking_ID,All_Product,Total_Price,Address,Sell_Date,Status from sell s inner join product p On p.Product_ID=s.Product_ID Where Status ='pending' or Status = 'paid'";
         return $productlist = $db->query($sql);
 
     }

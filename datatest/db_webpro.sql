@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Oct 29, 2018 at 03:35 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -13,19 +5,7 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
-
--- Database: `db_webpro`
-
-
--- --------------------------------------------------------
-
-
--- Table structure for table `activity`
 
 
 CREATE TABLE `activity` (
@@ -37,9 +17,7 @@ CREATE TABLE `activity` (
   `Admin_ID` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `activity`
---
+
 
 INSERT INTO `activity` (`Activity_ID`, `Activity_Name`, `Activity_Detail`, `Activity_Date`, `Activity_Pic`, `Admin_ID`) VALUES
 (1, 'Act1', 'Detail Act 1', '0000-00-00', 'static/images/image-not-found.png', 1),
@@ -48,11 +26,7 @@ INSERT INTO `activity` (`Activity_ID`, `Activity_Name`, `Activity_Detail`, `Acti
 (4, 'Act4', 'Detail Act 4', '0000-00-00', 'static/images/image-not-found.png', 1),
 (5, 'Act5', 'Detail Act 5', '0000-00-00', 'static/images/image-not-found.png', 1);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `admin`
---
 
 CREATE TABLE `admin` (
   `id` bigint(20) NOT NULL,
@@ -61,18 +35,12 @@ CREATE TABLE `admin` (
   `last_login` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `admin`
---
+
 
 INSERT INTO `admin` (`id`, `username`, `password`, `last_login`) VALUES
 (1, 'admin', '$2y$10$zl2ptI4zXNFOtuzDyouwderC0q/VWEoKIW7hAqUdcUfbmqmqRyDg2', '2018-10-27 16:22:25');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `map`
---
 
 CREATE TABLE `map` (
   `Map_ID` smallint(6) NOT NULL,
@@ -81,9 +49,7 @@ CREATE TABLE `map` (
   `Map_Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `map`
---
+
 
 INSERT INTO `map` (`Map_ID`, `Latitude`, `Longtitude`, `Map_Date`) VALUES
 (1, 42.8806001, -8.5468299, '0000-00-00'),
@@ -102,11 +68,7 @@ INSERT INTO `map` (`Map_ID`, `Latitude`, `Longtitude`, `Map_Date`) VALUES
 (14, 48.8806001, -8.3468299, '0000-00-00'),
 (15, 42.8806001, -8.5468299, '0000-00-00');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `plant`
---
 
 CREATE TABLE `plant` (
   `Plant_ID` smallint(6) NOT NULL,
@@ -118,9 +80,6 @@ CREATE TABLE `plant` (
   `Map_ID` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `plant`
---
 
 INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`, `Plant_Pic`, `Admin_ID`, `Map_ID`) VALUES
 ( '1','เชอรี่','<p>เชอร์รี่ เป็นผลไม้ที่มีรสชาติหวานอมเปรี้ยว ลักษณะของผลมีลักษณะกลม ขนาดเล็ก เปลือกมีทั้งสีแดงเข้ม สีแดง สีส้ม และสีเหลือง ทั้งนี้ขึ้นอยู่กับสายพันธุ์</p> <br> <p>โดยทั่วไปแล้วเราจะแบ่งเชอร์รี่ออกเป็น 2 กลุ่ม ได้แก่ กลุ่มเชอร์รี่หวาน และกลุ่มเชอร์รี่หวานอมเปรี้ยว โดยแหล่งที่เพาะปลูกเชอร์รี่มากที่สุดก็คือทวีปอเมริกา ทวีปยุโรป ออสเตรเลีย รวมไปถึงญี่ปุ่น เพราะเชอร์รี่เป็นผลไม้ที่ชอบอากาศหนาวเย็น</p>','2018-11-26','static/images/เชอรี่.jpg',1,1),
@@ -148,11 +107,6 @@ INSERT INTO `plant` (`Plant_ID`, `Plant_Name`, `Plant_Detail`, `Plant_Date`, `Pl
 ('15', 'ละมุด', '<p>ละมุดเป็นไม้ยืนต้นขนาดกลาง เป็นพุ่มทึบ กิ่งก้าน แตกออกรอบลำต้นเป็นชั้น ๆ ใบเดี่ยว ท้องใบมีสีน้ำตาลอมเขียว มักออกเป็นกระจุก ตามปลายกิ่ง ดอกเดี่ยว ออกตามง่ามกิ่ง กลีบรองดอกเรียงกัน เป็น 2 ชั้น กลีบดอกเชื่อมกันและยกตั้งขึ้น มี 6 กลีบ มีสีเหลืองนวล ผลรูปไข่ หรือรูปปลายข้างหนึ่งแหลมเล็กน้อย มีสีน้ำตาล ผลยังไม่สุกมียางสีขาว รสฝาด แข็ง เมื่อสุกจะนิ่ม หวาน ไม่มียาง มีเมล็ดรูปยาว รี ผิวสีดำฝังอยู่ในเนื้อ ผลละ 2-6 เมล็ด</p>', '2018-11-26', 'static/images/ละมุด.jpg', '1', '15');
 
 
--- --------------------------------------------------------
-
---
--- Table structure for table `product`
---
 
 CREATE TABLE `product` (
   `Product_ID` smallint(6) NOT NULL,
@@ -164,9 +118,7 @@ CREATE TABLE `product` (
   `Admin_ID` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `product`
---
+
 
 INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_Date`, `Product_Price`, `Product_Pic`, `Admin_ID`) VALUES
 (1, 'ไข่เค็มสมุนไพร', 'ไข่เค็ม เป็นการถนอมอาหารอย่างหนึ่ง โดยมากมักจะใช้ไข่เป็ด แล้วนำไปแช่ในน้ำเกลือหรือนำไปพอกด้วยวัสดุที่ผสมเกลือเพื่อให้เกลือซึมเข้าไปในเนื้อของไข่ เพื่อให้สามารถเก็บไข่ไว้ได้นานขึ้น ไข่เป็ดเค็มที่ผลิตจากการแช่น้ำเกลือจะมีกลิ่นน้ำเกลือ ไข่ขาวจะแน่นและเนียน ในขณะที่ไข่แดงจะมีสีออกส้มอมแดง แต่ถ้าใช้ไข่ไก่จะมีรสชาติและรสสมผัสที่แตกต่างออกไป และรสชาติไข่แดงจะเข้มข้นน้อยกว่าไข่เป็ด', '2018-11-02', 50, 'static/images/1001.jpg', 1),
@@ -177,11 +129,7 @@ INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Detail`, `Product_
 (6, 'น้ำยาซักผ้า', 'ใช้ดีมาก หอม ผ้าขาวสะอาด', '2018-11-02', 50, 'static/images/6001.jpg', 1),
 (7, 'สบู่สมุนไพร', 'กลิ่นหอมมาก ทำให้ผิวขาว ไม่ระคายเคืองต่อผิวหนัง ใช้ชำระร่างกาย', '2018-11-02', 50, 'static/images/7001.jpg', 1);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `sell`
---
 
 CREATE TABLE `sell` (
   `Sell_ID` smallint(6) NOT NULL,
@@ -192,9 +140,7 @@ CREATE TABLE `sell` (
   `Status` enum('pending','paid','send','receive') COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `sell`
---
+
 
 INSERT INTO `sell` (`Sell_ID`, `All_Product`, `Total_Price`, `Address`, `Sell_Date`, `Status`) VALUES
 (1, 2, 100, 'Address 1', '0000-00-00', 'pending'),
@@ -205,87 +151,49 @@ INSERT INTO `sell` (`Sell_ID`, `All_Product`, `Total_Price`, `Address`, `Sell_Da
 (6, 2, 40, 'Address 6', '0000-00-00', 'receive'),
 (7, 3, 90, 'Address 7', '0000-00-00', 'send');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `activity`
---
 ALTER TABLE `activity`
   ADD PRIMARY KEY (`Activity_ID`);
 
---
--- Indexes for table `admin`
---
+
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `map`
---
+
 ALTER TABLE `map`
   ADD PRIMARY KEY (`Map_ID`);
 
---
--- Indexes for table `plant`
---
+
 ALTER TABLE `plant`
   ADD PRIMARY KEY (`Plant_ID`);
 
---
--- Indexes for table `product`
---
+
 ALTER TABLE `product`
   ADD PRIMARY KEY (`Product_ID`);
 
---
--- Indexes for table `sell`
---
+
 ALTER TABLE `sell`
   ADD PRIMARY KEY (`Sell_ID`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `activity`
---
 ALTER TABLE `activity`
   MODIFY `Activity_ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT for table `admin`
---
+
 ALTER TABLE `admin`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
---
--- AUTO_INCREMENT for table `map`
---
+
 ALTER TABLE `map`
   MODIFY `Map_ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- AUTO_INCREMENT for table `plant`
---
 ALTER TABLE `plant`
   MODIFY `Plant_ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- AUTO_INCREMENT for table `product`
---
+
 ALTER TABLE `product`
   MODIFY `Product_ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- AUTO_INCREMENT for table `sell`
---
+
 ALTER TABLE `sell`
   MODIFY `Sell_ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

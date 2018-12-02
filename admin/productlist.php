@@ -11,15 +11,7 @@ if (!$helper->checkLogin()) {
 
 }
 $productlist = $helper->ProductPending($db);
-// Include database connection
-// if (isset($_POST['rowid'])) {
-//     $id = $_POST['rowid']; //escape string
-//     echo $id;
-//     // Run the Query
-//     // Fetch Records
-//     // Echo the data you want to show in modal\e
-//     $modal = $helper->productmodal($db, $id);
-// }
+
 ?>
 
 <!DOCTYPE html>
@@ -49,32 +41,6 @@ $productlist = $helper->ProductPending($db);
         $(function () {
             $('#myTable').dataTable();
         });
-
-//         $(document).ready(function(){
-//     $('#myModal2').on('show.bs.modal', function (e) {
-//         var rowid = $(e.relatedTarget).data('id');
-//         console.log(rowid , location.pathname)
-//         $.ajax({
-//             type : 'get',
-//             url:location.pathname+'?id='+rowid, //Here you will fetch records 
-//             data :  {'rowid':rowid}, //Pass $id
-//             success : function(data){
-//             $('.fetched-data').html(data);//Show fetched data from database
-//             }
-//         });
-//      });
-// });
-$("#myModal2").on('show.bs.modal', function(event){
-        var button = $(event.relatedTarget);           
-        var id = button.data('formid');
-        //alert(id);        
-        $.get(location.pathname+'id='+id,
-            function(data) {
-                console.log(data)
-             $("#myModal2").html(data);   
-                });
-            });
-
     </script>
 
     <link rel="stylesheet" href="../admin/assets/css/event.css">
@@ -103,10 +69,10 @@ $("#myModal2").on('show.bs.modal', function(event){
                 <thead>
                     <tr id="tablehead">
                         <th>ID</th>
-                        <!-- <th>รายการสินค้า</th> -->
+                        <th>รายการสินค้า</th> 
                         <th>จำนวนสินค้า</th>
                           <th>จำนวนเงิน</th>
-                        <th>ยอดรวม</th>
+                        
                         <th>วันที่สั่ง</th>
                         <th>สถานะ</th>
                         <th>ดูรายละเอียด</th>
@@ -116,14 +82,23 @@ $("#myModal2").on('show.bs.modal', function(event){
                   <?php
 
                     while ($row = $productlist->fetch()) {
+                        $SellID=$row['Sell_ID'];
+                        $ProductName=$row['Product_name'];
+                        $AllProduct=$row['All_Product'];
+                        $TotalPrice=$row['Total_Price'];
+                        $Address=$row['Address'] ;
+                        $SellDate=$row['Sell_Date'] ;
+                        $Status=$row['Status'];
                         echo "<tr>";
-                        echo "<td>" . $row['Sell_ID'] . "</td>";
-                        echo "<td>" . $row['All_Product'] . "</td>";
-                        echo "<td>" . $row['Total_Price'] . " บาท" . "</td>";
-                        echo "<td>" . $row['Address'] . "</td>";
-                        echo "<td>" . $row['Sell_Date'] . "</td>";
-                        echo "<td>" . $row['Status'] . "</td>";
-                        echo "<td>" . "<a class='btn btn-warning' data-toggle='modal' data-target='#myModal2' data-toggle='modal' data-target='#myModal2' " . "data-id=" . $row['Sell_ID'] . " " . " ><i class='fa fa-edit'></i></a>" . "</td>";
+
+                        echo "<td>" .$SellID . "</td>";
+                        echo "<td>" .$ProductName . "</td>";
+                        echo "<td>" .$AllProduct . "</td>";
+                        echo "<td>" . $TotalPrice . " บาท" . "</td>";
+                       // echo "<td>" . $Address. "</td>";
+                        echo "<td>" . $SellDate . "</td>";
+                        echo "<td>" . $Status . "</td>";
+                        echo "<td>" . "<a href='productedit.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-edit'></a>" . "</td>";
                         echo "</tr>";
                     }
                     ?>
@@ -150,82 +125,7 @@ $("#myModal2").on('show.bs.modal', function(event){
 
         </div>
     </div>
-    <div id="myModal2" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-    
-                <!-- Modal content-->
-                <div class="modal-content" >
-                    <center>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h1>รายการการสั่งซื้อ</h1>
-                        <hr style="color: black;width: 80%;">
-                        <table class="table table-bordered" style="background-color:white;">
-                                <thead>
-                                    <tr id="tablehead" style="background-color:white;">
-                                        <th>รายการสินค้า</th>
-                                        <th>ชื่อสินค้า</th>
-                                        <th>จำนวนสินค้า</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                    <?php 
-                    if (isset($_REQUEST['id'])) {
 
-                        $id = $_REQUEST['id'];
-                        echo $id;
-                        // while ($row = $modal->fetch()) {
-                            //     echo "<tr>";
-                            //     echo "<td>" . $row['Sell_ID'] . "</td>";
-                            //     echo "<td>" . $row['All_Product'] . "</td>";
-                            //     echo "<td>" . $row['Total_Price'] . " บาท" . "</td>";
-                            //     echo "</tr>";
-                            // }
-                    }
-                    ?>
-                            //  <?php 
-
-                            // while ($row = $modal->fetch()) {
-                            //     echo "<tr>";
-                            //     echo "<td>" . $row['Sell_ID'] . "</td>";
-                            //     echo "<td>" . $row['All_Product'] . "</td>";
-                            //     echo "<td>" . $row['Total_Price'] . " บาท" . "</td>";
-                            //     echo "</tr>";
-                            // }
-                            // ?>
-                                </tbody>
-                
-                
-                            </table>
-                        <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ยังไม่ได้ส่งสินค้า</button>
-                        <a href="">
-                            <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;" data-dismiss="modal" data-toggle="modal" data-target="#myModal3">จัดส่งสินค้าแล้ว</button>
-                        </a>
-                    </center>
-                </div>
-    
-            </div>
-        </div>
-        <div id="myModal3" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-        
-                    <!-- Modal content-->
-                    <div class="modal-content" style="background-color: black; color: white;">
-                        <center>
-                                <div class="picture">
-                                        <center>
-                                            <img src="../../admin/assets/images/login.png" style="width:320px;margin-bottom: 2%;margin-top: 5%; ">
-                                        </center>
-                                    </div>
-                            <h1>คุณต้องการทำการแก้สถานะใช่ไหม</h1><br>
-                            <button class=" btn-lg btn-dark" type="button" style="margin-top:25px;width: 12%" data-dismiss="modal">ยกเลิก</button>
-                            <a href="">
-                                <button class=" btn-lg btn-success" type="submit" style="margin-top:25px;width: 12%">ยืนยัน</button>
-                            </a>
-                        </center>
-                    </div>
-        
-                </div>
-            </div>
 </body>
 
 </html>
