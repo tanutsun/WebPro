@@ -58,25 +58,34 @@ class helperAdmin
         $sql = "SELECT * FROM sell WHERE Sell_ID=" . $id . " LIMIT 1";
         return $modal = $db->query($sql);
     }
+    public function CountProduct($db)
+    {
+        $sql ="SELECT count(Product_ID) from product";
+        return $CountallProduct = $db->query($sql);
+    }
+    public function Countoverall($db)
+    {
+        $sql ="SELECT count(Sell_ID) from sell s inner join product p On p.Product_ID=s.Product_ID";
+        return $Countall = $db->query($sql);
+    }
 
     public function CountProductlistnotsent($db)
     {
-        $sql ="SELECT count(Sell_ID) from sell s inner join product p On p.Product_ID=s.Product_ID Where Status ='pending' or Status = 'paid'";
+        $sql =" SELECT count(Sell_ID) from sell Where Status ='pending' or Status = 'paid'";
         return $Countnotsent = $db->query($sql);
-    }
-    public function sumProductGraph($db)
-    {
-        $sql ="SELECT sum(All_Product) as quantity, sum(Total_Price) as total_Price, Sell_Date FROM `sell` where Status = 'success' GROUP BY Sell_Date";
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $row = $stmt->fetchAll();
-        return $row;
     }
     /** */
     public function ProductPending($db)
     {
-        $sql = "select Sell_ID,Product_name,Tracking_ID,All_Product,Total_Price,Address,Sell_Date,Status from sell s inner join product p On p.Product_ID=s.Product_ID Where Status ='pending' or Status = 'paid'";
+        $sql = "select Sell_ID,Product_name,Tracking_ID,All_Product,Total_Price,Address,Sell_Date,Status,s.Product_ID,p.Product_Quantity from sell s inner join product p On p.Product_ID=s.Product_ID Where Status ='pending' or Status = 'paid'";
         return $productlist = $db->query($sql);
+
+    }
+
+    public function SellPending($db)
+    {
+        $sql = "SELECT Product_ID,Product_Name,Product_Quantity FROM `product`";
+        return $productall = $db->query($sql);
 
     }
 
@@ -93,7 +102,12 @@ class helperAdmin
         return $Productalllist = $db->query($sql);
 
     }
+    public function ProductcountEdit($db,$Product_ID,$SumProduct)
+    {
+        $sql = "UPDATE product SET Product_Quantity = $SumProduct WHERE Product_ID=".$Product_ID;
+        return $productcountedit = $db->query($sql);
 
+    }
 
     public function ProductEdit($db,$SellID, $Status)
     {
@@ -110,6 +124,14 @@ class helperAdmin
         $row = $stmt->fetch();
         return $row;
 
+    }
+    public function sumProductGraph($db)
+    {
+        $sql ="SELECT sum(All_Product) as quantity, sum(Total_Price) as total_Price, Sell_Date FROM sell where Status = 'success' GROUP BY Sell_Date";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll();
+        return $row;
     }
     /**  */
     public function EventQueryOne($db, $id)

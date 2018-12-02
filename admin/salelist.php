@@ -89,6 +89,8 @@ $productlist = $helper->ProductPending($db);
                         $Address=$row['Address'] ;
                         $SellDate=$row['Sell_Date'] ;
                         $Status=$row['Status'];
+                        $Product_ID=$row['Product_ID'];
+                        $Product_Quantity=$row['Product_Quantity'];
                         echo "<tr>";
 
                         echo "<td>" .$SellID . "</td>";
@@ -98,7 +100,7 @@ $productlist = $helper->ProductPending($db);
                        // echo "<td>" . $Address. "</td>";
                         echo "<td>" . $SellDate . "</td>";
                         echo "<td>" . $Status . "</td>";
-                        echo "<td>" . "<a href='productedit.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-edit'></a>" . "</td>";
+                        echo "<td>" . "<a href='saleedit.php?ProductName=".$ProductName."&Sell_ID=$SellID&AllProduct=$AllProduct&Total_Price=$TotalPrice&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status."&Product_ID=".$Product_ID."&Product_Quantity=$Product_Quantity ' class='fa fa-edit'></a>" . "</td>";
                         echo "</tr>";
                     }
                     ?>
@@ -106,6 +108,10 @@ $productlist = $helper->ProductPending($db);
 
 
             </table>
+            <center>
+
+<a href="dashboard.php"><button class=" btn-lg btn-dark" type="button" style="margin-top:25px;" data-dismiss="modal">ย้อนกลับ</button></a>
+</center>
     </div>
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">

@@ -7,7 +7,7 @@ define("DB_NAME", "webpro");
 define("DB_USERNAME", "root");
 define("DB_PASSWORD", "");
 
-define("ROOT_URL", "http://localhost:8081/webpro");
+define("ROOT_URL", "http://localhost/webpro");
 
 
 require_once 'db.inc.php';
