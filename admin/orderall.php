@@ -73,7 +73,6 @@ $Orderalllist = $helper->OrderallPending($db);
                         <th>ยอดรวม</th>
                         <th>วันที่สั่ง</th>
                         <th>สถานะ</th>
-                        <th>ดูรายละเอียด</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,7 +95,7 @@ while ($row = $Orderalllist->fetch()) {
    // echo "<td>" . $Address. "</td>";
     echo "<td>" . $SellDate . "</td>";
     echo "<td>" . $Status . "</td>";
-    echo "<td>" . "<a href='productedit.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-edit'></a>" . "</td>";
+ //   echo "<td>" . "<a href='productedit.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-edit'></a>" . "</td>";
     echo "</tr>";
 }
 ?>
