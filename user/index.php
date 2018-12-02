@@ -14,7 +14,7 @@
         <style>
             
             body {
-               background-image: url("img/bg/bg.png");
+               /* background-image: url("img/bg/bg.png"); */
                width: 100%;
            }
 
@@ -93,7 +93,7 @@
         <div class="highlight mb-5">
             <div><a href="\webpro\user\module\product\detailproduct.php?Product_ID=7" ><img src="img/index-highlight1.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
             <div><a href="\webpro/user/module/plan/detailplan.php?Plant_ID=13" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
-            <div><a href="\webpro\user\module\detail.activity\detail1.php" ><img src="img/index-highlight3.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
+            <div><a href="\webpro\user\module\detail.activity\detail2.php" ><img src="img/index-highlight3.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
         </div>
         
         <div class="container">                    
@@ -257,7 +257,7 @@
                 
                 
                 <div class="col-md-3">
-                    <a href="module/detail.activity/detail1.php">
+                    <a href="module/detail.activity/detail2.php">
                         <img src="img/index-activity2.jpg" style="width:100%; height:160px;"> 
                     </a>
                     <div class="row">
