@@ -75,11 +75,7 @@
                     <a class="nav-link" href="\webpro\user\module\product\product.php"  > ผลิตภัณฑ์ </a>
                 </li>
                 <li class="nav-item">
-<<<<<<< HEAD
                     <a class="nav-link" href="\webpro\user\module\plan\plan.php" >พันธุ์พืช</a>
-=======
-                    <a class="nav-link" href="\webpro\user\module\plan\plant.php" >พันธุ์พืช</a>
->>>>>>> 2f73666f04e466b1fe3d84416bfed3e07562df7f
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="\webpro\user\module\activity\activity.php" >กิจกรรม</a>
@@ -96,11 +92,7 @@
 
         <div class="highlight mb-5">
             <div><a href="\webpro\user\module\product\detailproduct.php?Product_ID=7" ><img src="img/index-highlight1.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
-<<<<<<< HEAD
             <div><a href="\webpro/user/module/plan/detailplan.php?Plant_ID=13" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
-=======
-            <div><a href="\webpro/user/module/plant/detailplan.php?Plant_ID=13" ><img src="img/index-highlight2.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
->>>>>>> 2f73666f04e466b1fe3d84416bfed3e07562df7f
             <div><a href="\webpro\user\module\detail.activity\detail1.php" ><img src="img/index-highlight3.jpg" alt="img1 test" width="100%" class="img-fluid"></a></div>
         </div>
         
