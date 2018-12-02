@@ -57,13 +57,40 @@ class helperAdmin
     {
         $sql = "SELECT * FROM sell WHERE Sell_ID=" . $id . " LIMIT 1";
         return $modal = $db->query($sql);
+    }
 
+    public function CountProductlistnotsent($db)
+    {
+        $sql ="SELECT count(Sell_ID) from sell s inner join product p On p.Product_ID=s.Product_ID Where Status ='pending' or Status = 'paid'";
+        return $Countnotsent = $db->query($sql);
     }
     /** */
     public function ProductPending($db)
     {
         $sql = "select Sell_ID,Product_name,Tracking_ID,All_Product,Total_Price,Address,Sell_Date,Status from sell s inner join product p On p.Product_ID=s.Product_ID Where Status ='pending' or Status = 'paid'";
         return $productlist = $db->query($sql);
+
+    }
+
+    public function OrderallPending($db)
+    {
+        $sql = "select Sell_ID,Product_name,Tracking_ID,All_Product,Total_Price,Address,Sell_Date,Status from sell s inner join product p On p.Product_ID=s.Product_ID";
+        return $Orderalllist = $db->query($sql);
+
+    }
+    
+    public function ProductallPending($db)
+    {
+        $sql = "select Sell_ID,Product_name,Tracking_ID,All_Product,Total_Price,Address,Sell_Date,Status from sell s inner join product p On p.Product_ID=s.Product_ID";
+        return $Productalllist = $db->query($sql);
+
+    }
+
+
+    public function ProductEdit($db,$SellID, $Status)
+    {
+        $sql = "UPDATE sell SET Status = $Status WHERE Sell_ID=".$SellID;
+        return $productedit = $db->query($sql);
 
     }
     /**  */

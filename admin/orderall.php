@@ -9,6 +9,8 @@ if(!$helper->checkLogin()){
     $helper->redirectLogin();
     exit();
 }
+$Orderalllist = $helper->OrderallPending($db);
+
 ?>
 
 <!DOCTYPE html>
@@ -75,127 +77,29 @@ if(!$helper->checkLogin()){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>00</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>01</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>02</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>03</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>04</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>05</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>06</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>07</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>08</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>09</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>น้ำยาล้างจาน</td>
-                        <td>10</td>
-                        <td>300</td>
-                        <td>27/02/40</td>
-                        <td style="color:red;">ยังไม่ได้ส่งสินค้า</td>
-                        <td>
-                            <a href="" class="btn btn-warning" data-toggle="modal"data-target="#myModal2"><i class="fa fa-edit"></i></a>
-                        </td>
-                    </tr>
+                <?php
+
+while ($row = $Orderalllist->fetch()) {
+    $SellID=$row['Sell_ID'];
+    $ProductName=$row['Product_name'];
+    $AllProduct=$row['All_Product'];
+    $TotalPrice=$row['Total_Price'];
+    $Address=$row['Address'] ;
+    $SellDate=$row['Sell_Date'] ;
+    $Status=$row['Status'];
+    echo "<tr>";
+
+    echo "<td>" .$SellID . "</td>";
+    echo "<td>" .$ProductName . "</td>";
+    echo "<td>" .$AllProduct . "</td>";
+    echo "<td>" . $TotalPrice . " บาท" . "</td>";
+   // echo "<td>" . $Address. "</td>";
+    echo "<td>" . $SellDate . "</td>";
+    echo "<td>" . $Status . "</td>";
+    echo "<td>" . "<a href='productedit.php?ProductName=".$ProductName."&Sell_ID=" . $SellID ."&AllProduct=".$AllProduct."&Total_Price=".$TotalPrice."&Address=".$Address."&Sell_Date=".$SellDate."&Status=".$Status." ' class='fa fa-edit'></a>" . "</td>";
+    echo "</tr>";
+}
+?>
                 </tbody>
 
 
