@@ -78,16 +78,16 @@
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
-                     $con=mysqli_connect("localhost","root","","webpro");
-                    $con->set_charset("utf8");
-                    $sql="SELECT Product_ID,Product_Name,Product_Pic FROM product ";                   
-                    $result=mysqli_query($con,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                    $Product_ID =$row['Product_ID'];
-                    $Product_Name=$row['Product_Name'];
-                    $Product_Pic=$row['Product_Pic'];
-                  
-                 ?> 
+            $con = mysqli_connect("localhost", "root", "", "webpro");
+            $con->set_charset("utf8");
+            $sql = "SELECT Product_ID,Product_Name,Product_Pic FROM product ";
+            $result = mysqli_query($con, $sql);
+            while ($row = mysqli_fetch_array($result)) {
+                $Product_ID = $row['Product_ID'];
+                $Product_Name = $row['Product_Name'];
+                $Product_Pic = $row['Product_Pic'];
+
+                ?> 
 
                 <div class="col-sm-4">
                     <div class="row m-0">
@@ -95,13 +95,14 @@
                             <img src="../../../<?php echo $Product_Pic; ?>" style="width:100%;  height:250px;">
                         </div>
                         <div class="col-sm-12 pt-3">
-                            <a href="detailproduct.php?Product_ID=<?php echo $Product_ID;?>"><p class="text-center"><?php echo $Product_Name;?></p></a>
+                            <a href="detailproduct.php?Product_ID=<?php echo $Product_ID; ?>"><p class="text-center"><?php echo $Product_Name; ?></p></a>
                         </div>
                     </div>          
                 </div>
                <?php
-                    }
-                    ?>
+
+            }
+            ?>
                 
             </div>
 
@@ -138,7 +139,11 @@
                     <h6> ลำปลาทิว ลาดกระบัง กรุงเทพมหานคร  โทร 089 035 6498</h6>
                 </div>
                 <div class="col-8">
-                    <h6>fb : ชุมชนบึงบัว</h6>
+                    <h6>fb : 
+                    <a href="https://www.facebook.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%8A%E0%B8%99%E0%B8%85%E0%B8%99%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7-978384328863562/" target="_blank">                    
+                    ชุมชนบึงบัว
+                    </a>
+                    </h6>
                 </div>
             </div>
         </footer>     
