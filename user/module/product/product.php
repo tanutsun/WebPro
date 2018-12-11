@@ -71,8 +71,8 @@
 
         
 
-        <div class="container-fluid">
-
+       <div class="container-fluid">
+ 
             <div class="row m-0 pt-5">
            <?php
             ini_set('display_errors', 1);
@@ -108,7 +108,7 @@
 
             
          
-            <nav aria-label="Page navigation example" style="padding-top:120px;">
+            <!-- <nav aria-label="Page navigation example" style="padding-top:120px;">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">
                         <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -126,7 +126,7 @@
                         <a class="page-link" href="#">Next</a>
                     </li>
                 </ul>
-            </nav>
+            </nav> -->
 
         </div>
 

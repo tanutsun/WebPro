@@ -10,6 +10,7 @@
         <!--Bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
       
     <title> Detail Activity </title>
         <style>
@@ -19,11 +20,11 @@
 
             @font-face {
                 font-family: 'Supermarket';
-                src: url('../font/supermarket.ttf');
+                src: url('../../font/Supermarket/supermarket.ttf');
                 src: local('Souses Regular'), local('Supermarket Web'),
-                url("../font/supermarket.woff") format("woff"),
-                url("../font/supermarket.otf") format("opentype"),
-                url("../font/supermarket.svg#grablau") format("svg");
+                url("../../font/Supermarket/supermarket.woff") format("woff"),
+                url("../../font/Supermarket/supermarket.otf") format("opentype"),
+                url("../../font/Supermarket/supermarket.svg#grablau") format("svg");
             }
 
             .bg-nav{
@@ -78,7 +79,7 @@
         error_reporting(E_ALL);
                     $con=mysqli_connect("localhost","root","","webpro");
                     $con->set_charset("utf8");
-                    $sql="SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic FROM Activity  where Activity_ID= $ID ";
+                    $sql="SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic,Activity_Date FROM Activity  where Activity_ID= $ID ";
                     
                     $result=mysqli_query($con,$sql);
                     while($row=mysqli_fetch_array($result)){
@@ -86,7 +87,7 @@
                         $Activity_Name=$row['Activity_Name'];
                         $Activity_Detail=$row['Activity_Detail'];
                         $Activity_Pic =$row['Activity_Pic'];
-                  
+                        $Activity_Date=$row['Activity_Date'];
 
                   
 
@@ -103,6 +104,7 @@
     				<h3 style="padding-top:5%"><b>รายละเอียดกิจกรรม</b></h3><hr>
     				<?php echo $Activity_Detail; ?>
                    </h5>
+                   <h3 style="padding-top:5%"><b>วันที่จัดกิจกรรม :</b></h3>  <?php echo $Activity_Date; ?>
                     </div>
                     <?php 
                     }

@@ -254,19 +254,35 @@
             </div>
             <br>
             <div class="row pt-2 pb-3">
-                
+            <?php
+            ini_set('display_errors', 1);
+            ini_set('display_startup_errors', 1);
+            error_reporting(E_ALL);
+                     $con=mysqli_connect("localhost","root","","webpro");
+                    $con->set_charset("utf8");
+                    $sql="SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic,Activity_Date FROM Activity";                   
+                    $result=mysqli_query($con,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                   $Activity_ID =$row['Activity_ID'];
+                    $Activity_Name=$row['Activity_Name'];
+                    $Activity_Detail=$row['Activity_Detail'];
+                    $Activity_Pic =$row['Activity_Pic'];
+                    $Activity_Date=$row['Activity_Date'];
+                  
+                 ?> 
                 
                 <div class="col-md-3">
-                    <a href="module/detail.activity/detail2.php">
-                        <img src="img/index-activity2.jpg" style="width:100%; height:160px;"> 
+               
+                <a  href="module/detail.activity/detail1.php?Activity_ID=<?php echo $Activity_ID; ?>"><img src="../<?php echo $Activity_Pic; ?>" style="width:100%; height:160px;"> </a>
                     </a>
                     <div class="row">
                         <div class="col">
-                            <p class="name-plant">ศึกษาดูงานจังหวัด จันทบุรี ระยอง ปราจีนบุรี</p>
+                            <p class="name-plant"><?php echo $Activity_Name?></p>
                         </div>
                     </div>
                 </div>
-                
+                <?php
+                    }?>
             </div> 
             <br>
             <a href="module/activity/activity.php" class="btn btn-all">ดูทั้งหมด</a> 
@@ -288,7 +304,11 @@
                     <h6> ลำปลาทิว ลาดกระบัง กรุงเทพมหานคร  โทร 089 035 6498</h6>
                 </div>
                 <div class="col-8">
-                    <h6>fb : ชุมชนบึงบัว</h6>
+                    <h6>fb : 
+                    <a href="https://www.facebook.com/%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%8A%E0%B8%99%E0%B8%85%E0%B8%99%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7-978384328863562/" target="_blank">
+                    ชุมชนบึงบัว
+                    </a>
+                    </h6>
                 </div>
             </div>
         </footer>     

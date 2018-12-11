@@ -54,7 +54,7 @@
     </head>
     <body >
        
-        <font face="Supermarket">   
+        <font face="Supermarket">
             <nav class="navbar navbar-expand-sm bg-nav navbar-dark">
                 <!-- Brand/logo -->
                 <a class="navbar-brand" href="../../index.php">
@@ -85,13 +85,14 @@
             error_reporting(E_ALL);
                      $con=mysqli_connect("localhost","root","","webpro");
                     $con->set_charset("utf8");
-                    $sql="SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic FROM Activity";                   
+                    $sql="SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic,Activity_Date FROM Activity";                   
                     $result=mysqli_query($con,$sql);
                     while($row=mysqli_fetch_array($result)){
                    $Activity_ID =$row['Activity_ID'];
                     $Activity_Name=$row['Activity_Name'];
                     $Activity_Detail=$row['Activity_Detail'];
                     $Activity_Pic =$row['Activity_Pic'];
+                    $Activity_Date=$row['Activity_Date'];
                   
                  ?> 
                 
@@ -103,7 +104,7 @@
                                 <b><h4> ชื่อกิจกรรม : <?php echo $Activity_Name;?>
                                  <br><br>
                                  รายละเอียดกิจกรรม :  <?php echo $Activity_Detail; ?>
-                                
+                                 วันที่จัดกิจกรรม :  <?php echo $Activity_Date; ?>
                                  <br><br><br>
                                  <a class="btn btn-read" href="../detail.activity/detail1.php?Activity_ID=<?php echo $Activity_ID; ?>" role="button">อ่านเพิ่มเติม</a>
                                   </div>
@@ -117,18 +118,20 @@
                   
 
                 <!--start pageing number-->
-                <nav aria-label="Page navigation example" style="padding-top:120px;"> 
+                <!-- <nav aria-label="Page navigation example" style="padding-top:120px;"> 
                   <ul class="pagination justify-content-end">
                     
                     <li class="page-item"><a class="page-link" href="#">1</a></li>
                    
                    
                   </ul>
-                </nav> <!--end pageing number-->
-        </div> <!--end contrainer-->
+                </nav>  -->
+                <!--end pageing number-->
+        </div> 
+        <!--end contrainer-->
 
-
-        <footer>
+        
+        <footer style="margin-top: 6%;">
             <div class="row">
                 <div class="col-2">
                     <h2> Contact Us </h2>
