@@ -24,23 +24,23 @@ while ($row = $CountallProduct ->fetch()) {
     $CountP= $row['count(Product_ID)'];
  }
 
-$dataGraph = $helper->sumProductGraph($db);
+// $dataGraph = $helper->sumProductGraph($db);
 
-$line_quantity = array();
-$line_money = array();
+// $line_quantity = array();
+// $line_money = array();
 
-for($i = 0; $i< count($dataGraph); $i++){
-    $line_quantity[] = array(
-                            // 'date' => date('D M d Y H:i:s O', strtotime($dataGraph[$i]['Sell_Date'])),
-                            'date' => $dataGraph[$i]['Sell_Date'],
-                            'value' => number_format($dataGraph[$i]['quantity'], 2,'.', ',')
-                        );
-    $line_money[] = array(
-        // 'date' => date('D M d Y H:i:s O', strtotime($dataGraph[$i]['Sell_Date'])),
-        'date' => $dataGraph[$i]['Sell_Date'],
-        'value' => number_format($dataGraph[$i]['total_Price'], 2,'.', ',')
-    );
-}
+// for($i = 0; $i< count($dataGraph); $i++){
+//     $line_quantity[] = array(
+//                             // 'date' => date('D M d Y H:i:s O', strtotime($dataGraph[$i]['Sell_Date'])),
+//                             'date' => $dataGraph[$i]['Sell_Date'],
+//                             'value' => number_format($dataGraph[$i]['quantity'], 2,'.', ',')
+//                         );
+//     $line_money[] = array(
+//         // 'date' => date('D M d Y H:i:s O', strtotime($dataGraph[$i]['Sell_Date'])),
+//         'date' => $dataGraph[$i]['Sell_Date'],
+//         'value' => number_format($dataGraph[$i]['total_Price'], 2,'.', ',')
+//     );
+// }
 
 
 ?>
@@ -121,8 +121,8 @@ for($i = 0; $i< count($dataGraph); $i++){
         </div>
     </div>
     <br><br><br>
-    <hr style="color: black;width: 80%;">
-    <center>
+    <!-- <hr style="color: black;width: 80%;"> -->
+    <!-- <center>
         <div class="x_panel" style="width: 80%">
             <div class="x_title">
                 <h2>สถิติการขาย<small>จำนวนสินค้าที่ขายได้ / จำนวนเงินที่ขายได้</small></h2>
@@ -132,7 +132,7 @@ for($i = 0; $i< count($dataGraph); $i++){
                 <div id="chartdiv"></div>
             </div>
         </div>
-    </center>
+    </center> -->
 
     <div class="col-md-12 col-sm-12 col-xs-12">
         <h1 style="margin:2%;">ประเภทของบทความ</h1>
@@ -176,7 +176,7 @@ for($i = 0; $i< count($dataGraph); $i++){
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 
-    <script>
+    <!-- <script>
         // Themes begin
             // am4core.useTheme(am4themes_animated);
         // Themes end
@@ -243,7 +243,7 @@ for($i = 0; $i< count($dataGraph); $i++){
 
         //chart.scrollbarY = new am4core.Scrollbar();
         chart.scrollbarX = new am4core.Scrollbar();
-    </script>
+    </script> -->
 </body>
 
 </html>
@@ -251,7 +251,7 @@ for($i = 0; $i< count($dataGraph); $i++){
 
 
 
-<!-- <h2>Hear is Dashboard</h2>
+<!-- <h2>Hear is Dashboard</h2> -->
 
 <?php 
   //  $helper->showMsg();

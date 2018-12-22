@@ -161,7 +161,10 @@
                 <div class="col-sm-4">
                     <div class="row" >
                         <div class="col-sm-10 p-3" style="background-color:#F8F8F8;">
-                            <form method="post" action="">
+                            ราคาสินค้าต่อชิ้น : <?php echo $Product_Price ; ?>
+                            <br>
+                            <a href="https://www.facebook.com/ศูนย์การเรียนรู้ชุมชนฅนเมือง-บึงบัว-978384328863562/" class="btn btn-primary">สั่งซื้อสินค้า</a>
+                            <!-- <form method="post" action="">
                                 <div class="form-group">
                                     <label for="FormControlSelect1"> จำนวนที่ต้องการซื้อ </label>
                                     <select class="form-control" id="FormControlSelect1" style="width:20%" name="quantity">
@@ -195,7 +198,7 @@
                                     <button id="showModal" class="btn btn-sub" type="button" data-toggle="modal" data-target="#buyPlant" data-per-price="<?php echo $Product_Price ; ?>" >ซื้อสินค้า</button>
                                     <div class="modal fade modal-fullscreen " id="buyPlant" role="dialog">
                                         <div class="modal-dialog modal-dialog-centered">
-                                            <!-- Modal content-->
+                                           
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h3 class="modal-title w-100 text-center">ยืนยันรายละเอียดสินค้า</h3>
@@ -237,7 +240,7 @@
                                         </div>
                                     </div>
                                 </center>                       
-                            </form>
+                            </form> -->
                             
                         </div>
                     </div>
