@@ -261,4 +261,4 @@ while ($row = $CountallProduct ->fetch()) {
 
    
 
-<p><a href="<?php echo ROOT_URL."/admin/logout.php" ?>">Logout</a></p> -->
+<!-- <p><a href="<?php echo ROOT_URL."/admin/logout.php" ?>">Logout</a></p> -->

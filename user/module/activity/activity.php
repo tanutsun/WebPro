@@ -80,28 +80,28 @@
         <!--start activity-->
                 <div class="container">
                 <?php
-            ini_set('display_errors', 1);
-            ini_set('display_startup_errors', 1);
-            error_reporting(E_ALL);
-                     $con=mysqli_connect("localhost","root","","webpro");
-                    $con->set_charset("utf8");
-                    $sql="SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic,Activity_Date FROM Activity";                   
-                    $result=mysqli_query($con,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                   $Activity_ID =$row['Activity_ID'];
-                    $Activity_Name=$row['Activity_Name'];
-                    $Activity_Detail=$row['Activity_Detail'];
-                    $Activity_Pic =$row['Activity_Pic'];
-                    $Activity_Date=$row['Activity_Date'];
-                  
-                 ?> 
+                ini_set('display_errors', 1);
+                ini_set('display_startup_errors', 1);
+                error_reporting(E_ALL);
+                $con = mysqli_connect("localhost", "root", "", "webpro");
+                $con->set_charset("utf8");
+                $sql = "SELECT Activity_ID,Activity_Name,Activity_Detail,Activity_Pic,Activity_Date FROM activity";
+                $result = mysqli_query($con, $sql);
+                while ($row = mysqli_fetch_array($result)) {
+                    $Activity_ID = $row['Activity_ID'];
+                    $Activity_Name = $row['Activity_Name'];
+                    $Activity_Detail = $row['Activity_Detail'];
+                    $Activity_Pic = $row['Activity_Pic'];
+                    $Activity_Date = $row['Activity_Date'];
+
+                    ?> 
                 
                         <div class="row" style="padding-top:5%; padding-bottom: 5%; padding-bottom: 5%;">
                                 <div class="col-sm">
                                  <img src="../../../<?php echo $Activity_Pic; ?>" style="width : 350px;  height: 280px;">
                                </div>
                                <div class="col-sm" style="padding-left:0px; padding-top: 65px;">
-                                <b><h4> ชื่อกิจกรรม : <?php echo $Activity_Name;?>
+                                <b><h4> ชื่อกิจกรรม : <?php echo $Activity_Name; ?>
                                  <br><br>
                                  รายละเอียดกิจกรรม :  <?php echo $Activity_Detail; ?>
                                  วันที่จัดกิจกรรม :  <?php echo $Activity_Date; ?>
@@ -112,7 +112,8 @@
                    
                        </div>
                        <?php
-                 }
+
+                    }
                     ?>
 
                   
