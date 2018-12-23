@@ -17,7 +17,6 @@
 
     <title> บึงบัว </title>
         <style>
-
             .font {
                  font-family: 'Supermarket';
             }
@@ -30,11 +29,9 @@
                 url("../../font/Supermarket/supermarket.otf") format("opentype"),
                 url("../../font/Supermarket/supermarket.svg#grablau") format("svg");
             }
-
             .bg-nav{
                 background-color:#215732;
             }
-
             footer{
                 background-color:#215732;
                 height:10%;
@@ -42,12 +39,10 @@
                 padding: 10px; 
                 color: white;
             }
-
             .fa-facebook{
                 font-size:14px;
                 color:white
             }
-
             .btn-sub{
                 background-color:#FF9C2C;
                 border-radius: 25px;
@@ -58,7 +53,9 @@
                 border-radius: 25px;
                 color:whitesmoke;
             }
-
+            .detail {
+                text-indent: 1.8em;
+            }
         </style>
         
     </head>
@@ -70,16 +67,12 @@
 
 
             if($_POST){
-                $quantity = ($_POST['quantity']) ? $_POST['quantity'] : 0;
                 $productPrice = ($_POST['productPrice']) ? $_POST['productPrice'] : 0;
-                $bank = ($_POST['bank']) ? $_POST['bank'] : 0;
-                $address = ($_POST['address']) ? $_POST['address'] : 0;
                 $product_id = ($_POST['product_id']) ? $_POST['product_id'] : 0;
-                $total_price = $quantity*$productPrice;
                 $date = date('Y-m-d H:i:s');
 
-                $sql_insert = "INSERT INTO `sell` (`Product_ID`, `All_Product`, `Total_Price`, `Address`,`Sell_Date`, `Status` )
-                VALUES($product_id, '$quantity', '$total_price', '$address', '$date', 'pending')";
+                $sql_insert = "INSERT INTO `sell` (`Product_ID`, `Sell_Date`, `Status` )
+                VALUES($product_id,'$date', 'pending')";
                 $result = $db->query($sql_insert);
                 if($result){
         ?>
@@ -143,28 +136,29 @@
         <div class="container-fluid">
 
             <div class="row pt-5 pb-5">
-                <div class="col-sm-8">
+                <div class="col-sm">
                     <div class="row">
                         <div class="col-sm-12">
-                        <center><img src="<?php echo ROOT_URL."/".$Product_Pic;?>" style="width:90%; height:450px;"></center>
+                        <center><img src="<?php echo ROOT_URL."/".$Product_Pic;?>" style="width:50%; height:450px;"></center>
                        
                         </div>
                         <div class="col-sm-10 offset-sm-1 pt-3">
                             <h5 class="text-center"> <?php echo $Product_Name; ?> </h5>
-                            <p><?php echo $Product_Detail;?>
-                            </p>
                             <p> ราคาสินค้า : <?php echo $Product_Price ; ?> บาท </p>
+                            <p class="detail"><?php echo $Product_Detail;?></p>
+                            <br>
+                            
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <!--div class="col-sm-4">
                     <div class="row" >
                         <div class="col-sm-10 p-3" style="background-color:#F8F8F8;">
                             ราคาสินค้าต่อชิ้น : <?php echo $Product_Price ; ?>
                             <br>
                             <a href="https://www.facebook.com/ศูนย์การเรียนรู้ชุมชนฅนเมือง-บึงบัว-978384328863562/" class="btn btn-primary">สั่งซื้อสินค้า</a>
-                            <!-- <form method="post" action="">
+                            <form method="post" action="">
                                 <div class="form-group">
                                     <label for="FormControlSelect1"> จำนวนที่ต้องการซื้อ </label>
                                     <select class="form-control" id="FormControlSelect1" style="width:20%" name="quantity">
@@ -240,16 +234,18 @@
                                         </div>
                                     </div>
                                 </center>                       
-                            </form> -->
+                            </form> 
                             
                         </div>
                     </div>
-                </div>
+                </div-->
             </div>
 
             <?php } ?>
             <center>
                 <a href="product.php" class="btn btn-back">กลับสู่หน้าผลิตภัณฑ์</a>
+                &nbsp;&nbsp;
+                <a href="https://www.facebook.com/ศูนย์การเรียนรู้ชุมชนฅนเมือง-บึงบัว-978384328863562/" class="btn btn-sub">สั่งซื้อสินค้า</a>
             </center>
 
             <br>
